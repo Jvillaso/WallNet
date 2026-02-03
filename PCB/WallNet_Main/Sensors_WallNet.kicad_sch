@@ -2515,6 +2515,16 @@
 	)
 	(wire
 		(pts
+			(xy 35.56 69.85) (xy 39.37 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3deaa6bb-46cd-4c33-badb-5ef333f113cd")
+	)
+	(wire
+		(pts
 			(xy 162.56 44.45) (xy 172.72 44.45)
 		)
 		(stroke
@@ -2535,13 +2545,13 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 69.85) (xy 39.37 69.85)
+			(xy 45.72 41.91) (xy 49.53 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b4283680-50ff-4074-961d-42d45ce18cdf")
+		(uuid "98d6d6cf-439a-4565-a1d1-1fefbc83798f")
 	)
 	(wire
 		(pts
@@ -9061,16 +9071,6 @@
 		)
 		(uuid "02d5f224-df0a-434e-8ef5-624831a9307c")
 	)
-	(label "VDD_nRF"
-		(at 46.99 96.52 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1143388f-590c-4f90-b4ac-4eb991916564")
-	)
 	(label "P27"
 		(at 107.95 49.53 180)
 		(effects
@@ -9131,16 +9131,6 @@
 		)
 		(uuid "3958c530-047a-4ca5-ae38-c47d2380a1a3")
 	)
-	(label "P01"
-		(at 38.1 69.85 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "3972d08e-e40a-4bf3-a24b-4fccedf41742")
-	)
 	(label "P22"
 		(at 16.51 27.94 180)
 		(effects
@@ -9181,26 +9171,6 @@
 		)
 		(uuid "4e8d792b-5f47-4d01-a548-ddf5308190e0")
 	)
-	(label "P02"
-		(at 46.99 91.44 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5546fac5-f20a-4e75-9286-d66c53589504")
-	)
-	(label "P00"
-		(at 49.53 41.91 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5ef19ec8-c55b-4d49-98bb-f88c3e71780f")
-	)
 	(label "P20"
 		(at 107.95 34.29 180)
 		(effects
@@ -9220,16 +9190,6 @@
 			(justify right bottom)
 		)
 		(uuid "6d65ebed-b011-4153-91e7-259e602a4df8")
-	)
-	(label "P03"
-		(at 46.99 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7b5f4f39-36cd-4fad-860a-b43fd060312d")
 	)
 	(label "P30"
 		(at 16.51 43.18 180)
@@ -9301,16 +9261,6 @@
 		)
 		(uuid "aa6ced4a-ac23-462d-bc84-00acfc758162")
 	)
-	(label "VDD_nRF"
-		(at 39.37 64.77 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b4653962-a587-419f-8beb-549bd9b3cfd4")
-	)
 	(label "P14"
 		(at 16.51 15.24 180)
 		(effects
@@ -9350,6 +9300,94 @@
 			(justify right bottom)
 		)
 		(uuid "fb188f26-820b-4c4b-95e5-aa62c285e52c")
+	)
+	(global_label "VDD_nrf"
+		(shape input)
+		(at 39.37 64.77 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3423b9d5-a211-46de-bb78-51a9b43126ce")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.1277 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDD_nrf"
+		(shape input)
+		(at 46.99 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c2a3f0f4-7d47-4f9e-a1c6-eb20b030bca6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 36.7477 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(hierarchical_label "Button"
+		(shape output)
+		(at 35.56 69.85 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "16a22ca2-428e-4e4b-8be6-245205f3e5b9")
+	)
+	(hierarchical_label "TS_TX"
+		(shape bidirectional)
+		(at 46.99 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2f71f59d-85ab-41c1-b069-526c587f7dea")
+	)
+	(hierarchical_label "TS_RX"
+		(shape bidirectional)
+		(at 46.99 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "64d836e0-01a8-40d1-91f2-cf6c54eedcfb")
+	)
+	(hierarchical_label "Buzzer"
+		(shape output)
+		(at 45.72 41.91 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cff25242-e69b-4d92-9edc-961dfcc0c4e5")
 	)
 	(symbol
 		(lib_id "power:GND")
