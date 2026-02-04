@@ -430,7 +430,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -613,6 +613,14 @@
     [
       "3272dd14-9e34-4275-b10b-c06dab1b3ca1",
       "Root"
+    ],
+    [
+      "ac25aec4-60b5-4d7f-9f99-a074eef21076",
+      "Battery"
+    ],
+    [
+      "14f35c0a-7540-4617-95f9-116bbddd487f",
+      "Sensors"
     ]
   ],
   "text_variables": {}
