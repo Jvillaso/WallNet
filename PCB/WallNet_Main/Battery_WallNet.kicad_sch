@@ -2284,6 +2284,10 @@
 		(uuid "dcee7ed4-28b6-4165-bc6a-b7abeea1b691")
 	)
 	(no_connect
+		(at 71.12 125.73)
+		(uuid "065006a9-ace8-41de-bb5d-9124802652ef")
+	)
+	(no_connect
 		(at 35.56 140.97)
 		(uuid "649259ab-192e-4dd1-9f29-bfb1294cf0f3")
 	)
@@ -2344,6 +2348,16 @@
 			(type default)
 		)
 		(uuid "27aa5681-b3f8-4af5-8a36-05bd7f2e95c4")
+	)
+	(wire
+		(pts
+			(xy 119.38 123.19) (xy 119.38 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35d9c207-8e79-45e7-a839-b3c325d41256")
 	)
 	(wire
 		(pts
@@ -2524,16 +2538,6 @@
 			(type default)
 		)
 		(uuid "abc950f5-a44d-40d5-b162-ec9d45fedffe")
-	)
-	(wire
-		(pts
-			(xy 119.38 119.38) (xy 119.38 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b058e9d8-db1b-4566-819a-9eda54ae276b")
 	)
 	(wire
 		(pts
@@ -5157,16 +5161,6 @@
 		)
 		(uuid "761a1973-fdc9-4a49-951b-11fd8e5c537e")
 	)
-	(label "DSEL"
-		(at 71.12 125.73 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "793163e1-694c-4f2b-9513-2ce28e498fbc")
-	)
 	(label "V_Bat"
 		(at 199.39 39.37 0)
 		(effects
@@ -5227,16 +5221,6 @@
 		)
 		(uuid "acdd2d46-33ff-4961-a0ea-152b3b843eaf")
 	)
-	(label "DSEL"
-		(at 100.33 132.08 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "ada43e05-a224-4e31-af55-9519df3abe38")
-	)
 	(label "CE"
 		(at 113.03 132.08 180)
 		(effects
@@ -5268,7 +5252,7 @@
 		(uuid "b64d4446-b4f6-465d-848f-e9d539e1c4b9")
 	)
 	(label "STAT"
-		(at 119.38 119.38 180)
+		(at 119.38 123.19 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5380,7 +5364,7 @@
 		)
 	)
 	(hierarchical_label "BQ_INT"
-		(shape bidirectional)
+		(shape input)
 		(at 40.64 31.75 180)
 		(effects
 			(font
@@ -5537,6 +5521,75 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
 					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 119.38 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2edf9a89-da34-4cd7-a512-dd7f0e47ad42")
+		(property "Reference" "R11"
+			(at 120.396 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "UNKNOWN"
+			(at 120.142 120.904 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 119.38 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "75e0bc0c-a276-4578-aa8a-bb8043281400")
+		)
+		(pin "2"
+			(uuid "6b894339-fd4c-40b2-af3f-942a64765ef4")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -6096,71 +6149,6 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
 					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 100.33 132.08 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "78cd1968-0d2f-48c4-b6ee-98427f5d74aa")
-		(property "Reference" "#PWR06"
-			(at 100.33 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 103.378 134.874 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 100.33 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 100.33 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 100.33 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c407576f-3f4c-4239-a251-a73d73a2d604")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
-					(reference "#PWR06")
 					(unit 1)
 				)
 			)

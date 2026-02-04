@@ -1675,16 +1675,6 @@
 		)
 		(uuid 7abfce87-01ce-4a33-b1ec-c3a9d295d972)
 	)
-	(text "Program / Debug"
-		(exclude_from_sim no)
-		(at 125.476 56.388 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "22404012-1bd1-4ba3-b4b9-6c629a507991")
-	)
 	(text "Debug"
 		(exclude_from_sim no)
 		(at 123.952 50.292 0)
@@ -2081,7 +2071,7 @@
 		(uuid "226424c0-7f87-49b1-80d9-f3a17a0a5797")
 	)
 	(label "SWDCLK"
-		(at 128.27 62.23 0)
+		(at 128.27 58.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2260,16 +2250,6 @@
 		)
 		(uuid "913df16b-dadd-48b1-8713-a843e7b701bb")
 	)
-	(label "VDD_nRF"
-		(at 128.27 67.31 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "91d9b9a2-a918-4c18-9798-e37dc01a6822")
-	)
 	(label "P16"
 		(at 68.58 53.34 0)
 		(effects
@@ -2301,7 +2281,7 @@
 		(uuid "a59633ee-5f59-4c49-8ee4-8ff9ca6d3444")
 	)
 	(label "RESET_nRF"
-		(at 128.27 64.77 0)
+		(at 128.27 60.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2321,7 +2301,7 @@
 		(uuid "ac868c9c-75e0-493b-8719-337d31a7b76f")
 	)
 	(label "SWDIO"
-		(at 128.27 59.69 0)
+		(at 128.27 55.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2412,6 +2392,50 @@
 	)
 	(global_label "VDD_nrf"
 		(shape input)
+		(at 128.27 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "727685b1-b5bd-4136-8478-02e3c682aac7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 138.5123 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDD_nrf"
+		(shape input)
+		(at 124.46 34.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b17f76e0-9181-4dab-b2f0-74aad6a75cac")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 114.2177 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDD_nrf"
+		(shape input)
 		(at 68.58 48.26 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2454,20 +2478,9 @@
 			)
 		)
 	)
-	(hierarchical_label "VDD_nRF"
-		(shape input)
-		(at 124.46 34.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ba93ecc3-2b73-4890-94d5-9bb987387b4d")
-	)
 	(symbol
 		(lib_id "Connector:Conn_01x05_Pin")
-		(at 123.19 64.77 0)
+		(at 123.19 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2475,7 +2488,7 @@
 		(dnp no)
 		(uuid "29aa664d-2a7e-4791-afa6-394cb3189a40")
 		(property "Reference" "J1"
-			(at 121.412 62.738 0)
+			(at 121.412 58.928 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2483,7 +2496,7 @@
 			)
 		)
 		(property "Value" "Conn_01x05_Pin"
-			(at 114.808 64.262 0)
+			(at 114.808 60.452 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2491,7 +2504,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
-			(at 123.19 64.77 0)
+			(at 123.19 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2500,7 +2513,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 123.19 64.77 0)
+			(at 123.19 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2509,7 +2522,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x05, script generated"
-			(at 123.19 64.77 0)
+			(at 123.19 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2543,7 +2556,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 128.27 69.85 0)
+		(at 128.27 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2551,7 +2564,7 @@
 		(dnp no)
 		(uuid "2d23d10f-3dfb-40d9-a171-7b120688369f")
 		(property "Reference" "#PWR08"
-			(at 128.27 76.2 0)
+			(at 128.27 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2560,7 +2573,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 130.302 69.088 0)
+			(at 131.318 68.326 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2568,7 +2581,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 128.27 69.85 0)
+			(at 128.27 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2577,7 +2590,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 128.27 69.85 0)
+			(at 128.27 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2586,7 +2599,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 128.27 69.85 0)
+			(at 128.27 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3443,7 +3456,7 @@
 				(justify left top)
 			)
 		)
-		(pin "BQ_INT" bidirectional
+		(pin "BQ_INT" output
 			(at 198.12 36.83 180)
 			(uuid "6c08d174-5f50-419a-9000-9efcbbece912")
 			(effects
