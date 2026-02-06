@@ -5531,7 +5531,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 119.38 82.55 0)
 			(effects
 				(font
@@ -5715,7 +5715,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b46e3e2-c25b-46e7-b7dd-82b7b97823fb")
-		(property "Reference" "J2"
+		(property "Reference" "J101"
 			(at 227.33 27.94 0)
 			(effects
 				(font
@@ -5731,7 +5731,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x-0190_6P_TopMnt_Horizontal"
 			(at 231.14 43.18 0)
 			(effects
 				(font
@@ -5782,7 +5782,7 @@
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
-					(reference "J2")
+					(reference "J101")
 					(unit 1)
 				)
 			)
@@ -5880,7 +5880,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 248.92 55.88 0)
 			(effects
 				(font
@@ -5950,7 +5950,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 105.41 77.47 0)
 			(effects
 				(font
@@ -6020,7 +6020,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 105.41 121.92 0)
 			(effects
 				(font
@@ -6090,7 +6090,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 123.19 121.92 0)
 			(effects
 				(font
@@ -6142,7 +6142,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7daafb7b-8dcd-47c0-9be1-d267206aaa2e")
-		(property "Reference" "U3"
+		(property "Reference" "U101"
 			(at 53.34 48.26 0)
 			(effects
 				(font
@@ -6304,7 +6304,7 @@
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
-					(reference "U3")
+					(reference "U101")
 					(unit 1)
 				)
 			)
@@ -6338,7 +6338,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 132.08 121.92 0)
 			(effects
 				(font
@@ -6472,7 +6472,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 105.41 54.61 0)
 			(effects
 				(font
@@ -6541,7 +6541,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 143.51 93.98 0)
 			(effects
 				(font
@@ -6610,7 +6610,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 157.48 99.06 0)
 			(effects
 				(font
@@ -6745,7 +6745,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -6944,7 +6944,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 147.32 54.61 0)
 			(effects
 				(font
@@ -7157,7 +7157,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 151.13 96.52 0)
 			(effects
 				(font
@@ -7226,7 +7226,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 242.57 55.88 0)
 			(effects
 				(font
@@ -7295,7 +7295,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 105.41 59.69 0)
 			(effects
 				(font
@@ -7365,7 +7365,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 93.98 77.47 0)
 			(effects
 				(font
@@ -7500,7 +7500,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 137.16 77.47 0)
 			(effects
 				(font
@@ -7617,7 +7617,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f1b05295-a36a-4106-bf04-b92fb9401764")
-		(property "Reference" "J3"
+		(property "Reference" "J102"
 			(at 194.945 31.75 0)
 			(effects
 				(font
@@ -7675,7 +7675,7 @@
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
-					(reference "J3")
+					(reference "J102")
 					(unit 1)
 				)
 			)
