@@ -2299,6 +2299,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 73.66) (xy 119.38 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2382389d-5dad-4cb0-b8ac-7d658a82aa8c")
+	)
+	(wire
+		(pts
 			(xy 40.64 31.75) (xy 43.18 31.75)
 		)
 		(stroke
@@ -4999,16 +5009,6 @@
 		)
 		(uuid "1fce966e-37bf-4516-989c-c5dc5bac771b")
 	)
-	(label "VDD_nRF"
-		(at 146.05 91.44 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2268a44d-0511-4e9e-bf56-bc7b748f790f")
-	)
 	(label "BTST"
 		(at 71.12 81.28 0)
 		(effects
@@ -5189,16 +5189,6 @@
 		)
 		(uuid "a902bf54-e613-48b9-b78c-96a4bd742667")
 	)
-	(label "VDD_nRF"
-		(at 119.38 74.93 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "acdd2d46-33ff-4961-a0ea-152b3b843eaf")
-	)
 	(label "CE"
 		(at 113.03 95.25 180)
 		(effects
@@ -5320,6 +5310,28 @@
 		(uuid "f757c26b-9abf-4843-806c-029637df9fb0")
 	)
 	(global_label "VDD_nrf"
+		(shape input)
+		(at 119.38 73.66 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "45cfd79b-d5ec-4007-9cc2-0be0368c3cf3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 109.1377 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDD_nrf"
 		(shape output)
 		(at 142.24 119.38 0)
 		(fields_autoplaced yes)
@@ -5337,6 +5349,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDD_nrf"
+		(shape input)
+		(at 143.51 91.44 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e51ebc81-aa11-4954-b2e0-fad862d9a6fe")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 133.2677 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5513,7 +5547,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2edf9a89-da34-4cd7-a512-dd7f0e47ad42")
-		(property "Reference" "R11"
+		(property "Reference" "R109"
 			(at 120.396 81.28 0)
 			(effects
 				(font
@@ -5531,7 +5565,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 119.38 82.55 0)
 			(effects
 				(font
@@ -5567,7 +5601,7 @@
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
-					(reference "R11")
+					(reference "R109")
 					(unit 1)
 				)
 			)
@@ -5880,7 +5914,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 248.92 55.88 0)
 			(effects
 				(font
@@ -5950,7 +5984,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 105.41 77.47 0)
 			(effects
 				(font
@@ -6020,7 +6054,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 105.41 121.92 0)
 			(effects
 				(font
@@ -6090,7 +6124,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 123.19 121.92 0)
 			(effects
 				(font
@@ -6338,7 +6372,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 132.08 121.92 0)
 			(effects
 				(font
@@ -6472,7 +6506,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 105.41 54.61 0)
 			(effects
 				(font
@@ -6541,7 +6575,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 143.51 93.98 0)
 			(effects
 				(font
@@ -6610,7 +6644,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 157.48 99.06 0)
 			(effects
 				(font
@@ -6745,7 +6779,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 158.75 77.47 0)
 			(effects
 				(font
@@ -6944,7 +6978,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 147.32 54.61 0)
 			(effects
 				(font
@@ -7079,7 +7113,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_0603_1608Metric"
 			(at 119.38 77.47 90)
 			(effects
 				(font
@@ -7157,7 +7191,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 151.13 96.52 0)
 			(effects
 				(font
@@ -7226,7 +7260,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 242.57 55.88 0)
 			(effects
 				(font
@@ -7295,7 +7329,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 105.41 59.69 0)
 			(effects
 				(font
@@ -7633,7 +7667,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_CLIK-Mate_502494-0470_1x04-1MP_P2.00mm_Horizontal"
+		(property "Footprint" "Connector_Molex:Molex_PicoBlade_53261-0471_1x04-1MP_P1.25mm_Horizontal"
 			(at 194.31 39.37 0)
 			(effects
 				(font

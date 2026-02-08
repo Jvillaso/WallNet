@@ -18843,7 +18843,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 127 149.86 0)
 			(effects
 				(font
@@ -18912,7 +18912,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 241.3 90.17 0)
 			(effects
 				(font
@@ -18981,7 +18981,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 190.5 90.17 0)
 			(effects
 				(font
@@ -19115,7 +19115,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 231.14 90.17 0)
 			(effects
 				(font
@@ -19249,7 +19249,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 261.62 54.61 0)
 			(effects
 				(font
@@ -19557,7 +19557,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 200.66 90.17 0)
 			(effects
 				(font
@@ -19775,7 +19775,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 45.72 100.33 0)
 			(effects
 				(font
@@ -19844,7 +19844,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 250.19 90.17 0)
 			(effects
 				(font
@@ -19913,7 +19913,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 270.51 90.17 0)
 			(effects
 				(font
@@ -20114,7 +20114,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Molex:Molex_CLIK-Mate_502494-0470_1x04-1MP_P2.00mm_Horizontal"
+		(property "Footprint" "Connector_Molex:Molex_PicoBlade_53261-0471_1x04-1MP_P1.25mm_Horizontal"
 			(at 53.34 124.46 0)
 			(effects
 				(font
@@ -20171,7 +20171,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6df28dba-6486-4a00-a37b-2b1753496ac4")
-		(property "Reference" "D3"
+		(property "Reference" "D203"
 			(at 248.92 63.8174 90)
 			(effects
 				(font
@@ -20225,7 +20225,7 @@
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "D3")
+					(reference "D203")
 					(unit 1)
 				)
 			)
@@ -20241,7 +20241,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "73d9ff9d-9670-445c-a4b5-06e8271496e6")
-		(property "Reference" "Q2"
+		(property "Reference" "Q201"
 			(at 270.51 34.2899 0)
 			(effects
 				(font
@@ -20301,7 +20301,7 @@
 		(instances
 			(project ""
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "Q2")
+					(reference "Q201")
 					(unit 1)
 				)
 			)
@@ -20316,7 +20316,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "845600fd-0cdb-4121-9c34-23e1f7163bb4")
-		(property "Reference" "D2"
+		(property "Reference" "D202"
 			(at 259.08 63.8174 90)
 			(effects
 				(font
@@ -20370,7 +20370,7 @@
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "D2")
+					(reference "D202")
 					(unit 1)
 				)
 			)
@@ -20403,7 +20403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 133.35 152.4 0)
 			(effects
 				(font
@@ -20472,7 +20472,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 260.35 90.17 0)
 			(effects
 				(font
@@ -20671,7 +20671,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 210.82 90.17 0)
 			(effects
 				(font
@@ -20740,7 +20740,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 248.92 45.72 0)
 			(effects
 				(font
@@ -20791,7 +20791,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9c0c2609-836e-4590-867e-75f3fe54fc37")
-		(property "Reference" "SW2"
+		(property "Reference" "SW201"
 			(at 59.436 95.25 0)
 			(effects
 				(font
@@ -20849,7 +20849,7 @@
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "SW2")
+					(reference "SW201")
 					(unit 1)
 				)
 			)
@@ -20990,7 +20990,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 251.46 35.56 0)
 			(effects
 				(font
@@ -21319,7 +21319,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 220.98 90.17 0)
 			(effects
 				(font
@@ -21370,7 +21370,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dd5bbcaa-b6ba-44ee-b512-3a4cd1e30328")
-		(property "Reference" "D1"
+		(property "Reference" "D201"
 			(at 269.24 63.8174 90)
 			(effects
 				(font
@@ -21424,7 +21424,7 @@
 		(instances
 			(project ""
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "D1")
+					(reference "D201")
 					(unit 1)
 				)
 			)
@@ -21457,7 +21457,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 251.46 25.4 0)
 			(effects
 				(font
@@ -21593,7 +21593,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 40.64 95.25 0)
 			(effects
 				(font
