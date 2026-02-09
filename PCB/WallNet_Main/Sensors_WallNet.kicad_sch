@@ -3496,6 +3496,16 @@
 		)
 		(uuid "cff00044-fa69-441c-991b-ea4638fe2a72")
 	)
+	(text "Implement Backup circuit (Socket connector)"
+		(exclude_from_sim no)
+		(at 230.886 106.172 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d077eeaa-cde0-43fb-bd71-90f23ca7d083")
+	)
 	(text "Buzzer"
 		(exclude_from_sim no)
 		(at 54.356 56.388 0)
@@ -20807,7 +20817,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "436331045822:4363X10458XX"
 			(at 52.07 97.79 0)
 			(effects
 				(font
