@@ -5556,7 +5556,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "UNKNOWN"
+		(property "Value" "240"
 			(at 120.142 84.074 0)
 			(effects
 				(font
