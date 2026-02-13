@@ -5,6 +5,217 @@
 	(uuid "c3b57753-fdfc-48e8-a18f-ec2c08e7b08a")
 	(paper "A4")
 	(lib_symbols
+		(symbol "436331045822:436331045822"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "S"
+				(at -0.13 7.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Value" "436331045822"
+				(at -5.01 -5.38 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "436331045822:4363X10458XX"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "436331045822_0_0"
+				(polyline
+					(pts
+						(xy 0 3.175) (xy 0 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 2.54)
+					(radius 0.508)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.508)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.47 2.74) (xy 1.04 -0.07)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 5.08) (xy -2.54 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy -2.54 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 5.08 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "CPT-9019B-SMT-TR:CPT-9019B-SMT-TR"
 			(pin_names
 				(offset 1.016)
@@ -2867,180 +3078,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_DPST_x2"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW"
-				(at 0 3.175 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SW_DPST_x2"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Single Pole Single Throw (SPST) switch, separate symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch lever"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_DPST_x2_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 0.254) (xy 1.524 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SW_DPST_x2_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "SW_DPST_x2_2_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Transistor_FET:BSS138"
 			(pin_names
 				(offset 0)
@@ -3760,6 +3797,12 @@
 		(uuid "a2c32fa9-4eac-40b2-8e98-e66006feb675")
 	)
 	(junction
+		(at 153.67 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ab3764c4-6367-47a2-ac17-c935328342b7")
+	)
+	(junction
 		(at 266.7 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3811,6 +3854,16 @@
 		(at 106.68 52.07)
 		(uuid "e818a07a-9898-4af9-8e17-c7390f75229c")
 	)
+	(wire
+		(pts
+			(xy 153.67 59.69) (xy 161.29 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bcc5f65-b730-48ff-a028-689ca8b63e64")
+	)
 	(polyline
 		(pts
 			(xy 123.19 48.26) (xy 179.07 48.26)
@@ -3830,6 +3883,16 @@
 			(type default)
 		)
 		(uuid "11a15a16-172b-496c-ae10-1b1070ab6e80")
+	)
+	(wire
+		(pts
+			(xy 152.4 49.53) (xy 153.67 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15cefd8b-1c21-4d1a-85de-a23e0bbed629")
 	)
 	(wire
 		(pts
@@ -3990,6 +4053,16 @@
 			(type default)
 		)
 		(uuid "4d413c71-3435-4d2b-8dbc-ee255db268ab")
+	)
+	(wire
+		(pts
+			(xy 144.78 49.53) (xy 143.51 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e965eb9-1080-4aa5-8504-18fa77d979fc")
 	)
 	(wire
 		(pts
@@ -4203,6 +4276,16 @@
 	)
 	(wire
 		(pts
+			(xy 143.51 49.53) (xy 143.51 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8502f0ab-0e76-4ed5-921f-f17cd3c101a1")
+	)
+	(wire
+		(pts
 			(xy 190.5 92.71) (xy 200.66 92.71)
 		)
 		(stroke
@@ -4343,16 +4426,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 59.69) (xy 154.94 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b843ce69-3f15-4648-889f-7416d4979e77")
-	)
-	(wire
-		(pts
 			(xy 254 45.72) (xy 259.08 45.72)
 		)
 		(stroke
@@ -4370,6 +4443,16 @@
 			(type default)
 		)
 		(uuid "c2e39265-fb4d-432d-b5c6-d03493fd36ba")
+	)
+	(wire
+		(pts
+			(xy 152.4 59.69) (xy 153.67 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c328534a-c158-4023-9127-4e6096ce1ef0")
 	)
 	(wire
 		(pts
@@ -4430,6 +4513,16 @@
 			(type dash)
 		)
 		(uuid "e5d4fbc1-a5c0-4f52-8b63-6e2158f683e5")
+	)
+	(wire
+		(pts
+			(xy 153.67 49.53) (xy 153.67 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e99a1728-5c33-44a6-8581-811b597eb969")
 	)
 	(wire
 		(pts
@@ -21307,6 +21400,83 @@
 		)
 	)
 	(symbol
+		(lib_id "436331045822:436331045822")
+		(at 149.86 54.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "763938b5-8ec5-4982-b73d-39a9ba2cf526")
+		(property "Reference" "S201"
+			(at 153.67 53.3399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "436331045822"
+			(at 153.67 55.8799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "436331045822:4363X10458XX"
+			(at 149.86 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 149.86 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "6410da2d-5a3b-4192-addc-25566a2c9906")
+		)
+		(pin "2"
+			(uuid "1a7a6b5c-ebdb-4f7d-9197-18dbae0c2896")
+		)
+		(pin "4"
+			(uuid "95d49a3c-f06d-4315-beca-f7187de848c7")
+		)
+		(pin "1"
+			(uuid "4d33ff90-906d-45d8-8d95-93bdc7748059")
+		)
+		(instances
+			(project ""
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
+					(reference "S201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 21.59 181.61 0)
 		(unit 1)
@@ -21908,79 +22078,6 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "C212")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_DPST_x2")
-		(at 149.86 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9c0c2609-836e-4590-867e-75f3fe54fc37")
-		(property "Reference" "SW201"
-			(at 157.226 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW"
-			(at 156.21 58.674 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "436331045822:4363X10458XX"
-			(at 149.86 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 149.86 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Single Pole Single Throw (SPST) switch, separate symbol"
-			(at 149.86 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "91fa8a67-adf5-4c0c-8692-18448e92f2df")
-		)
-		(pin "3"
-			(uuid "d9ce7f2a-367c-43b4-a66d-c3716028fad1")
-		)
-		(pin "1"
-			(uuid "29cf3d3f-f4c7-4b19-a356-5fc6fc69342b")
-		)
-		(pin "4"
-			(uuid "fa65f86f-92d1-450d-94a3-2698e0e42122")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "SW201")
 					(unit 1)
 				)
 			)
@@ -22985,7 +23082,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "VLS3015CX_680M_H:IND_VLS3015CX-680M-H"
 			(at 261.62 45.72 0)
 			(effects
 				(font

@@ -5980,7 +5980,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "ISMC:IND_IMSC1008AZER_VIS"
 			(at 111.76 119.38 0)
 			(effects
 				(font
