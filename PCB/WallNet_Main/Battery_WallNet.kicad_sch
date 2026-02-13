@@ -808,6 +808,113 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:USB_C_Receptacle_PowerOnly_6P"
 			(pin_names
 				(offset 1.016)
@@ -2035,6 +2142,18 @@
 		(uuid 93966e0e-37d6-4142-a18c-36860477687b)
 	)
 	(rectangle
+		(start 15.24 153.67)
+		(end 71.12 193.04)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c2661782-827d-464d-9e10-fcbeac8e5598)
+	)
+	(rectangle
 		(start 210.82 22.86)
 		(end 255.27 68.58)
 		(stroke
@@ -2092,6 +2211,19 @@
 			)
 		)
 		(uuid "6e73ee82-3635-474c-bc5c-5d6b787fd805")
+	)
+	(text "Test Points"
+		(exclude_from_sim no)
+		(at 42.926 156.718 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+				(color 43 40 255 1)
+			)
+		)
+		(uuid "73b04414-d2da-4cf3-8f25-b393f91b5008")
 	)
 	(text "Power Management IC"
 		(exclude_from_sim no)
@@ -2336,6 +2468,16 @@
 			(type default)
 		)
 		(uuid "35d9c207-8e79-45e7-a839-b3c325d41256")
+	)
+	(polyline
+		(pts
+			(xy 15.24 158.75) (xy 71.12 158.75)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "3676da09-c2cf-4d5e-9ec0-06f5be5457cb")
 	)
 	(wire
 		(pts
@@ -4989,6 +5131,16 @@
 		)
 		(uuid "0e9ede59-1471-4b1a-961f-b1b7b8da6770")
 	)
+	(label "V_Bat"
+		(at 20.32 170.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "151d00d7-a104-4fc1-94fa-0dd9294a6eed")
+	)
 	(label "VBUS_BQ"
 		(at 71.12 55.88 0)
 		(effects
@@ -5038,6 +5190,16 @@
 			(justify left bottom)
 		)
 		(uuid "37b99273-e981-45cd-bdb4-33a890f0d03f")
+	)
+	(label "V_in"
+		(at 27.94 170.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "381ccd2a-1b70-4d9b-beef-4d92eb4c4aa6")
 	)
 	(label "V_Bat"
 		(at 138.43 74.93 0)
@@ -5332,6 +5494,28 @@
 		)
 	)
 	(global_label "VDD_nrf"
+		(shape input)
+		(at 35.56 170.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8367c971-425a-484c-b1cc-7bc648a96028")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 45.8023 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDD_nrf"
 		(shape output)
 		(at 142.24 119.38 0)
 		(fields_autoplaced yes)
@@ -5386,6 +5570,17 @@
 		)
 		(uuid "288b1c77-b142-4309-b458-eb1b15c1365e")
 	)
+	(hierarchical_label "BQ_SCL"
+		(shape bidirectional)
+		(at 30.48 184.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3fca14f9-5589-44ca-8213-8429525bdd74")
+	)
 	(hierarchical_label "BQ_SDA"
 		(shape bidirectional)
 		(at 40.64 26.67 180)
@@ -5396,6 +5591,28 @@
 			(justify right)
 		)
 		(uuid "728e353f-2603-4822-a3f7-dd43babbce9b")
+	)
+	(hierarchical_label "BQ_INT"
+		(shape input)
+		(at 40.64 184.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7c52de27-1319-46fe-a9b0-3daf32fd0296")
+	)
+	(hierarchical_label "BQ_SDA"
+		(shape bidirectional)
+		(at 20.32 184.15 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c5a7348d-8a78-4f77-b67d-9dbaa1650b50")
 	)
 	(hierarchical_label "BQ_SCL"
 		(shape bidirectional)
@@ -5602,6 +5819,72 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
 					(reference "R109")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 35.56 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "32d2422d-4743-42ed-9574-f16b9ef1c3a2")
+		(property "Reference" "TP103"
+			(at 32.766 163.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VSys"
+			(at 33.782 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 40.64 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 35.56 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "af0ecef5-5a5b-459c-a0ca-55b15a7cbe9a")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
+					(reference "TP103")
 					(unit 1)
 				)
 			)
@@ -6415,6 +6698,72 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 20.32 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "826ef26b-58bb-4a77-947e-ce1fa4d389f2")
+		(property "Reference" "TP101"
+			(at 17.526 163.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VBat"
+			(at 18.542 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 25.4 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 25.4 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 20.32 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9d121d7c-f0f8-4d42-9c38-0f80984de42b")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
+					(reference "TP101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 123.19 124.46 0)
 		(unit 1)
@@ -6612,6 +6961,72 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
 					(reference "R106")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 30.48 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8b8e1f7c-4448-4923-9d76-b3c1f9a6a8e6")
+		(property "Reference" "TP105"
+			(at 27.686 177.038 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BQ_SCL"
+			(at 27.432 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "5001:KEYSTONE_5001"
+			(at 35.56 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 35.56 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 30.48 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8f75f1a9-bdcd-467f-9693-30aa4db2c660")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
+					(reference "TP105")
 					(unit 1)
 				)
 			)
@@ -6881,6 +7296,138 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
 					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 27.94 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a0d05a27-1802-4f04-8126-c3a6302edc6f")
+		(property "Reference" "TP102"
+			(at 25.146 163.068 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "VUSB"
+			(at 24.892 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 33.02 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 33.02 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 27.94 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "027b37aa-0f29-4ea8-840a-f02b1e0e33b9")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
+					(reference "TP102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 20.32 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a18d2a29-4c32-469b-8481-5b1cfdd15051")
+		(property "Reference" "TP104"
+			(at 17.272 177.038 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BQ_SDA"
+			(at 16.764 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "5001:KEYSTONE_5001"
+			(at 25.4 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 25.4 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 20.32 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1f4e29e5-0eac-41d2-95d2-847053af88b6")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
+					(reference "TP104")
 					(unit 1)
 				)
 			)
@@ -7571,6 +8118,72 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
 					(reference "C103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 40.64 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e846b437-080b-4b40-9e29-b3ceb767b492")
+		(property "Reference" "TP106"
+			(at 37.846 177.038 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BQ_INT"
+			(at 37.846 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "5001:KEYSTONE_5001"
+			(at 45.72 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 45.72 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 40.64 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3c0233b1-9740-481f-9456-34cfcd60d391")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/ac25aec4-60b5-4d7f-9f99-a074eef21076"
+					(reference "TP106")
 					(unit 1)
 				)
 			)

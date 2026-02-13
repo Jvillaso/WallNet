@@ -149,6 +149,7 @@
 	(net 69 "Net-(D101-K)")
 	(net 70 "Net-(J101-CC2)")
 	(net 71 "Net-(J101-CC1)")
+	(net 72 "Net-(D1-A)")
 	(footprint "Button_Switch_SMD:SW_Push_1P1T_NO_E-Switch_TL3301NxxxxxG"
 		(layer "F.Cu")
 		(uuid "04764332-c004-4011-9105-4e7a6805de4f")
@@ -681,7 +682,7 @@
 				)
 			)
 		)
-		(property "Value" "UNKNOWN"
+		(property "Value" "240"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "3ac96018-8305-4651-a752-6b76055a21c3")
@@ -1087,6 +1088,336 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "10816443-3d02-414c-8565-b87a5af7c74d")
+		(at 86 123.91)
+		(property "Reference" "TP213"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "f90526cf-44ab-49d0-9cc3-ab80fc904aa5")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "EP_SDA"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "51ee1561-1fd2-4c59-aa19-1b3d6e9c45f0")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac7b3bc2-4135-44b1-bc35-4813db63b082")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4a64f62-2f2d-413e-ac78-43d4247025fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/31175ff8-b40f-469e-ad2f-5ece6f50df95")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "51532897-0f14-40d4-ac11-d36bff325b64")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "3d01168c-0b24-401b-95f5-67374324a0d1")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "afa52c17-c22f-4fcc-baa2-8f65a2f3eba3")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 60 "/P27")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "3781be11-145f-44b2-b209-7ef228a54d98")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "113246ac-aaba-4bef-8d3f-1c8d1d5389fc")
+		(at 86 136.18)
+		(property "Reference" "TP216"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "4f9e8a5e-aa86-4fab-9d9c-99b2c279cb8d")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "EP_BUSY"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a9d30240-c322-4193-91b2-e7b3b7c8a952")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fe374e20-ba5d-4fa9-a6c7-33d46c837f92")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3b57f46-f142-41ef-a2ce-b557a8639d43")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/80097d87-9369-4464-be7d-07e8723a9739")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "1868cb9a-6147-44fe-9206-fec128d76e0c")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "4955fe12-2f6d-4cb6-9380-cf012b6f82f3")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "48c1ae62-4b44-402b-a900-e44581bf1ea9")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 53 "/P28")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "9ad88794-0353-4a5f-bddd-b6b2f3da9ecb")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
+	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
+		(layer "F.Cu")
+		(uuid "1282809e-3ee4-4448-b408-3821c808412e")
+		(at 71.235 123.41)
+		(descr "SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP101"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(uuid "35a9801d-d29e-410d-8b06-ec00157d0f2b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "VBat"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "77dad9bc-0a3e-4cf0-9751-917af3ca006d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0acb5e7-3aab-4f99-82d8-3c4ac77faa2f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "603e803b-5a17-4535-bfde-8ce6e7ac15d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/ac25aec4-60b5-4d7f-9f99-a074eef21076/826ef26b-58bb-4a77-947e-ce1fa4d389f2")
+		(sheetname "/Battery/")
+		(sheetfile "Battery_WallNet.kicad_sch")
+		(attr exclude_from_pos_files)
+		(fp_circle
+			(center 0 0)
+			(end 0 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "d91df277-988c-4ac9-b066-a2d0cfeb8e7c")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b15a9916-c1bb-4c72-8beb-93c9b5c8fd1d")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "04671b1d-568b-496c-8864-027e1e132609")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net 2 "/Battery/BAT")
+			(pinfunction "1")
+			(pintype "passive")
+			(uuid "89ee6a3a-4659-4008-b312-6abc33c0c0f3")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Diode_SMD:D_SOD-123"
 		(layer "F.Cu")
 		(uuid "137f6ae4-4c08-4265-899b-f3c9c62881f3")
@@ -1369,6 +1700,204 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "MountingHole:MountingHole_4.3mm_M4"
+		(layer "F.Cu")
+		(uuid "1536a528-6e05-49e0-8d5a-332ff8f0aa3c")
+		(at 108.5 148.35)
+		(descr "Mounting Hole 4.3mm, M4, no annular, generated by kicad-footprint-generator mountinghole.py")
+		(tags "mountinghole M4")
+		(property "Reference" "H3"
+			(at 0 -5.25 0)
+			(layer "F.SilkS")
+			(uuid "8ee16092-916c-47a2-9ced-de73422bef5d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 5.25 0)
+			(layer "F.Fab")
+			(uuid "7a945b97-3250-4df2-ba45-8779438cef14")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32442956-b515-4366-8b5c-623a92ee670c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "46fd58d2-040b-4adb-a485-d317eb07cbf1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/4023149b-2ff1-40a1-af32-e81370783bbb")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 4.3 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "653e25b9-335e-45a5-adb4-7cd8c7724fa5")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 4.55 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "5bbab7dd-c253-41a2-b485-004292f60d57")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "8270d97f-ddba-4603-a66e-168af28dda28")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 4.3 4.3)
+			(drill 4.3)
+			(layers "*.Cu" "*.Mask")
+			(uuid "eb93f020-3e73-4c39-a4c7-33829fccd8a7")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "MountingHole:MountingHole_4.3mm_M4"
+		(layer "F.Cu")
+		(uuid "17dccafc-7bf6-44f6-86dd-379a3946cc9c")
+		(at 108.5 158.5)
+		(descr "Mounting Hole 4.3mm, M4, no annular, generated by kicad-footprint-generator mountinghole.py")
+		(tags "mountinghole M4")
+		(property "Reference" "H4"
+			(at 0 -5.25 0)
+			(layer "F.SilkS")
+			(uuid "0ac1aaaf-e108-4b24-918b-4fecbf854196")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 5.25 0)
+			(layer "F.Fab")
+			(uuid "599f655f-17f1-4ec9-9260-9bc58710f6b9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2a97e75c-23a5-4c98-ada9-1938c8f724ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5d30e752-92e6-46c0-af0e-260bc1cd29f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/28241642-b43a-429f-8d43-b4e3993b6fac")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 4.3 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "ae4c4cdd-6979-4ef4-bb06-20117a2ca857")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 4.55 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "27a4a116-fa2e-4cf6-9761-09b346dbd034")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "29f2cc98-7d79-4fd2-8646-6d02f7d0f401")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 4.3 4.3)
+			(drill 4.3)
+			(layers "*.Cu" "*.Mask")
+			(uuid "5b838ab6-e72a-4d4e-858f-a14fe3a2a3e3")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "CPT_9019B_SMT_TR:XDCR_CPT-9019B-SMT-TR"
 		(layer "F.Cu")
@@ -2930,6 +3459,218 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "28ae2bd6-40a0-4640-b1ff-7cdfc5a884ee")
+		(at 81.91 123.91)
+		(property "Reference" "TP207"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "ab493026-bbf3-4225-b9b6-692dbd69e0ed")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "RFID_RST"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "560cc580-152f-43c4-8f94-c6c9faaec17d")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a458b21f-e139-47e6-aa91-0208a731695c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67c61234-4182-4e48-8764-37b1be5a3ebf")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/d58a0528-ded2-4e1d-a41b-d3b0fed12299")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "41812188-04e2-41cc-b67a-ade8732d2094")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "4b1977af-1ba6-460e-8f5d-7eddd420c66c")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "c1c6eab3-db62-461c-ab4e-3dd9e64f365e")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 61 "/P18")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "bc9f14eb-af1c-4922-a014-19dce16f5ee1")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
+	(footprint "MountingHole:MountingHole_4.3mm_M4"
+		(layer "F.Cu")
+		(uuid "28fd2d8c-1526-4440-a73d-4f5c3ee98a14")
+		(at 108.5 128.05)
+		(descr "Mounting Hole 4.3mm, M4, no annular, generated by kicad-footprint-generator mountinghole.py")
+		(tags "mountinghole M4")
+		(property "Reference" "H1"
+			(at 0 -5.25 0)
+			(layer "F.SilkS")
+			(uuid "2fba6d07-80d5-44e6-86bb-5d9f54088c46")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 5.25 0)
+			(layer "F.Fab")
+			(uuid "a87ea5d0-8301-46ed-be7c-c4d97009e160")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dfd89db0-753b-47a5-8e70-98371988fc08")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "764c7449-9ceb-449e-a26c-bdb723dd4b3b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/267509c8-3d24-477f-8d51-7f6dc73e44ec")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 4.3 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "a21293ae-dce3-43e0-a258-f6cbb124ad08")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 4.55 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "c751aa2d-11ea-4b7e-8dbc-16adba8f1891")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "dca210cb-366b-44b8-9ac2-d31d8b0fc216")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 4.3 4.3)
+			(drill 4.3)
+			(layers "*.Cu" "*.Mask")
+			(uuid "5c7b7eb4-63ac-4650-a4a9-30d09346f2b1")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "2a1db0b0-aff2-4dfd-a34e-6032a48b0d4f")
@@ -3353,6 +4094,119 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "307d1a37-ac26-492b-ba18-86ebee7f3e0f")
+		(at 81.91 140.27)
+		(property "Reference" "TP211"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "8965c3dc-2409-446d-bcfe-10e5789931a2")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "RFID_SS"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "8549d0a9-de4b-4de5-8682-f4e57f49512c")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a041f0fb-f6eb-4871-ae76-663e5679b7a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f6dc8cc-a0ef-4b4c-a1cb-ba2075131d1f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/221c71c6-ab09-4768-bf2a-0f20992d16b5")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "7210a792-4326-4979-823d-38cd8bb141bd")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "1097610b-e5ff-4032-a968-0c6ddeeb603d")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "151624b4-6f67-4167-9650-494a71a97815")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 54 "/P26")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "61d9433c-8e51-45b0-b4c3-0da975ececc5")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "314622c1-0f2e-47d6-bd43-0d48965673cd")
@@ -3751,6 +4605,119 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "3b3e5994-b062-40ea-8945-04ed985523b5")
+		(at 77.82 144.36)
+		(property "Reference" "TP206"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "7ba119b4-1d5a-482d-a6ea-55986d9339f8")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "GPS_TP"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "42d0eb6d-40d4-4a2c-88f6-0a9a3c8ea943")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b7903b10-7609-4fa0-beb0-7b9cba6da4bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f4dbe44e-db98-48f7-b19d-221f66d4a887")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/b0e9fbc1-8a7b-4e7b-9e52-8bd9de4d951f")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "bd76e3f9-bfbe-4893-890a-2ba01ce94d44")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "acc12d20-d649-4532-9582-0e70a5abeac7")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "a1e6e29e-2e04-4114-8ac9-7f6336a8879e")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 50 "/P14")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "baeb5654-83d4-4408-a739-d3154afda3e2")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "3c2dd5e2-4656-49e8-bd00-553c06e86636")
@@ -4032,6 +4999,105 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "MountingHole:MountingHole_4.3mm_M4"
+		(layer "F.Cu")
+		(uuid "3ffa8d33-a2af-4742-bca1-dacd8a1310a8")
+		(at 108.5 138.2)
+		(descr "Mounting Hole 4.3mm, M4, no annular, generated by kicad-footprint-generator mountinghole.py")
+		(tags "mountinghole M4")
+		(property "Reference" "H2"
+			(at 0 -5.25 0)
+			(layer "F.SilkS")
+			(uuid "034119e7-fb23-405d-81f9-9d16c9b814c4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 0 5.25 0)
+			(layer "F.Fab")
+			(uuid "fda8261e-66de-4971-ba0a-aae52df5130f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08313148-f333-4c02-823e-4c5ac8980a02")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2965dd4d-e221-42c4-a682-e7d0969fd66f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "MountingHole*")
+		(path "/2b9e2e3a-b691-42ab-843e-5ef4787e84ff")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr exclude_from_pos_files exclude_from_bom)
+		(fp_circle
+			(center 0 0)
+			(end 4.3 0)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(fill no)
+			(layer "Cmts.User")
+			(uuid "d0a5ec8d-661e-4ca5-a888-582f22a38da3")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 4.55 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "1efb5e52-88e1-4d0a-8243-b5b8c400962e")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "7e5cd2f9-b4ff-4518-90aa-5f478be6ada9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 4.3 4.3)
+			(drill 4.3)
+			(layers "*.Cu" "*.Mask")
+			(uuid "a764c5d9-dd8a-4d7c-915f-16e4fb2613b8")
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
@@ -4315,6 +5381,119 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "4482cf10-2065-44d8-a209-1888d6d6f1fa")
+		(at 81.91 144.36)
+		(property "Reference" "TP212"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "8d5810ae-cafe-441b-a6d0-18b5171ff723")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "EP_DC"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "563bcdc7-c657-4c3c-b450-e708a7647a9f")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "77c08750-f6fc-4f39-89eb-843ef4bd826f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e333eab-c4b3-4904-a67c-a330576d93a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/78aa673f-0fe0-47ac-ac68-4dc2b523a33f")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "536cc62d-eec2-4e79-a5c5-9fa7bf0eebc3")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "e99b365b-3eb3-407a-8a03-dcd9ae9bc3b2")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "26318059-ec3c-48be-8e0c-1cd7826473b5")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 45 "/P04")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "4951629e-03f7-4be6-b0b3-c07802ef531b")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "4b81a86b-02b1-4175-8ed8-74059648c773")
@@ -4594,6 +5773,345 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "5577847c-a623-4513-b162-f6d8ec0ad40c")
+		(at 77.82 140.27)
+		(property "Reference" "TP205"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "fe841d7b-36cf-46cd-b138-fe7192a52a85")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "GPS_INT"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "cf741a2d-91ac-4df6-bbd0-a7655defdcd9")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e986fb5-b3f5-4ca8-8dae-6a6c0014a0c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0fc160cd-33a3-4fff-8cb3-aaa3d852c0e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/393f558a-ae9e-4d42-aacc-9c938e96f684")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "c526ee90-95a9-4f9e-b910-f157d23b6d48")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "d55000ce-ad4b-427c-a5df-7bda98defb50")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "20d3c340-302e-45ad-8b19-b876bfa5017f")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 34 "/P23")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "3ae45468-d6bc-4ea6-911d-f3369cb33c76")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "55bd09d9-707b-4c0d-b6e2-1a460ec46c48")
+		(at 86 132.09)
+		(property "Reference" "TP215"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "e93b8ceb-f925-4283-a93c-7213ee548be0")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "EP_CSB"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "b065c972-a15f-4aa5-ab20-325492fd04c4")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b268504d-f882-4489-8e89-f45706494c70")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "40fed03e-e10c-4f32-9e9f-c31409721ef4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/d570aaba-abc6-4993-b0c3-39e473eb70b2")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "4b46759f-7afe-4184-b1c4-358b375deea2")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "e0af72a0-67c4-4270-97f2-2e64aa84325d")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "07839a96-bccd-41bd-939f-11a146d9221d")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 43 "/P29")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "841a75b1-3659-4fa4-92e5-2dbe6ad85f22")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "574a222b-5eda-400b-a7ed-bffb148a7e09")
+		(at 95.41 128.38)
+		(property "Reference" "TP105"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "48d816ad-1d0f-46ca-8c50-a4470b3a1be6")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BQ_SCL"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "83a0a888-abbd-4330-ba0d-613b4c9fd89c")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa50bf17-6f49-4bdd-8c7e-6be1cb614348")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5ad2c957-0e73-4a22-90f2-af70c0a4bada")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/ac25aec4-60b5-4d7f-9f99-a074eef21076/8b8e1f7c-4448-4923-9d76-b3c1f9a6a8e6")
+		(sheetname "/Battery/")
+		(sheetfile "Battery_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "48858d0e-0441-4797-b761-b7f2aa3bde56")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "18d26bbb-bfef-48f8-a3d1-d7aa96c94dcd")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "c47fe30c-1d2b-400c-97a4-4e17a5d546d6")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 39 "/P09")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "77eb0162-0367-4bba-98c5-ed80b8f80d4a")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
 			)
 		)
 	)
@@ -4962,6 +6480,119 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "5b4f325f-acd8-4828-9419-2e619cdfab23")
+		(at 81.91 128)
+		(property "Reference" "TP208"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "1bad974b-7e0b-4676-8326-0aec6e2a27ff")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "RFID_SCK"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "6a948bf0-47bb-4ea0-8235-ca60df66744b")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d22f6d9b-e222-40e7-8be1-1452863a3cdd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4529a986-53f2-4401-bed7-41b7f678678d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/d92dd178-1849-455d-9113-e3ff8a856505")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "37e9a68a-aed6-4c36-a20e-5df6e466e8e9")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b2f50bd5-0cd7-4d3f-ad61-cd7d1e4b2e99")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "71d437b5-3067-46d5-b6be-9a5e1ef10ff9")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 41 "/P20")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "11820e37-d3ca-4425-9d85-6ef652120fcd")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "5d19fd70-218b-48bb-9ecd-5efde6822576")
@@ -5100,6 +6731,119 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "60d565e0-552a-48e0-a316-3f351dbdd1a4")
+		(at 95.41 132.47)
+		(property "Reference" "TP106"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "3d28e9c1-8ff7-409f-897d-68f4b728bc22")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BQ_INT"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "cbb0c8f7-0d8f-4eb0-9b66-5e93157ef3a0")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a081db2f-5ab6-47bb-ba4e-12b0df933fb8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e45c24eb-3888-44df-b678-dcea973dd76d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/ac25aec4-60b5-4d7f-9f99-a074eef21076/e846b437-080b-4b40-9e29-b3ceb767b492")
+		(sheetname "/Battery/")
+		(sheetfile "Battery_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "45c15380-60d9-4247-aa69-ecfbd92d0a48")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "626118ae-cdab-45ad-8821-3d032847a460")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "8a28bac1-7013-4e91-ae08-769b801b1989")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 44 "/P13")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "7de2d1f0-3d38-4501-a98f-3bfb00173537")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
 			)
 		)
 	)
@@ -5816,6 +7560,222 @@
 			)
 		)
 	)
+	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
+		(layer "F.Cu")
+		(uuid "63e66b29-85f5-4fa1-bc36-ccdde27b38ec")
+		(at 71.235 134)
+		(descr "SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP1"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(uuid "c22bb49e-f9b5-4836-832e-316c208458f4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "7db7c998-01c7-4c71-bd25-5482b4bf1fc5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2ed5c4e4-131e-4003-a943-0657082e9bfd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7147a0e7-e570-460b-93d8-8a03fd45555a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/021533ad-9005-4d27-9fe4-9f93d79d6343")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr exclude_from_pos_files)
+		(fp_circle
+			(center 0 0)
+			(end 0 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "386fe9fb-9fa6-4181-8ed8-350da76f3206")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "707cc25c-a2c3-4e6e-b8f6-8e31bae3f98f")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "f0dd963a-ab29-4aef-8402-d01075023852")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net 1 "GND")
+			(pinfunction "1")
+			(pintype "passive")
+			(uuid "ddba8a37-3624-479f-ab9c-e47f3bc265d8")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "6860e1c3-cada-4073-a1a7-f41fbbf8ecc5")
+		(at 95.41 124.29)
+		(property "Reference" "TP104"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "61093dd9-7256-42c8-8a67-3a6a43206190")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "BQ_SDA"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "caa1fa96-7c92-4938-84e2-d64d17c53290")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6f142bee-bbfd-42e5-a2d0-1460f2cd6804")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "26693275-13e3-427b-a5d1-c948a90a76a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/ac25aec4-60b5-4d7f-9f99-a074eef21076/a18d2a29-4c32-469b-8481-5b1cfdd15051")
+		(sheetname "/Battery/")
+		(sheetfile "Battery_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "2ffa0204-4e88-493a-aab1-5f1918acbd79")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "23de830e-452a-4481-9bb0-21ff0e67a815")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "22962ac3-3232-4754-82e1-fce596343bc8")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 57 "/P10")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "4036e3e0-6f83-43a3-ad6c-97423cbaaad2")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "7154ca7a-8e3c-4f60-890d-13eec95cc463")
@@ -6087,6 +8047,314 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
+		(layer "F.Cu")
+		(uuid "75d5b02c-1f1f-460f-916f-9eb104c8b07c")
+		(at 71.235 129.51)
+		(descr "SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP103"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(uuid "dabbda80-383e-476d-8b20-586c2b535d2a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "VSys"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "2f7bc39b-e1e4-44d2-8041-f19155ad20d4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a468b243-0efc-46ab-a76e-1323ae6a2f22")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "721dbe36-ecc5-47c6-bb67-e3f25f05cf34")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/ac25aec4-60b5-4d7f-9f99-a074eef21076/32d2422d-4743-42ed-9574-f16b9ef1c3a2")
+		(sheetname "/Battery/")
+		(sheetfile "Battery_WallNet.kicad_sch")
+		(attr exclude_from_pos_files)
+		(fp_circle
+			(center 0 0)
+			(end 0 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "19537b8e-761d-45a1-85f9-c61a6ba2073b")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "973b65d2-53df-4d94-a568-245df61d7056")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "ab1966b6-5fee-478a-adbf-d67691034257")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net 65 "VDD_nrf")
+			(pinfunction "1")
+			(pintype "passive")
+			(uuid "92802017-7a74-40d4-b41b-51dbb66400c4")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "Diode_SMD:D_0603_1608Metric"
+		(layer "F.Cu")
+		(uuid "7dcd126b-e931-402e-89f8-8918ec23d526")
+		(at 101.2125 115.5)
+		(descr "Diode SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
+		(tags "diode")
+		(property "Reference" "D1"
+			(at 0 -1.43 0)
+			(layer "F.SilkS")
+			(uuid "30ae5e60-4e21-444e-a1aa-fca714eff267")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 0 1.43 0)
+			(layer "F.Fab")
+			(uuid "73b28857-f0f9-4498-8b02-643c225bfad1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "662b7243-fb2a-4b7e-b0b8-20552ee94bfd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode, small symbol"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b8bb353-9a0e-45e3-8a1f-593bb63cf7f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "75f9b7f1-9565-4e05-a163-75f9aca5ee2f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
+		(path "/3618a98b-be13-4004-a7f6-91989a3340ef")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start -1.485 -0.735)
+			(end -1.485 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "cf3cc358-221d-4210-b1e5-156b01698fc9")
+		)
+		(fp_line
+			(start -1.485 0.735)
+			(end 0.8 0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "306335ff-93cf-4304-a64b-c76270a54e6c")
+		)
+		(fp_line
+			(start 0.8 -0.735)
+			(end -1.485 -0.735)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "6ab6aa3a-453d-4cc9-b8e3-0c185d73b816")
+		)
+		(fp_rect
+			(start -1.48 -0.73)
+			(end 1.48 0.73)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b41286a4-add2-4062-a964-b46b1b93f235")
+		)
+		(fp_line
+			(start -0.8 -0.1)
+			(end -0.8 0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "96dafba3-2d76-4659-a0f4-cac0efa47fc4")
+		)
+		(fp_line
+			(start -0.8 0.4)
+			(end 0.8 0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "bbb35bd5-49c1-441a-a312-e74c10a00e2a")
+		)
+		(fp_line
+			(start -0.5 -0.4)
+			(end -0.8 -0.1)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6609c6cf-f83d-4acb-aa20-af65a8eb6200")
+		)
+		(fp_line
+			(start 0.8 -0.4)
+			(end -0.5 -0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "60b7750e-c93d-4331-8e94-d9d84fbb1bbd")
+		)
+		(fp_line
+			(start 0.8 0.4)
+			(end 0.8 -0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "b7d4d397-43fb-4ed5-8fda-6b264099b705")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "d7d35137-018b-4b39-9f46-cb8eb66daaa9")
+			(effects
+				(font
+					(size 0.4 0.4)
+					(thickness 0.06)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.7875 0)
+			(size 0.875 0.95)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 1 "GND")
+			(pinfunction "K")
+			(pintype "passive")
+			(uuid "4773143a-34eb-48e9-9ad5-66aef027bda7")
+		)
+		(pad "2" smd roundrect
+			(at 0.7875 0)
+			(size 0.875 0.95)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 72 "Net-(D1-A)")
+			(pinfunction "A")
+			(pintype "passive")
+			(uuid "1a430f06-e20b-4209-a27c-c84885f0a22b")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Diode_SMD.3dshapes/D_0603_1608Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -6380,6 +8648,119 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "81705f13-4d43-4eb6-b3bf-d4c2d456fd6d")
+		(at 86 128)
+		(property "Reference" "TP214"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "7ea17da7-0a41-4c46-9a8b-1eaf3907056d")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "EP_SCL"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "c5ea0063-5082-4ee9-a72c-e2e351f4a47f")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f9a5e11d-249e-4c9b-a7bc-d40e6d554cab")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "578f34a8-6a90-4e00-84cf-0f8773d2e0f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/70488141-e528-43ff-9afc-0a0e9290784e")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "d56d4195-c2eb-4828-b9e9-fb6c19cac505")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "6fa090b1-aaf1-4f82-bfd7-1f778bd2c0d5")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "3d9a2b95-9245-4e98-b1a0-ec18ecfe09c7")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 36 "/P07")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "3e63225b-248c-4ed0-9bb2-4a307dccfb67")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "87f001f7-4107-4b6e-9fc4-e20d7179854f")
@@ -6521,6 +8902,120 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "950de40c-6413-4831-84b2-11a61700cb33")
+		(at 86 140.27)
+		(property "Reference" "TP217"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "26eca5a9-24ff-4e3d-9b7f-19b75b12f9e6")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "EP_RESET"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "863223ef-198c-48fd-a092-c50e7e92694a")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "70b26c4d-c45a-4177-ba10-e72a7206c457")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "94d89437-8b99-4f97-b641-53dd6a444e0d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/e00c15d8-8e53-4c00-b787-d6cf92cb596b")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "5e66ca66-c438-448c-b79d-53ba3f0db981")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "e81d2781-f5cd-400b-8b6b-84c7c27fb91d")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "f90250d7-f795-4e0e-9be8-e9da376a6195")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 56 "/P05")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "f768aca3-004b-48d9-88b1-35399dde5372")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "975e5adf-966c-4a28-8791-a199c42161b6")
@@ -6659,6 +9154,232 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "a36ec6bf-9191-41fb-91f1-47ac185b5170")
+		(at 77.82 128)
+		(property "Reference" "TP202"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "223883c1-36af-4787-ac5d-6a9a207ab061")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TS_RX"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "6f86d623-fa15-4769-8d4f-08355bcb4900")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7c443d40-ea87-4023-bfce-65b1684afd8a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "48a2a252-d738-463c-ba0f-138dcfe18f77")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/0c02b483-cf71-49c2-b800-acbb74701a1f")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "c484d9e5-a374-467a-8a03-39af4961365b")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "2012f060-99d9-4575-b669-3798b56d7dfa")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "e40f2395-e84e-4eaa-a524-08951d5950e4")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 59 "/P11")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "135f5864-dce0-4529-a577-e6935f970c1c")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "a7f7f092-c838-4238-b22a-3b84fb03a414")
+		(at 77.82 123.91)
+		(property "Reference" "TP201"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "e33fc84d-cb91-4baa-815f-cea17b7fb69c")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "TS_TX"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "8aa4d3da-a8de-4a6a-84ec-1b28884dee2e")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b047de9e-0df8-4b9f-949c-f87c9ad45e4a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d5feb75-1805-4607-bd9b-c5fde6cbc70f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/1e60a57a-53d0-4ff8-8a43-be067615a962")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "e957a049-e531-49e2-be41-32f9a4286eeb")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "8ac5d535-7e17-4798-9ffb-6ed3271206a0")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "1f7e49fb-6ce3-40f7-a1a3-1e43e9a99516")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 48 "/P12")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "f923ab7a-99df-4500-8cc0-45b1291be892")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
 			)
 		)
 	)
@@ -7366,6 +10087,260 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "b39cd78d-9067-4ec0-9769-df0f80a0a8ed")
+		(at 77.82 132.09)
+		(property "Reference" "TP203"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "720cd788-dd3e-48a5-9066-53230c84a0ec")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "GPS_SDA"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "9b664831-9fe2-4a02-a5bf-e23d8e0eb61d")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "51c23e26-d614-4c2f-ad16-4c57986dee3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5175876b-3688-4d62-be2b-201a499ca58b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/4a0c8a60-220e-4854-9d06-b37e0a66da39")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "31bbb438-205a-4114-8155-3b267f169250")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "9f7121fa-2563-4a97-9b40-2a3731eae378")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "919cfc61-75f2-43d9-aa60-40855c6ce914")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 49 "/P16")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "292da668-c9e8-45da-a4cd-5c46773e740e")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
+	(footprint "Resistor_SMD:R_0603_1608Metric"
+		(layer "F.Cu")
+		(uuid "b5b7ab78-01d9-4649-a6aa-f986da49760e")
+		(at 101.175 112)
+		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
+		(tags "resistor")
+		(property "Reference" "R2"
+			(at 0 -1.43 0)
+			(layer "F.SilkS")
+			(uuid "80df602a-2077-4b10-870c-b913fc7e8de0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "240"
+			(at 0 1.43 0)
+			(layer "F.Fab")
+			(uuid "8b68fc5c-6740-489c-b9cd-10d7f18124b8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a5c40565-0da4-4560-989e-38e0046bb225")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1cecb255-755a-4d47-aca0-ba045ccb57ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/bdca9210-6c5f-4773-81a9-d263196e3abf")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start -0.237258 -0.5225)
+			(end 0.237258 -0.5225)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "40f9bdd0-5672-4a2d-b7f9-5a789dceb2f0")
+		)
+		(fp_line
+			(start -0.237258 0.5225)
+			(end 0.237258 0.5225)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "0d4c848a-b8f2-457f-a19b-9ee53111545c")
+		)
+		(fp_rect
+			(start -1.48 -0.73)
+			(end 1.48 0.73)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "bcff5caf-f9f4-4cf6-a141-585fb66753b2")
+		)
+		(fp_rect
+			(start -0.8 -0.4125)
+			(end 0.8 0.4125)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "4ac70fd7-c189-4958-af40-e9fd81e5439d")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "5a65c5b1-bf4f-4c05-89b6-2f60bb70ccdb")
+			(effects
+				(font
+					(size 0.4 0.4)
+					(thickness 0.06)
+				)
+			)
+		)
+		(pad "1" smd roundrect
+			(at -0.825 0)
+			(size 0.8 0.95)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 42 "/P08")
+			(pintype "passive")
+			(uuid "766981ee-3875-41cd-9db7-aec4fe0cdd0e")
+		)
+		(pad "2" smd roundrect
+			(at 0.825 0)
+			(size 0.8 0.95)
+			(layers "F.Cu" "F.Mask" "F.Paste")
+			(roundrect_rratio 0.25)
+			(net 72 "Net-(D1-A)")
+			(pintype "passive")
+			(uuid "51076496-a953-4845-9b0c-3af857337861")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9364,6 +12339,109 @@
 			)
 		)
 	)
+	(footprint "TestPoint:TestPoint_Pad_D1.0mm"
+		(layer "F.Cu")
+		(uuid "c840ec3f-b0e9-4488-acc6-bbabf396d5e2")
+		(at 71.235 126.46)
+		(descr "SMD pad as test Point, diameter 1.0mm")
+		(tags "test point SMD pad")
+		(property "Reference" "TP102"
+			(at 0 -1.448 0)
+			(layer "F.SilkS")
+			(uuid "099bbabc-86eb-4d81-be2d-425a757463b3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "VUSB"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "42e84f66-2c15-42a6-87a5-aa658d58bfa4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "88088205-e081-4d6d-a0ce-1985297bc07a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2745005d-e2d1-45ad-b767-a1680a955869")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/ac25aec4-60b5-4d7f-9f99-a074eef21076/a0d05a27-1802-4f04-8126-c3a6302edc6f")
+		(sheetname "/Battery/")
+		(sheetfile "Battery_WallNet.kicad_sch")
+		(attr exclude_from_pos_files)
+		(fp_circle
+			(center 0 0)
+			(end 0 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "2de05a2f-bc11-4736-a9fd-1e3afc1c8d3d")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "a276120e-ecef-4163-adb1-c7ed8dba80b5")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "2b591db6-9671-4ca6-aecb-072e36f928ae")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd circle
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net 23 "/Battery/VBUS_BQ")
+			(pinfunction "1")
+			(pintype "passive")
+			(uuid "6a7695d7-f9a2-4bac-84c9-25f85b43e8f3")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x-0190_6P_TopMnt_Horizontal"
 		(layer "F.Cu")
 		(uuid "ca24cf72-e6b6-406d-9818-09253ed345b7")
@@ -10214,6 +13292,119 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "cd121693-24d0-4af9-83b9-260232fd3bd4")
+		(at 89.32 124.29)
+		(property "Reference" "TP2"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "df24c2ba-c81c-46e7-ad43-55abce59331f")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "487b7856-5b88-471c-ad58-f84c321baba2")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7cc845d3-14cc-4a76-9b6a-847489b35ce1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1f97ef01-7c7b-4ec9-a9f3-db8945dd31af")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/bdfc09e0-e8d2-47d2-8727-d6ad64c7bfc1")
+		(sheetname "/")
+		(sheetfile "WallNet_Main.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "1a761fb2-5aa7-4fa8-ac91-c953395127be")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "31cdbb18-1abc-40bf-8c42-e67951be0b0c")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "6ef9ab40-c0f5-468b-a4c9-df86b7fbc955")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 1 "GND")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "c01a5df9-5e60-4c26-8e3e-af3f99ff660a")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
 			)
 		)
 	)
@@ -13259,6 +16450,119 @@
 			)
 		)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "eddd9a0d-21cb-4d4b-9440-06bafcb969b7")
+		(at 81.91 136.18)
+		(property "Reference" "TP210"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "14cebca8-0a97-41fe-bd84-41dea281a101")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "RFID_MOSI"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "8a951175-607a-458e-9169-006a6d42d93f")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8e8e2dd6-184f-4c6a-8ab9-5c55f7bea3d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84446b12-8184-49a9-a202-bafa97dea6b0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/4b6e0b2d-f996-4f71-b281-4cdf4ca89a6c")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "10c6dadd-2359-4c0f-b846-414876807b0c")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "16019f9a-d256-4550-a905-89e3a4b954ec")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "cebcd72e-b2d5-425b-8799-9e69620a7167")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 62 "/P03")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "fc80657c-00f6-45ad-a6e9-28dd18a13446")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "f2138df0-5f59-405e-9c00-d0f2ab038c8b")
@@ -13820,6 +17124,119 @@
 		)
 		(embedded_fonts no)
 	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "fd941369-c710-492a-b595-e38f15da19b5")
+		(at 81.91 132.09)
+		(property "Reference" "TP209"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "b1fcdc84-2e57-48cf-840f-2e657b8e2b98")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "RFID_MISO"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "6f08e8da-646d-4e41-84ca-db8c03ac1c4c")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3e48f44-cc4a-48ab-8eb1-dad51102c35a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2307ff76-a6a3-43f3-99c7-469e8c5ee81d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/73d64d17-fdb2-47fb-9521-6a2956f9d2b2")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "c06f4d33-ade7-4176-a61d-4cc6881598b4")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "17e52ed9-4ee4-47c2-9822-353e7ea8b3d8")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "a41b4a7f-6562-4316-9e55-3ffce8209464")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 64 "/P02")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "01c2100d-3300-4924-ac40-9b0119a0398d")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0603_1608Metric"
 		(layer "F.Cu")
 		(uuid "fdd18d58-57dd-486d-ac0e-2db7199ba716")
@@ -13958,6 +17375,119 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "5001:KEYSTONE_5001"
+		(layer "F.Cu")
+		(uuid "fdf149c4-4bdd-4261-8c98-740c7d89c6df")
+		(at 77.82 136.18)
+		(property "Reference" "TP204"
+			(at 0.032 -2.2064 0)
+			(layer "F.SilkS")
+			(uuid "338db0a7-e6ea-4c2d-bf42-eea514951d8f")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "GPS_SCL"
+			(at 3.2832 2.2064 0)
+			(layer "F.Fab")
+			(uuid "a91178a2-9a71-4e80-8680-47a71fb9d28c")
+			(effects
+				(font
+					(size 0.64 0.64)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d431f81c-7b3d-42b4-a29d-3f97acc5fefe")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e457c69-8796-4b3c-8e7f-839bbdff8c92")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/14f35c0a-7540-4617-95f9-116bbddd487f/03b341ca-2e94-41e3-a664-2bf8699f2c12")
+		(sheetname "/Sensors/")
+		(sheetfile "Sensors_WallNet.kicad_sch")
+		(attr through_hole)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "3c342985-41d8-4e9a-b9a5-c3fe3a0f37a4")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.52 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "69810985-0059-4df9-9a46-ee78792c2892")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 1.27 0)
+			(stroke
+				(width 0.127)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "acdc3f87-d592-4ffc-aff2-f3cb38906f9f")
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.53 1.53)
+			(drill 1.02)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 47 "/P19")
+			(pinfunction "1")
+			(pintype "passive")
+			(solder_mask_margin 0.102)
+			(uuid "e0803ff7-1511-4dda-8e5b-bf4c2b5a2175")
+		)
+		(embedded_fonts no)
+		(model "C:/Users/txiki/OneDrive/Desktop/College/.Current_Semester/437/GitHub/WallNet/PCB/Components/5001/5001.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
 			)
 		)
 	)
