@@ -2233,6 +2233,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 91.44) (xy 198.12 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bbef561-f68c-4ca7-ba18-436dc2fd7dff")
+	)
+	(wire
+		(pts
 			(xy 68.58 64.77) (xy 68.58 66.04)
 		)
 		(stroke
@@ -2263,7 +2273,17 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 102.87) (xy 198.12 102.87)
+			(xy 195.58 88.9) (xy 198.12 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22874b22-a897-41f6-9756-8cb76fc94e56")
+	)
+	(wire
+		(pts
+			(xy 195.58 97.79) (xy 198.12 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2280,26 +2300,6 @@
 			(type dash)
 		)
 		(uuid "3ab90c99-77fd-490b-a9f8-e971cdebb68c")
-	)
-	(wire
-		(pts
-			(xy 195.58 96.52) (xy 198.12 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e1fb235-5027-4df3-acbf-359e6d092011")
-	)
-	(wire
-		(pts
-			(xy 195.58 91.44) (xy 198.12 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3fc0b558-a110-44c5-9bf9-02fe18b30138")
 	)
 	(wire
 		(pts
@@ -2421,16 +2421,6 @@
 		)
 		(uuid "7a9052fc-9db6-4e85-95f2-bb8436d0f084")
 	)
-	(wire
-		(pts
-			(xy 195.58 88.9) (xy 198.12 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "84b19358-6d84-4bf8-85f3-36cce14c8af6")
-	)
 	(polyline
 		(pts
 			(xy 83.82 48.26) (xy 163.83 48.26)
@@ -2473,7 +2463,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 100.33) (xy 198.12 100.33)
+			(xy 195.58 95.25) (xy 198.12 95.25)
 		)
 		(stroke
 			(width 0)
@@ -2490,16 +2480,6 @@
 			(type default)
 		)
 		(uuid "a4e44ec4-38c9-42a4-9f29-d332bd95953e")
-	)
-	(wire
-		(pts
-			(xy 195.58 86.36) (xy 198.12 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a929503b-71ac-4497-8190-4b6f6a218614")
 	)
 	(polyline
 		(pts
@@ -2553,16 +2533,6 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 93.98) (xy 198.12 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc17fb0c-7da7-4730-be3b-bb6bb6596875")
-	)
-	(wire
-		(pts
 			(xy 195.58 66.04) (xy 198.12 66.04)
 		)
 		(stroke
@@ -2580,6 +2550,16 @@
 			(type dash)
 		)
 		(uuid "ca53d237-b5bc-4f55-ba9d-9417fb759852")
+	)
+	(wire
+		(pts
+			(xy 195.58 86.36) (xy 198.12 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cec373b1-70db-4345-8f1b-566306ad9129")
 	)
 	(polyline
 		(pts
@@ -11929,16 +11909,6 @@
 		)
 		(uuid "183cef3d-1ded-4fb4-bab8-f7bfc6137d23")
 	)
-	(label "P20"
-		(at 195.58 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1b65acb8-2c35-403d-9b52-0833e5a992eb")
-	)
 	(label "P22"
 		(at 100.33 99.06 180)
 		(effects
@@ -12029,18 +11999,8 @@
 		)
 		(uuid "29382533-93a7-4909-bde9-7b99f9c777a1")
 	)
-	(label "P18"
-		(at 195.58 91.44 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2987a0db-2a47-49ba-acd0-86e68b46ad1e")
-	)
 	(label "P12"
-		(at 195.58 102.87 180)
+		(at 195.58 97.79 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12110,7 +12070,7 @@
 		(uuid "40b9c6da-8ca7-464a-8273-769f63d7e552")
 	)
 	(label "P26"
-		(at 195.58 96.52 180)
+		(at 195.58 88.9 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12130,7 +12090,7 @@
 		(uuid "47727c2f-623e-405d-be9b-5c79643fd1bf")
 	)
 	(label "P11"
-		(at 195.58 100.33 180)
+		(at 195.58 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12409,16 +12369,6 @@
 		)
 		(uuid "cb8bb937-8945-4271-b85b-dcb2b838d816")
 	)
-	(label "P03"
-		(at 195.58 88.9 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d0c4c82d-f7e7-448a-842f-779706ae9227")
-	)
 	(label "P04"
 		(at 27.94 63.5 180)
 		(effects
@@ -12498,6 +12448,16 @@
 			(justify right bottom)
 		)
 		(uuid "f251ec80-3d3e-45d5-aeaf-c68fdb66af38")
+	)
+	(label "P03"
+		(at 195.58 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f3efb060-9a9a-4bcb-ae5a-6f18acc50767")
 	)
 	(label "P17"
 		(at 68.58 55.88 0)
@@ -13279,6 +13239,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 44.45 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "55592519-17eb-47f1-8b1f-12e027e8fbe5")
+		(property "Reference" "H6"
+			(at 46.99 142.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RFID_mount_2"
+			(at 46.99 144.7799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_4.3mm_M4"
+			(at 44.45 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 44.45 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1"
+					(reference "H6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_DPST_x2")
 		(at 124.46 86.36 0)
 		(unit 1)
@@ -13547,6 +13571,70 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1"
 					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 44.45 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b536e628-394c-465d-a964-ee8c06d72972")
+		(property "Reference" "H5"
+			(at 46.99 135.8899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RFID_mount_1"
+			(at 46.99 138.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_4.3mm_M4"
+			(at 44.45 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 44.45 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1"
+					(reference "H5")
 					(unit 1)
 				)
 			)
@@ -14240,7 +14328,7 @@
 	)
 	(sheet
 		(at 198.12 49.53)
-		(size 13.97 55.88)
+		(size 13.97 50.8)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -14264,7 +14352,7 @@
 			)
 		)
 		(property "Sheetfile" "Sensors_WallNet.kicad_sch"
-			(at 198.12 105.9946 0)
+			(at 198.12 100.9146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14392,58 +14480,8 @@
 				(justify left)
 			)
 		)
-		(pin "RFID_MISO" output
-			(at 198.12 86.36 180)
-			(uuid "aa78585e-a4e3-4f0b-92e0-c7a2a87d64e8")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "RFID_MOSI" input
-			(at 198.12 88.9 180)
-			(uuid "0c4e94f1-304d-4cb5-baeb-e4ad5f78b0ff")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "RFID_RST" input
-			(at 198.12 91.44 180)
-			(uuid "cf71b540-4754-4625-aed3-5fa8ca8b09f5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "RFID_SCK" input
-			(at 198.12 93.98 180)
-			(uuid "e4331ae3-20d8-4b4e-9500-387741d2c292")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "RFID_SS" input
-			(at 198.12 96.52 180)
-			(uuid "72f82769-f968-4c77-8fc5-f3699a2e87b9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "TS_RX" input
-			(at 198.12 100.33 180)
+			(at 198.12 95.25 180)
 			(uuid "84f934db-4628-48f0-b513-72f47f7b67af")
 			(effects
 				(font
@@ -14453,8 +14491,38 @@
 			)
 		)
 		(pin "TS_TX" output
-			(at 198.12 102.87 180)
+			(at 198.12 97.79 180)
 			(uuid "6b30d0c2-ad06-4ef9-824d-7a07e1ff681a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RFID_GPO" input
+			(at 198.12 86.36 180)
+			(uuid "625e7b9a-0efe-4df7-aead-d328e9dfb689")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RFID_SCL" input
+			(at 198.12 88.9 180)
+			(uuid "84dbca20-82cc-415a-b35f-f12c328938fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RFID_SDA" bidirectional
+			(at 198.12 91.44 180)
+			(uuid "eaea597e-aa5c-4109-8b63-caa15985acef")
 			(effects
 				(font
 					(size 1.27 1.27)

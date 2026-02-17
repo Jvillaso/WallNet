@@ -501,381 +501,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Conn_01x07_Socket"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x07_Socket"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x07, script generated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x07_Socket_1_1"
-				(polyline
-					(pts
-						(xy -1.27 7.62) (xy -0.508 7.62)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 5.08) (xy -0.508 5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 2.54) (xy -0.508 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -2.54) (xy -0.508 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -5.08) (xy -0.508 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -7.62) (xy -0.508 -7.62)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 7.112)
-					(mid -0.5058 7.62)
-					(end 0 8.128)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 4.572)
-					(mid -0.5058 5.08)
-					(end 0 5.588)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 2.032)
-					(mid -0.5058 2.54)
-					(end 0 3.048)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -0.508)
-					(mid -0.5058 0)
-					(end 0 0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -3.048)
-					(mid -0.5058 -2.54)
-					(end 0 -2.032)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -5.588)
-					(mid -0.5058 -5.08)
-					(end 0 -4.572)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -8.128)
-					(mid -0.5058 -7.62)
-					(end 0 -7.112)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 7.62 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 5.08 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "Pin_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:TestPoint"
 			(pin_numbers
 				(hide yes)
@@ -3589,7 +3214,7 @@
 	)
 	(rectangle
 		(start 16.51 137.16)
-		(end 87.63 191.77)
+		(end 97.79 191.77)
 		(stroke
 			(width 0)
 			(type dash)
@@ -18567,6 +18192,28 @@
 	)
 	(global_label "VDD_nrf"
 		(shape input)
+		(at 72.39 171.45 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4b967f64-c575-422a-917e-f67649fd0737")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 82.6323 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VDD_nrf"
+		(shape input)
 		(at 200.66 81.28 180)
 		(fields_autoplaced yes)
 		(effects
@@ -18719,16 +18366,27 @@
 			)
 		)
 	)
-	(hierarchical_label "RFID_MOSI"
+	(hierarchical_label "RFID_SCL"
 		(shape input)
-		(at 59.69 171.45 0)
+		(at 21.59 171.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "06cf397e-71a1-4e7f-9b8b-d237a50f4ce4")
+		(uuid "031131b8-c1a9-407b-a45f-8a859941dad0")
+	)
+	(hierarchical_label "RFID_VEH"
+		(shape output)
+		(at 46.99 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0b9a4a47-e5fd-456b-b13f-3b86509a0e59")
 	)
 	(hierarchical_label "Button"
 		(shape output)
@@ -18763,17 +18421,6 @@
 		)
 		(uuid "1fb6fe2d-f4c2-49ed-a6a0-3e9abc08d4b3")
 	)
-	(hierarchical_label "RFID_RST"
-		(shape input)
-		(at 21.59 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "21d5d0d7-5eb4-46db-ace3-7513cbc088c6")
-	)
 	(hierarchical_label "EP_RESET"
 		(shape input)
 		(at 214.63 68.58 180)
@@ -18796,9 +18443,10 @@
 		)
 		(uuid "2f71f59d-85ab-41c1-b069-526c587f7dea")
 	)
-	(hierarchical_label "RFID_MOSI"
-		(shape input)
-		(at 151.13 123.19 180)
+	(hierarchical_label "RFID_SDA"
+		(shape bidirectional)
+		(at 151.13 120.65 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -18806,6 +18454,16 @@
 			(justify right)
 		)
 		(uuid "2f8e8099-2da3-4ad0-8e33-eb578d3b6450")
+		(property "P26" ""
+			(at 151.13 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
 	)
 	(hierarchical_label "EP_DC"
 		(shape input)
@@ -18829,17 +18487,6 @@
 		)
 		(uuid "3a8b25d1-a06d-490b-987f-d98ebdfc3c27")
 	)
-	(hierarchical_label "RFID_MISO"
-		(shape output)
-		(at 46.99 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3c749470-4f61-4ce7-90fb-3d011472940c")
-	)
 	(hierarchical_label "TS_TX"
 		(shape output)
 		(at 21.59 151.13 0)
@@ -18851,20 +18498,10 @@
 		)
 		(uuid "5507a630-4155-4103-926a-78843e22b756")
 	)
-	(hierarchical_label "RFID_RST"
-		(shape input)
-		(at 151.13 115.57 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "58cd2e8f-2d38-44a1-b526-0eb1c94fe9f5")
-	)
-	(hierarchical_label "RFID_SS"
-		(shape input)
+	(hierarchical_label "RFID_GPO"
+		(shape output)
 		(at 151.13 125.73 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -18872,6 +18509,16 @@
 			(justify right)
 		)
 		(uuid "64444ee4-8d4c-4a60-9c67-20597b8b2893")
+		(property "P02" ""
+			(at 151.13 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
 	)
 	(hierarchical_label "TS_RX"
 		(shape input)
@@ -18983,6 +18630,28 @@
 		)
 		(uuid "a42b91a0-8008-4aa9-816e-50c86267d3be")
 	)
+	(hierarchical_label "RFID_GPO"
+		(shape input)
+		(at 59.69 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a4bbe047-4d51-4ff0-93d0-0671247a9823")
+	)
+	(hierarchical_label "RFID_SDA"
+		(shape bidirectional)
+		(at 34.29 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a641ce57-c1bc-4519-bea5-3f93d1b22ece")
+	)
 	(hierarchical_label "EP_RESET"
 		(shape input)
 		(at 76.2 181.61 0)
@@ -19004,17 +18673,6 @@
 			(justify left)
 		)
 		(uuid "aeda5f12-c4bc-4c51-935a-ae16455c68a8")
-	)
-	(hierarchical_label "RFID_SCK"
-		(shape input)
-		(at 34.29 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "aefe0ef2-b9b6-4c1e-8053-818784b36ffa")
 	)
 	(hierarchical_label "EP_BUSY"
 		(shape output)
@@ -19060,6 +18718,17 @@
 		)
 		(uuid "c280986a-900e-430c-93f3-1cf7fd0c2534")
 	)
+	(hierarchical_label "RFID_VEH"
+		(shape output)
+		(at 151.13 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "caf08a79-983b-4cc4-aea0-6acf14c41a4d")
+	)
 	(hierarchical_label "Buzzer"
 		(shape output)
 		(at 144.78 31.75 180)
@@ -19071,9 +18740,9 @@
 		)
 		(uuid "cff25242-e69b-4d92-9edc-961dfcc0c4e5")
 	)
-	(hierarchical_label "RFID_MISO"
-		(shape output)
-		(at 151.13 120.65 180)
+	(hierarchical_label "RFID_SCL"
+		(shape input)
+		(at 151.13 118.11 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -19104,17 +18773,6 @@
 		)
 		(uuid "edae94fa-eee4-4f8b-831c-2bb51db458b1")
 	)
-	(hierarchical_label "RFID_SS"
-		(shape input)
-		(at 72.39 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f38945f9-6d29-4f5f-a52f-74d4899c0a57")
-	)
 	(hierarchical_label "GPS_INT"
 		(shape output)
 		(at 44.45 161.29 0)
@@ -19125,17 +18783,6 @@
 			(justify left)
 		)
 		(uuid "f56b34fb-9658-469e-a988-7ad8356c883a")
-	)
-	(hierarchical_label "RFID_SCK"
-		(shape input)
-		(at 151.13 118.11 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f833d0dc-93e0-43a2-800c-71de10d11e91")
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
@@ -19460,72 +19107,6 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "TP201")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 72.39 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "221c71c6-ab09-4768-bf2a-0f20992d16b5")
-		(property "Reference" "TP211"
-			(at 69.342 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "RFID_SS"
-			(at 68.834 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 77.47 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 77.47 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 72.39 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9b0c33f7-b424-4322-aab6-0bd054769bca")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP211")
 					(unit 1)
 				)
 			)
@@ -20287,7 +19868,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "RFID_MOSI"
+		(property "Value" "RFID_GPO"
 			(at 56.134 166.37 0)
 			(effects
 				(font
@@ -20330,6 +19911,71 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "TP210")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 85.09 171.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4b8a24ea-e62f-4852-bb03-cec571781f5a")
+		(property "Reference" "#PWR033"
+			(at 91.44 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 87.376 175.006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cac6cc02-3ba3-46d6-8709-108fed7618ce")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -20703,90 +20349,6 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "#PWR030")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x07_Socket")
-		(at 156.21 123.19 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "628d0791-2016-4bb2-a42d-a02237509a9d")
-		(property "Reference" "J202"
-			(at 154.94 113.792 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x07_Socket"
-			(at 152.146 132.842 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_2.00mm:PinSocket_1x07_P2.00mm_Horizontal"
-			(at 156.21 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 156.21 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x07, script generated"
-			(at 156.21 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "14b407c8-2ea9-4da5-9eb9-4df7c3477563")
-		)
-		(pin "1"
-			(uuid "411feb04-d5aa-496e-b95f-ca8909bece5a")
-		)
-		(pin "2"
-			(uuid "b0a2fdf4-ba94-4e92-a328-b31e63a14b48")
-		)
-		(pin "5"
-			(uuid "61bca406-bd0b-439c-934a-4efef01f1381")
-		)
-		(pin "7"
-			(uuid "4816e7c3-5c4e-4561-9c8a-040b95b01937")
-		)
-		(pin "3"
-			(uuid "15aa9331-c64d-4a2b-8e75-ab2cc7810390")
-		)
-		(pin "6"
-			(uuid "796c397e-4108-40ea-998d-5d7dc5487a68")
-		)
-		(instances
-			(project ""
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "J202")
 					(unit 1)
 				)
 			)
@@ -21288,7 +20850,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "RFID_MISO"
+		(property "Value" "RFID_VEH"
 			(at 43.434 166.37 0)
 			(effects
 				(font
@@ -21888,6 +21450,72 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 72.39 171.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8d38a073-c8de-413c-822d-2e429e35d25b")
+		(property "Reference" "TP3"
+			(at 69.342 164.338 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RFID_VDD"
+			(at 68.834 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "5001:KEYSTONE_5001"
+			(at 77.47 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 77.47 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 72.39 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "76502f4f-23bc-4ba5-b4a2-06416b9e804d")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
+					(reference "TP3")
 					(unit 1)
 				)
 			)
@@ -22697,7 +22325,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "RFID_RST"
+		(property "Value" "RFID_SCL"
 			(at 18.034 166.37 0)
 			(effects
 				(font
@@ -22828,7 +22456,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "RFID_SCK"
+		(property "Value" "RFID_SDA"
 			(at 30.734 166.37 0)
 			(effects
 				(font
@@ -23144,6 +22772,72 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "R202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 85.09 171.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ea2f4d8c-bf8d-455b-bb6b-dd3aa2911a51")
+		(property "Reference" "TP4"
+			(at 82.042 164.338 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RFID_GND"
+			(at 81.534 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "5001:KEYSTONE_5001"
+			(at 90.17 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 90.17 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 85.09 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b6c004e5-cc88-4345-9769-6d3cc731ea04")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
