@@ -5179,7 +5179,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "47nF"
 			(at 0 -1 0)
 			(layer "F.Fab")
 			(hide yes)

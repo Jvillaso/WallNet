@@ -6280,7 +6280,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "47nF"
 			(at 107.95 123.1962 0)
 			(effects
 				(font
