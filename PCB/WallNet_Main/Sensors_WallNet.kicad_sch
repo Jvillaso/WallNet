@@ -787,113 +787,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Generic:Conn_02x12_Counter_Clockwise"
 			(pin_names
 				(offset 1.016)
@@ -3498,18 +3391,6 @@
 		)
 		(uuid d3ba7736-792a-4b5f-9b0e-954cda5f40e1)
 	)
-	(rectangle
-		(start 16.51 137.16)
-		(end 97.79 191.77)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(fill
-			(type none)
-		)
-		(uuid e13064fe-4512-4aaf-9fad-17d1da2edd7a)
-	)
 	(text "RFID"
 		(exclude_from_sim no)
 		(at 150.114 107.95 0)
@@ -3575,29 +3456,6 @@
 		)
 		(uuid "cff00044-fa69-441c-991b-ea4638fe2a72")
 	)
-	(text "Implement Backup circuit (Socket connector)"
-		(exclude_from_sim no)
-		(at 230.886 106.172 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "d077eeaa-cde0-43fb-bd71-90f23ca7d083")
-	)
-	(text "Test Points"
-		(exclude_from_sim no)
-		(at 55.372 140.208 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-				(thickness 0.508)
-				(bold yes)
-				(color 43 40 255 1)
-			)
-		)
-		(uuid "dee4fb66-f5c2-4a69-8aff-7d5bcba2c9fc")
-	)
 	(text "Buzzer"
 		(exclude_from_sim no)
 		(at 152.146 18.288 0)
@@ -3640,6 +3498,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "191cd433-874c-4fbc-aebc-19521ef294fe")
+	)
+	(junction
+		(at 147.32 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "19ac4cd6-d3c4-48e5-833c-84b4be1aafcf")
 	)
 	(junction
 		(at 256.54 54.61)
@@ -4151,6 +4015,16 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 31.75) (xy 148.59 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c8551ce-ffe7-494b-ae30-71b906329625")
+	)
+	(wire
+		(pts
 			(xy 106.68 59.69) (xy 106.68 62.23)
 		)
 		(stroke
@@ -4311,7 +4185,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 31.75) (xy 148.59 31.75)
+			(xy 144.78 31.75) (xy 147.32 31.75)
 		)
 		(stroke
 			(width 0)
@@ -4368,16 +4242,6 @@
 			(type dash)
 		)
 		(uuid "af02b782-fd11-4606-aa0b-4ff45011aa4f")
-	)
-	(polyline
-		(pts
-			(xy 16.51 142.24) (xy 87.63 142.24)
-		)
-		(stroke
-			(width 0)
-			(type dash)
-		)
-		(uuid "b4c7797d-24d0-4c38-bc23-eadefd9a9a56")
 	)
 	(wire
 		(pts
@@ -12698,7 +12562,7 @@
 		)
 	)
 	(image
-		(at 311.15 72.39)
+		(at 313.69 72.39)
 		(scale 0.307936)
 		(uuid "aeb7366a-ea5a-4d0c-9c36-b4e228443e64")
 		(data "iVBORw0KGgoAAAANSUhEUgAABJoAAALrCAYAAAC2x+3YAAAABHNCSVQICAgIfAhkiAAAIABJREFU"
@@ -18144,7 +18008,7 @@
 		)
 		(uuid "323f2f96-84e4-43b1-a1b2-5647ed40e563")
 	)
-	(label "EP_SDA"
+	(label "EP_DIN"
 		(at 204.47 49.53 0)
 		(effects
 			(font
@@ -18334,7 +18198,7 @@
 		)
 		(uuid "9918aac4-a36f-4681-a05e-008b2d28b8f7")
 	)
-	(label "EP_SDA"
+	(label "EP_DIN"
 		(at 195.58 66.04 0)
 		(effects
 			(font
@@ -18650,17 +18514,6 @@
 			)
 		)
 	)
-	(hierarchical_label "RFID_SCL"
-		(shape input)
-		(at 21.59 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "031131b8-c1a9-407b-a45f-8a859941dad0")
-	)
 	(hierarchical_label "Button"
 		(shape output)
 		(at 134.62 59.69 180)
@@ -18682,17 +18535,6 @@
 			(justify left)
 		)
 		(uuid "1d630e44-ea46-43b1-b69b-0dd74f7ac97f")
-	)
-	(hierarchical_label "EP_DC"
-		(shape input)
-		(at 21.59 181.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1fb6fe2d-f4c2-49ed-a6a0-3e9abc08d4b3")
 	)
 	(hierarchical_label "EP_RESET"
 		(shape input)
@@ -18749,7 +18591,7 @@
 		)
 		(uuid "347f7f51-27af-448d-abce-4e3fdd381243")
 	)
-	(hierarchical_label "EP_SDA"
+	(hierarchical_label "EP_DIN"
 		(shape input)
 		(at 195.58 66.04 180)
 		(effects
@@ -18759,17 +18601,6 @@
 			(justify right)
 		)
 		(uuid "3a8b25d1-a06d-490b-987f-d98ebdfc3c27")
-	)
-	(hierarchical_label "TS_TX"
-		(shape output)
-		(at 21.59 151.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5507a630-4155-4103-926a-78843e22b756")
 	)
 	(hierarchical_label "RFID_GPO"
 		(shape output)
@@ -18804,17 +18635,6 @@
 		)
 		(uuid "64d836e0-01a8-40d1-91f2-cf6c54eedcfb")
 	)
-	(hierarchical_label "GPS_TP"
-		(shape output)
-		(at 55.88 161.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "688d19e5-b7d7-4860-a392-475541591021")
-	)
 	(hierarchical_label "EP_BUSY"
 		(shape output)
 		(at 214.63 66.04 180)
@@ -18837,17 +18657,6 @@
 		)
 		(uuid "71475da7-b1e2-4504-a54f-b0eb3c802f67")
 	)
-	(hierarchical_label "EP_CSB"
-		(shape input)
-		(at 53.34 181.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "75840a08-727b-4114-ba43-1b000877251d")
-	)
 	(hierarchical_label "GPS_INT"
 		(shape output)
 		(at 60.96 49.53 180)
@@ -18858,17 +18667,6 @@
 			(justify right)
 		)
 		(uuid "83cb3bef-8abd-410d-9663-b7b71b3ab050")
-	)
-	(hierarchical_label "TS_RX"
-		(shape input)
-		(at 30.48 151.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8d013ab6-40b1-4c65-9ed7-e1a600742212")
 	)
 	(hierarchical_label "EP_CSB"
 		(shape input)
@@ -18881,61 +18679,6 @@
 		)
 		(uuid "8feb161c-851f-4b1e-a9ea-e9d5b892b3b2")
 	)
-	(hierarchical_label "EP_SCL"
-		(shape input)
-		(at 43.18 181.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "91d7116b-78e5-426e-9871-b8ae5ded0d60")
-	)
-	(hierarchical_label "EP_SDA"
-		(shape input)
-		(at 31.75 181.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a42b91a0-8008-4aa9-816e-50c86267d3be")
-	)
-	(hierarchical_label "RFID_GPO"
-		(shape input)
-		(at 45.72 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a4bbe047-4d51-4ff0-93d0-0671247a9823")
-	)
-	(hierarchical_label "RFID_SDA"
-		(shape bidirectional)
-		(at 34.29 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a641ce57-c1bc-4519-bea5-3f93d1b22ece")
-	)
-	(hierarchical_label "EP_RESET"
-		(shape input)
-		(at 76.2 181.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "abad5583-d7a9-4307-b233-9d0b2ab9b4f9")
-	)
 	(hierarchical_label "GPS_TP"
 		(shape output)
 		(at 106.68 39.37 0)
@@ -18947,28 +18690,6 @@
 		)
 		(uuid "aeda5f12-c4bc-4c51-935a-ae16455c68a8")
 	)
-	(hierarchical_label "EP_BUSY"
-		(shape output)
-		(at 64.77 181.61 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b13701fc-3953-42ab-ba02-18ddfd168f3e")
-	)
-	(hierarchical_label "GPS_SCL"
-		(shape input)
-		(at 33.02 161.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b445d837-be08-4cb8-a9be-7aa1f58f8dae")
-	)
 	(hierarchical_label "GPS_SDA"
 		(shape bidirectional)
 		(at 106.68 44.45 0)
@@ -18979,17 +18700,6 @@
 			(justify left)
 		)
 		(uuid "bcfbe1e5-03f7-4e8b-afe4-fe67464e1b10")
-	)
-	(hierarchical_label "GPS_SDA"
-		(shape bidirectional)
-		(at 21.59 161.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c280986a-900e-430c-93f3-1cf7fd0c2534")
 	)
 	(hierarchical_label "RFID_VEH"
 		(shape output)
@@ -19045,83 +18755,6 @@
 			(justify right)
 		)
 		(uuid "edae94fa-eee4-4f8b-831c-2bb51db458b1")
-	)
-	(hierarchical_label "GPS_INT"
-		(shape output)
-		(at 44.45 161.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f56b34fb-9658-469e-a988-7ad8356c883a")
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 33.02 161.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "03b341ca-2e94-41e3-a664-2bf8699f2c12")
-		(property "Reference" "TP204"
-			(at 29.972 154.178 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GPS_SCL"
-			(at 29.464 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 38.1 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 38.1 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 33.02 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "05e8e844-5cc1-4ee4-b828-0d755f9a8dd6")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP204")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -19254,72 +18887,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 30.48 151.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0c02b483-cf71-49c2-b800-acbb74701a1f")
-		(property "Reference" "TP202"
-			(at 27.432 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TS_RX"
-			(at 26.924 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 35.56 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 35.56 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 30.48 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e1238b75-4fdc-4a9d-ae83-8236c818b25d")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP202")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x05_Pin")
 		(at 158.75 121.92 0)
 		(mirror y)
@@ -19329,7 +18896,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "191d654e-e6ad-43e1-ab1d-6c8d1b655b77")
-		(property "Reference" "J2"
+		(property "Reference" "J202"
 			(at 158.115 111.76 0)
 			(effects
 				(font
@@ -19390,73 +18957,7 @@
 		(instances
 			(project ""
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 21.59 151.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1e60a57a-53d0-4ff8-8a43-be067615a962")
-		(property "Reference" "TP201"
-			(at 18.542 144.018 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TS_TX"
-			(at 18.034 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 26.67 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 26.67 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 21.59 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a81846b7-c822-4f96-9405-36aa07b36258")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP201")
+					(reference "J202")
 					(unit 1)
 				)
 			)
@@ -19591,72 +19092,6 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "R204")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 31.75 181.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "31175ff8-b40f-469e-ad2f-5ece6f50df95")
-		(property "Reference" "TP211"
-			(at 28.702 174.498 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EP_SDA"
-			(at 28.194 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 36.83 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 36.83 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 31.75 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e8b8a568-43d8-4f2b-bf20-baf5e9bcec20")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP211")
 					(unit 1)
 				)
 			)
@@ -19866,72 +19301,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 44.45 161.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "393f558a-ae9e-4d42-aacc-9c938e96f684")
-		(property "Reference" "TP205"
-			(at 41.402 154.178 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GPS_INT"
-			(at 40.894 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 49.53 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 49.53 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 44.45 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7db72c9e-6784-4cf5-a662-87a6cead0979")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP205")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 231.14 90.17 0)
 		(unit 1)
@@ -20135,16 +19504,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 21.59 161.29 0)
+		(lib_id "Device:R_Small_US")
+		(at 147.32 34.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4a0c8a60-220e-4854-9d06-b37e0a66da39")
-		(property "Reference" "TP203"
-			(at 18.542 154.178 0)
+		(uuid "4b2a18ab-f41d-4555-9df4-5b1aec5f6e45")
+		(property "Reference" "R206"
+			(at 149.098 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20152,8 +19521,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GPS_SDA"
-			(at 18.034 156.21 0)
+		(property "Value" "10k"
+			(at 148.082 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20161,8 +19530,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 26.67 161.29 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 147.32 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20171,7 +19540,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 26.67 161.29 0)
+			(at 147.32 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20179,74 +19548,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "test point"
-			(at 21.59 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5db628f7-a00b-48f3-8a7e-c0024a4ddc7f")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP203")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 45.72 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4b6e0b2d-f996-4f71-b281-4cdf4ca89a6c")
-		(property "Reference" "TP209"
-			(at 42.672 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "RFID_GPO"
-			(at 42.164 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 50.8 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 50.8 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 45.72 171.45 0)
+		(property "Description" "Resistor, small US symbol"
+			(at 147.32 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20255,12 +19558,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "176b9c2f-6407-489b-9b36-1249a4554050")
+			(uuid "13b10e7f-8d9e-4545-8da2-6be39bd9f61b")
+		)
+		(pin "2"
+			(uuid "8d8ebe1f-f066-48ec-88cc-09a764e16b9b")
 		)
 		(instances
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP209")
+					(reference "R206")
 					(unit 1)
 				)
 			)
@@ -20634,6 +19940,71 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "#PWR030")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 36.83 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "59d160fd-f9c7-43cf-a4b8-fffd8ff9c2fb")
+		(property "Reference" "#PWR033"
+			(at 147.32 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 40.386 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 147.32 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fe0d7541-8113-4482-92fc-2da1dfbc3c38")
+		)
+		(instances
+			(project "WallNet_Main"
+				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -21052,72 +20423,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 43.18 181.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "70488141-e528-43ff-9afc-0a0e9290784e")
-		(property "Reference" "TP212"
-			(at 40.132 174.498 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EP_SCL"
-			(at 39.624 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 48.26 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 48.26 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 43.18 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fb7073fd-19e6-4540-9f1d-37bd876c726f")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP212")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Transistor_FET:BSS138")
 		(at 264.16 35.56 0)
 		(mirror x)
@@ -21271,140 +20576,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 21.59 181.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "78aa673f-0fe0-47ac-ac68-4dc2b523a33f")
-		(property "Reference" "TP210"
-			(at 18.542 174.498 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EP_DC"
-			(at 18.034 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 26.67 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 26.67 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 21.59 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "35e839bb-d1f7-49f1-b115-6b5dec65dc0d")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP210")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 64.77 181.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "80097d87-9369-4464-be7d-07e8723a9739")
-		(property "Reference" "TP214"
-			(at 61.722 174.498 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EP_BUSY"
-			(at 61.214 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 69.85 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 69.85 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 64.77 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "aa2ac7f3-db81-4e89-8cc1-358db3c2e0d9")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP214")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Diode:MBR0530")
-		(at 256.54 64.77 90)
+		(at 256.54 64.77 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -21412,7 +20585,7 @@
 		(dnp no)
 		(uuid "845600fd-0cdb-4121-9c34-23e1f7163bb4")
 		(property "Reference" "D202"
-			(at 259.08 63.8174 90)
+			(at 261.62 67.564 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21421,7 +20594,7 @@
 			)
 		)
 		(property "Value" "MBR0530"
-			(at 252.476 67.31 90)
+			(at 260.604 62.23 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21430,7 +20603,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 260.985 64.77 0)
+			(at 252.095 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22185,72 +21358,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 55.88 161.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b0e9fbc1-8a7b-4e7b-9e52-8bd9de4d951f")
-		(property "Reference" "TP206"
-			(at 52.832 154.178 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GPS_TP"
-			(at 52.324 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 60.96 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 60.96 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 55.88 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d09b7280-aaa0-4fcf-81dc-fd5ce4a2753b")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP206")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic_MountingPin:Conn_01x04_MountingPin")
 		(at 151.13 82.55 0)
 		(unit 1)
@@ -22395,138 +21502,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 53.34 181.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d570aaba-abc6-4993-b0c3-39e473eb70b2")
-		(property "Reference" "TP213"
-			(at 50.292 174.498 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EP_CSB"
-			(at 49.784 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 58.42 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 58.42 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 53.34 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7fbf42ee-293b-4015-af60-a0f2f0a79d4c")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP213")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 21.59 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d58a0528-ded2-4e1d-a41b-d3b0fed12299")
-		(property "Reference" "TP207"
-			(at 18.542 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "RFID_SCL"
-			(at 18.034 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 26.67 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 26.67 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 21.59 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "10a6e2a8-9169-49c8-bca6-ba4d615d28b3")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP207")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 161.29 59.69 0)
 		(unit 1)
@@ -22586,72 +21561,6 @@
 			(project "WallNet_Main"
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 34.29 171.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d92dd178-1849-455d-9113-e3ff8a856505")
-		(property "Reference" "TP208"
-			(at 31.242 164.338 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "RFID_SDA"
-			(at 30.734 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 39.37 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 39.37 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 34.29 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b5c18be8-8634-40ac-9f3f-22fcee06b309")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP208")
 					(unit 1)
 				)
 			)
@@ -22790,72 +21699,6 @@
 			(project ""
 				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
 					(reference "D201")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 76.2 181.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e00c15d8-8e53-4c00-b787-d6cf92cb596b")
-		(property "Reference" "TP215"
-			(at 73.152 174.498 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "EP_RESET"
-			(at 72.644 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "5001:KEYSTONE_5001"
-			(at 81.28 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 81.28 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 76.2 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "835596a9-6a0a-4ee2-9df3-44ca71cec613")
-		)
-		(instances
-			(project "WallNet_Main"
-				(path "/3272dd14-9e34-4275-b10b-c06dab1b3ca1/14f35c0a-7540-4617-95f9-116bbddd487f"
-					(reference "TP215")
 					(unit 1)
 				)
 			)
