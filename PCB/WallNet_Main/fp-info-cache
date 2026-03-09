@@ -1,4 +1,4 @@
-27234958711650963
+27249112373665097
 436331045822
 4363X10458XX
 
@@ -63531,6 +63531,27 @@ heatsink
 0
 0
 0
+ISMC
+IND_IMSC1008AZER_VIS
+
+IMSC1008AZER2R2M 
+0
+2
+2
+ISMC
+IND_IMSC1008AZER_VIS-L
+
+IMSC1008AZER2R2M 
+0
+2
+2
+ISMC
+IND_IMSC1008AZER_VIS-M
+
+IMSC1008AZER2R2M 
+0
+2
+2
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
@@ -71847,6 +71868,13 @@ Yellow 5381 Series LED
 0
 2
 2
+Library
+ST25DV16K
+
+
+0
+0
+0
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -107967,3 +107995,31 @@ Varistor VF
 0
 2
 2
+footprints
+QFN-20_UD_LIT
+
+LTC3553EUD-PBF 
+0
+21
+21
+footprints
+QFN-20_UD_LIT-L
+
+LTC3553EUD-PBF 
+0
+21
+21
+footprints
+QFN-20_UD_LIT-M
+
+LTC3553EUD-PBF 
+0
+21
+21
+upin
+PinHeader_1x05_P1.00mm_Vertical
+Through hole straight pin header, 1x05, 1.00mm pitch, single row
+Through hole pin header THT 1x05 1.00mm single row
+0
+5
+5
