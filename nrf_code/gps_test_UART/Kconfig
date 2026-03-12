@@ -1,0 +1,5 @@
+config GPS_PARSED_OUTPUT
+    bool "Use parsed GPS output instead of raw NMEA strings"
+    default n
+
+source "Kconfig.zephyr"
