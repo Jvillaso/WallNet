@@ -24,7 +24,7 @@ class UnitFingerprint:
     
     
 
-    def __init__(self, uart_id=1, tx=17, rx=16):
+    def __init__(self, uart_id=1, tx=25, rx=34):
         self.uart = UART(
             uart_id,
             baudrate=115200,
@@ -59,7 +59,7 @@ class UnitFingerprint:
         
     def read_exact(self, n):
         buf = bytearray()
-        timeout = 5
+        timeout = 5000000000#5
         i = 0
         while len(buf) < n:
             chunk = self.uart.read(n - len(buf))

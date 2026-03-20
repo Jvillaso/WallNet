@@ -11,17 +11,19 @@ static int  line_pos = 0;
 
 static void uart_cb(const struct device *dev, void *user_data)
 {
+    printk("UART callback triggered\n");
     uint8_t c;
     if (!uart_irq_update(dev) || !uart_irq_rx_ready(dev)) return;
 
     while (uart_fifo_read(dev, &c, 1) == 1) {
-        if (c == '\n' && line_pos > 0) {
-            line_buf[line_pos] = '\0';
-            printk("%s\n", line_buf);
-            line_pos = 0;
-        } else if (c != '\r' && line_pos < NMEA_MAX_LEN - 1) {
-            line_buf[line_pos++] = c;
-        }
+        printk("%d\n", c);
+        // if (c == '\n' && line_pos > 0) {
+        //     line_buf[line_pos] = '\0';
+        //     printk("%s\n", line_buf);
+        //     line_pos = 0;
+        // } else if (c != '\r' && line_pos < NMEA_MAX_LEN - 1) {
+        //     line_buf[line_pos++] = c;
+        // }
     }
 }
 

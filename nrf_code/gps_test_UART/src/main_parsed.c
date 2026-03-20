@@ -88,6 +88,7 @@ static void uart_cb(const struct device *dev, void *user_data)
 
 int main(void)
 {
+
     if (!device_is_ready(gps_uart)) {
         printk("GPS UART not ready\n");
         return -1;
@@ -109,6 +110,8 @@ int main(void)
 
         float lat = nmea_to_decimal(g_lat, g_lat_dir);
         float lon = nmea_to_decimal(g_lon, g_lon_dir);
+
+
 
         char hh[3] = { g_time[0], g_time[1], '\0' };
         char mm[3] = { g_time[2], g_time[3], '\0' };
