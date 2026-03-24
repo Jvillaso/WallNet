@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_lbs"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_lbs.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_lbs-complete.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/peripheral_lbs-prefix/src/peripheral_lbs-stamp/peripheral_lbs-build.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/peripheral_lbs-prefix/src/peripheral_lbs-stamp/peripheral_lbs-configure.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/peripheral_lbs-prefix/src/peripheral_lbs-stamp/peripheral_lbs-download.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/peripheral_lbs-prefix/src/peripheral_lbs-stamp/peripheral_lbs-install.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/peripheral_lbs-prefix/src/peripheral_lbs-stamp/peripheral_lbs-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/peripheral_lbs-prefix/src/peripheral_lbs-stamp/peripheral_lbs-patch.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/_sysbuild/sysbuild/images/peripheral_lbs-prefix/src/peripheral_lbs-stamp/peripheral_lbs-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"peripheral_lbs"
+		],
+		"name" : "peripheral_lbs"
+	}
+}
