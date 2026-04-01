@@ -20,9 +20,6 @@ class UnitFingerprint:
     CMD_EMPTY = 0x0D
     CMD_ENROLL = 0x31
     CMD_IDENTIFY = 0x32
-    
-    
-    
 
     def __init__(self, uart_id=1, tx=25, rx=34):
         self.uart = UART(
@@ -75,8 +72,8 @@ class UnitFingerprint:
     def _get_packet(self):
         header = b'\xEF\x01\xFF\xFF\xFF\xFF'
         start = self.read_exact(9) #read 9 bytes
-        print("START: ", end="")
-        print(start)
+        #print("START: ", end="")
+        #print(start)
         if start is None or start[0:6] != header: #Ensure the header is correct
             return None
         
@@ -86,8 +83,8 @@ class UnitFingerprint:
         
         #TODO: do checksum
         pkt = start + payload
-        print("Payload: ", end="")
-        print(payload)
+        #print("Payload: ", end="")
+        #print(payload)
         return pkt
         
         
@@ -213,9 +210,9 @@ class UnitFingerprint:
 if __name__ == "__main__":
     fp = UnitFingerprint(uart_id=1, tx=25, rx=34)
     
-    fp.enroll_fp(1)
+    #fp.enroll_fp(1)
     #fp.check_match()
     
-    #fp._read_packet()
-    
+    fp._read_packet()
+    fp.wake()    
     
