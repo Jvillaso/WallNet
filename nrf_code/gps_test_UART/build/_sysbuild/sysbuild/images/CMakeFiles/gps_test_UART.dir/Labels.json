@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/CMakeFiles/gps_test_UART"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/CMakeFiles/gps_test_UART.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/CMakeFiles/gps_test_UART-complete.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-build.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-configure.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-download.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-install.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-patch.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"gps_test_UART"
+		],
+		"name" : "gps_test_UART"
+	}
+}

@@ -1,0 +1,13 @@
+# Target labels
+ gps_test_UART
+# Source files and their labels
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/CMakeFiles/gps_test_UART
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/CMakeFiles/gps_test_UART.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/CMakeFiles/gps_test_UART-complete.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-build.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-configure.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-download.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-install.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-mkdir.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-patch.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/_sysbuild/sysbuild/images/gps_test_UART-prefix/src/gps_test_UART-stamp/gps_test_UART-update.rule

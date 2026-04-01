@@ -1,0 +1,7 @@
+default: gps_test_UART
+build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build
+domains:
+  - name: gps_test_UART
+    build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/gps_test_UART/build/gps_test_UART
+flash_order:
+  - gps_test_UART
