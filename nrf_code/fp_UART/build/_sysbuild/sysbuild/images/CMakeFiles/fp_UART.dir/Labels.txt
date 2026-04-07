@@ -1,0 +1,13 @@
+# Target labels
+ fp_UART
+# Source files and their labels
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/CMakeFiles/fp_UART
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/CMakeFiles/fp_UART.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/CMakeFiles/fp_UART-complete.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-build.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-configure.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-download.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-install.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-mkdir.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-patch.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-update.rule

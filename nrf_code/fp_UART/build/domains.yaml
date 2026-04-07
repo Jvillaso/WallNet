@@ -1,0 +1,7 @@
+default: fp_UART
+build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build
+domains:
+  - name: fp_UART
+    build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/fp_UART
+flash_order:
+  - fp_UART

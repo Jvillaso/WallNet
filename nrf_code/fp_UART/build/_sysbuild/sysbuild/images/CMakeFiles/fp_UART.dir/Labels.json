@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/CMakeFiles/fp_UART"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/CMakeFiles/fp_UART.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/CMakeFiles/fp_UART-complete.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-build.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-configure.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-download.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-install.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-patch.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/_sysbuild/sysbuild/images/fp_UART-prefix/src/fp_UART-stamp/fp_UART-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"fp_UART"
+		],
+		"name" : "fp_UART"
+	}
+}
