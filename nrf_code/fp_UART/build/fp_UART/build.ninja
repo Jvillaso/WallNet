@@ -172,6 +172,14 @@ build CMakeFiles/app.dir/src/main.c.obj: C_COMPILER__app_ C$:/Users/biote/OneDri
   OBJECT_DIR = CMakeFiles\app.dir
   OBJECT_FILE_DIR = CMakeFiles\app.dir\src
 
+build CMakeFiles/app.dir/src/fp_commands.c.obj: C_COMPILER__app_ C$:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/src/fp_commands.c || cmake_object_order_depends_target_app
+  DEFINES = -DKERNEL -DK_HEAP_MEM_POOL_SIZE=4096 -DNRF52832_XXAA -DNRF54L_CONFIGURATION_56_ENABLE=0 -DPICOLIBC_LONG_LONG_PRINTF_SCANF -DUSE_PARTITION_MANAGER=1 -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1
+  DEP_FILE = CMakeFiles\app.dir\src\fp_commands.c.obj.d
+  FLAGS = -fno-strict-aliasing -Os -imacros C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/fp_UART/zephyr/include/generated/zephyr/autoconf.h -fno-printf-return-value -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfp16-format=ieee -mtp=soft --sysroot=C:/ncs/toolchains/c717907b94/opt/zephyr-sdk/arm-zephyr-eabi/arm-zephyr-eabi -imacros C:/ncs/v3.2.2/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/ncs/v3.2.2/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/ncs/v3.2.2=WEST_TOPDIR -ffunction-sections -fdata-sections -specs=picolibc.specs -std=c99
+  INCLUDES = -IC:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/fp_UART/zephyr/include/generated/zephyr -IC:/ncs/v3.2.2/zephyr/include -IC:/Users/biote/OneDrive/Documents/WallNet/nrf_code/fp_UART/build/fp_UART/zephyr/include/generated -IC:/ncs/v3.2.2/zephyr/soc/nordic -IC:/ncs/v3.2.2/zephyr/soc/nordic/nrf52/. -IC:/ncs/v3.2.2/zephyr/soc/nordic/common/. -IC:/ncs/v3.2.2/nrf/include -IC:/ncs/v3.2.2/nrf/tests/include -IC:/ncs/v3.2.2/modules/hal/cmsis_6/CMSIS/Core/Include -IC:/ncs/v3.2.2/zephyr/modules/cmsis_6/. -IC:/ncs/v3.2.2/nrf/modules/hal_nordic/. -IC:/ncs/v3.2.2/modules/hal/nordic/nrfx -IC:/ncs/v3.2.2/modules/hal/nordic/nrfx/drivers/include -IC:/ncs/v3.2.2/modules/hal/nordic/nrfx/bsp/stable -IC:/ncs/v3.2.2/modules/hal/nordic/nrfx/bsp/stable/templates -IC:/ncs/v3.2.2/zephyr/modules/hal_nordic/nrfx/. -IC:/ncs/v3.2.2/modules/debug/segger/SEGGER -IC:/ncs/v3.2.2/modules/debug/segger/Config -isystem C:/ncs/v3.2.2/zephyr/lib/libc/common/include
+  OBJECT_DIR = CMakeFiles\app.dir
+  OBJECT_FILE_DIR = CMakeFiles\app.dir\src
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target app
@@ -180,7 +188,7 @@ build CMakeFiles/app.dir/src/main.c.obj: C_COMPILER__app_ C$:/Users/biote/OneDri
 #############################################
 # Link the static library app\libapp.a
 
-build app/libapp.a: C_STATIC_LIBRARY_LINKER__app_ CMakeFiles/app.dir/src/main.c.obj || zephyr/device_api_ld_target zephyr/driver_validation_h_target zephyr/kobj_types_h_target zephyr/offsets_h zephyr/syscall_list_h_target zephyr/version_h
+build app/libapp.a: C_STATIC_LIBRARY_LINKER__app_ CMakeFiles/app.dir/src/main.c.obj CMakeFiles/app.dir/src/fp_commands.c.obj || zephyr/device_api_ld_target zephyr/driver_validation_h_target zephyr/kobj_types_h_target zephyr/offsets_h zephyr/syscall_list_h_target zephyr/version_h
   OBJECT_DIR = CMakeFiles\app.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
