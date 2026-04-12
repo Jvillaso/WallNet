@@ -1,0 +1,7 @@
+default: WallNet_1
+build_dir: C:/Users/jsche/WallNet_Proj/WallNet_1/build
+domains:
+  - name: WallNet_1
+    build_dir: C:/Users/jsche/WallNet_Proj/WallNet_1/build/WallNet_1
+flash_order:
+  - WallNet_1

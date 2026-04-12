@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/CMakeFiles/WallNet_1"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/CMakeFiles/WallNet_1.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/CMakeFiles/WallNet_1-complete.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/WallNet_1-prefix/src/WallNet_1-stamp/WallNet_1-build.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/WallNet_1-prefix/src/WallNet_1-stamp/WallNet_1-configure.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/WallNet_1-prefix/src/WallNet_1-stamp/WallNet_1-download.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/WallNet_1-prefix/src/WallNet_1-stamp/WallNet_1-install.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/WallNet_1-prefix/src/WallNet_1-stamp/WallNet_1-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/WallNet_1-prefix/src/WallNet_1-stamp/WallNet_1-patch.rule"
+		},
+		{
+			"file" : "C:/Users/jsche/WallNet_Proj/WallNet_1/build/_sysbuild/sysbuild/images/WallNet_1-prefix/src/WallNet_1-stamp/WallNet_1-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"WallNet_1"
+		],
+		"name" : "WallNet_1"
+	}
+}
