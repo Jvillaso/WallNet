@@ -2,6 +2,8 @@
 #include <zephyr/logging/log.h>
 #include <zephyr/settings/settings.h>
 
+#include "fp_commands.h"
+
 #include "system_state.h"
 
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);

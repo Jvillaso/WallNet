@@ -9,6 +9,7 @@ target_sources(app PRIVATE
     src/main.c
     src/wallnet_ble.c
     src/wallnet_ui.c
-    src/wallnet_auth.c
+    src/fp_commands.c
+    src/fp_commands.h
     src/wallnet_gps.c
 )

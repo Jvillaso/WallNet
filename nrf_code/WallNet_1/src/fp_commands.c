@@ -2,22 +2,8 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/uart.h>
 #include <math.h>
+#include "fp_commands.h"
 
-#define FP_UART     DEVICE_DT_GET(DT_NODELABEL(uart0))
-#define BYTE_MAX_LEN 100 //Max number of bytes in a single message
-#define MAX_BACKLOG 20 //Max number of messages to keep in backlog
-
-//Packet types
-#define PKT_CMD 0x01
-#define PKT_ACK 0x07
-
-//Common commands
-#define CMD_WORK_MODE 0xD3
-#define CMD_SET_WRK_MODE 0xD2
-#define CMD_WAKE 0xD4
-#define CMD_EMPTY 0x0D
-#define CMD_ENROLL 0x31
-#define CMD_IDENTIFY 0x32
 
 static const struct device *fp_uart = FP_UART; //Get the UART device from the device tree
 
@@ -30,22 +16,35 @@ static uint16_t bytes_read = 0;
 static uint16_t bytes_to_read = 9;
 static bool response_flag = false; //Flag to indicate when a response packet is received 
 
-typedef struct Response_Data { //packet data structure to hold number of packets received and the last packet received
-    uint16_t num_pckts;
-    char last_payload[BYTE_MAX_LEN];
-    uint16_t last_payload_len;
-} Response_Data; 
 
 //Transmission variables
 static const uint8_t *tx_buf;
 static size_t tx_len;
 static size_t tx_pos;
 
-
-
 //Function declarations:
+static void uart_cb(const struct device *dev, void *user_data);
 void uart_send_bytes_irq(const struct device *uart, const uint8_t *data, size_t len);
+bool wait_for_resp(uint16_t delay, uint16_t timeout);
+void free_entire_backlog();
 void free_backlog_entry(uint8_t index);
+uint16_t checksum(char* data, uint8_t start, uint8_t len);
+Response_Data send_cmd(char command, char* params, uint8_t params_len, uint16_t delay);
+
+
+
+//Functions:
+
+void fp_init() {
+    //Setupt UART and callback for receiving data from the FP scanner
+
+     if (!device_is_ready(fp_uart)) {
+        printk("FP UART not ready\n");
+        return;
+    }
+    uart_irq_callback_user_data_set(fp_uart, uart_cb, NULL); //Set the callback for the UART interrupts
+}
+
 
 static void uart_cb(const struct device *dev, void *user_data)
 {
@@ -96,11 +95,11 @@ static void uart_cb(const struct device *dev, void *user_data)
         
 
         //print out buffer
-        // printk("Received packet: ");
-        // for(int i = 0; i < bytes_read; i++) {   
-        //     printk("%X ", read_buf[i]);
-        // }
-        // printk("\n");
+        printk("Received packet: ");
+        for(int i = 0; i < bytes_read; i++) {   
+            printk("%X ", read_buf[i]);
+        }
+        printk("\n");
 
         //Add PAYLOAD to backlog
         backlog_sizes[backlog_size] = bytes_read - 11; //Store size of message in backlog sizes array
@@ -157,7 +156,7 @@ bool wait_for_resp(uint16_t delay, uint16_t timeout) {
 
     uart_irq_rx_enable(fp_uart); //Enable receiving
     uint64_t count = 0;
-    uint64_t ceiling = ceil(timeout / delay);
+    uint64_t ceiling = (timeout + delay - 1) / delay;
 
     while (!response_flag) {
         k_sleep(K_MSEC(delay));
@@ -291,6 +290,10 @@ Response_Data empty() {
     return send_cmd(CMD_EMPTY, NULL, 0, 10);
 }
 
+Response_Data activate() {
+    return send_cmd(CMD_ACTIVATE, NULL, 0, 10);
+}
+
 Response_Data enroll(uint16_t ident, uint8_t numEntries, bool status, bool overwrite, bool repeat, bool remove) {
     //Sends enroll command with parameters for enrolling a fingerprint
 
@@ -325,7 +328,7 @@ Response_Data enroll(uint16_t ident, uint8_t numEntries, bool status, bool overw
     params[3] = (char) ((param >> 8) & 0xFF); // MSB
     params[4] = (char) (param & 0xFF); // LSB
 
-    return send_cmd(CMD_ENROLL, params, sizeof(params), 5000);
+    return send_cmd(CMD_ENROLL, params, sizeof(params), 10);
 }
 
 Response_Data identify(uint8_t security, uint16_t ident, bool status) {
@@ -360,9 +363,11 @@ void print_packet(char* packet, uint16_t len) {
     printk("\n");
 }
 
-void start_and_enroll() {
+bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool overwrite, bool repeat, bool remove) {
     //Wake, set work mode, and enroll a fingerprint 
 
+    printk("Starting enrollment process...\n");
+    printk("Rapidly place finger on sensor three times...\n");
 
     Response_Data resp = wake(); //Wake up FP scanner
     printk("Number of packets received: %d\n", resp.num_pckts);
@@ -374,13 +379,21 @@ void start_and_enroll() {
     printk("Last packet received: ");
     print_packet(resp.last_payload, resp.last_payload_len);
 
-    resp = enroll(1, 1, false, true, false, false); //Enroll a fingerprint with ID 1, 1 entry, no return status packets, allow overwriting, allow repeated registration, request to remove finger between collections
+
+    resp = enroll(ident, numEntries, status, overwrite, repeat, remove); //Enroll a fingerprint with ID 1, 1 entry, no return status packets, allow overwriting, allow repeated registration, request to remove finger between collections
     printk("Number of packets received: %d\n", resp.num_pckts);
     printk("Last packet received: ");
     print_packet(resp.last_payload, resp.last_payload_len);
+
+    if (resp.last_payload[resp.last_payload_len - 2] == 0x06 && resp.last_payload[resp.last_payload_len - 1] == 0xf2) {
+        printk("Enrollment successful!\n");
+        return true;
+    }
+    
+    return false;
 }
 
-void start_and_identify() {
+bool start_and_identify() {
     //Wake, set work mode, and identify a fingerprint
     Response_Data resp = wake(); //Wake up FP scanner
     printk("Number of packets received: %d\n", resp.num_pckts);
@@ -396,27 +409,13 @@ void start_and_identify() {
     printk("Number of packets received: %d\n", resp.num_pckts);
     printk("Last packet received: ");
     print_packet(resp.last_payload, resp.last_payload_len);
+
+    int score = (resp.last_payload[resp.last_payload_len - 2] & 0xFF) << 8 | (resp.last_payload[resp.last_payload_len - 1] & 0xFF); //Combine 2 bytes of payload to get the score of the identification
+    printk("Identification score: %d\n", score);
+    if(score > 100) {
+        printk("Identification successful!\n");
+        return true;
+    }
+    
+    return false;
 }
-
-// int main(void)
-// {
-    
-//     if (!device_is_ready(fp_uart)) {
-//         printk("FP UART not ready\n");
-//         return -1;
-//     }
-
-//     uart_irq_callback_user_data_set(fp_uart, uart_cb, NULL); //Set the callback for the UART interrupts
-    
-//     printk("FP enrolling started!\n");
-//     printk("=====================\n");
-//     start_and_enroll(); //Start the process and enroll a fingerprint
-//     printk("FP identify started!\n");
-//     printk("=====================\n");
-//     start_and_identify(); //Start the process and identify a fingerprint
-
-//     while (1) { //Dont exit at the end
-//         k_sleep(K_FOREVER);
-//     }
-//     return 0;
-// }

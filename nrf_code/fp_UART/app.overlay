@@ -20,7 +20,7 @@
     };
 };
 
-/* UART0 peripheral configuration - used for GPS NMEA data at 9600 baud */
+/* UART0 peripheral configuration - used for FP data at 115200 baud */
 &uart0 {
     status = "okay";
     current-speed = <115200>;
