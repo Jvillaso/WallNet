@@ -42,5 +42,5 @@ Response_Data activate();
 Response_Data enroll(uint16_t ident, uint8_t numEntries, bool status, bool overwrite, bool repeat, bool remove);
 Response_Data identify(uint8_t security, uint16_t ident, bool status);
 void print_packet(char* packet, uint16_t len);
-void start_and_enroll();
-void start_and_identify();
+bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool overwrite, bool repeat, bool remove);
+bool start_and_identify();

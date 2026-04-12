@@ -328,7 +328,7 @@ Response_Data enroll(uint16_t ident, uint8_t numEntries, bool status, bool overw
     params[3] = (char) ((param >> 8) & 0xFF); // MSB
     params[4] = (char) (param & 0xFF); // LSB
 
-    return send_cmd(CMD_ENROLL, params, sizeof(params), 5000);
+    return send_cmd(CMD_ENROLL, params, sizeof(params), 10);
 }
 
 Response_Data identify(uint8_t security, uint16_t ident, bool status) {
@@ -363,9 +363,11 @@ void print_packet(char* packet, uint16_t len) {
     printk("\n");
 }
 
-void start_and_enroll() {
+bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool overwrite, bool repeat, bool remove) {
     //Wake, set work mode, and enroll a fingerprint 
 
+    printk("Starting enrollment process...\n");
+    printk("Rapidly place finger on sensor three times...\n");
 
     Response_Data resp = wake(); //Wake up FP scanner
     printk("Number of packets received: %d\n", resp.num_pckts);
@@ -377,13 +379,21 @@ void start_and_enroll() {
     printk("Last packet received: ");
     print_packet(resp.last_payload, resp.last_payload_len);
 
-    resp = enroll(1, 1, false, true, false, false); //Enroll a fingerprint with ID 1, 1 entry, no return status packets, allow overwriting, allow repeated registration, request to remove finger between collections
+
+    resp = enroll(ident, numEntries, status, overwrite, repeat, remove); //Enroll a fingerprint with ID 1, 1 entry, no return status packets, allow overwriting, allow repeated registration, request to remove finger between collections
     printk("Number of packets received: %d\n", resp.num_pckts);
     printk("Last packet received: ");
     print_packet(resp.last_payload, resp.last_payload_len);
+
+    if (resp.last_payload[resp.last_payload_len - 2] == 0x06 && resp.last_payload[resp.last_payload_len - 1] == 0xf2) {
+        printk("Enrollment successful!\n");
+        return true;
+    }
+    
+    return false;
 }
 
-void start_and_identify() {
+bool start_and_identify() {
     //Wake, set work mode, and identify a fingerprint
     Response_Data resp = wake(); //Wake up FP scanner
     printk("Number of packets received: %d\n", resp.num_pckts);
@@ -402,10 +412,10 @@ void start_and_identify() {
 
     int score = (resp.last_payload[resp.last_payload_len - 2] & 0xFF) << 8 | (resp.last_payload[resp.last_payload_len - 1] & 0xFF); //Combine 2 bytes of payload to get the score of the identification
     printk("Identification score: %d\n", score);
-    if(score > 50) {
+    if(score > 100) {
         printk("Identification successful!\n");
+        return true;
     }
-    else {
-        printk("Identification failed.\n");
-    }
+    
+    return false;
 }

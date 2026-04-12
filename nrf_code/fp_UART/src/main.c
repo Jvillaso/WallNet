@@ -9,12 +9,12 @@ int main(void)
 {
     fp_init();
     
-    // printk("FP enrolling started!\n");
-    // printk("=====================\n");
-    // start_and_enroll(); //Start the process and enroll a fingerprint
-    printk("FP identify started!\n");
+    printk("FP enrolling started!\n");
     printk("=====================\n");
-    start_and_identify(); //Start the process and identify a fingerprint
+    start_and_enroll(1, 3, true, true, true, true); //Enroll a fingerprint with ID 1, 3 entries, return status packets, allow overwriting, allow repeated registration, request to remove finger between collections
+    // printk("FP identify started!\n");
+    // printk("=====================\n");
+    // start_and_identify(); //Start the process and identify a fingerprint
 
 
 
