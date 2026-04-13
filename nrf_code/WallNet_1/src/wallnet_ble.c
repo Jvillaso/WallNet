@@ -229,6 +229,9 @@ static void connected(struct bt_conn *conn, uint8_t err) {
             // E-ink show "Syncing..."
             update_eink_display(); 
         }
+
+        
+        wallnet_gps_start();
     }
 }
 
@@ -236,12 +239,14 @@ static void disconnected(struct bt_conn *conn, uint8_t reason) {
     sys_is_connected = false;
     LOG_INF("Disconnected from Phone (reason 0x%02x).", reason);
     
+    // if have valid gps and we disconnect, save the last known to nrf NVM
     if (sys_have_valid_gps) {
         int err = settings_save_one("gps/last_fix", &sys_current_gps_payload, sizeof(sys_current_gps_payload));
         if (err) LOG_ERR("Failed to anchor GPS to NVM (%d)", err);
         else LOG_INF("Anchored Last Known GPS to NVM.");
     }
 
+    wallnet_gps_stop();
     k_work_submit(&adv_restart_work);
 }
 

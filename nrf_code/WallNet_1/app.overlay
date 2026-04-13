@@ -16,13 +16,6 @@
         };
     };
 
-    // gps_pins {
-    //     compatible = "gpio-keys";
-    //     gps_int: gps_interrupt {
-    //         // change to GPS INT pin
-    //         gpios = <&gpio0 14 GPIO_ACTIVE_HIGH>; 
-    //     };
-    // };
 };
 
 &pinctrl {

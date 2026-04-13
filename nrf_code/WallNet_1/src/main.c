@@ -66,7 +66,7 @@ int main(void)
     LOG_WRN("WallNet Booting...");
 
     wallnet_ble_init();
-    // wallnet_gps_init(); // takes care of gps_conf before settings_load()
+    wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
 
 

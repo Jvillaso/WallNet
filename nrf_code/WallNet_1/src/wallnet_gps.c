@@ -1,7 +1,6 @@
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/i2c.h>
-#include <zephyr/drivers/gpio.h>
 #include <zephyr/logging/log.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -15,9 +14,6 @@ LOG_MODULE_REGISTER(wallnet_gps, LOG_LEVEL_INF);
 #define I2C_NODE DT_NODELABEL(i2c0)
 #define GPS_I2C_ADDR 0x42
 
-// Define in app.overlay later: GPS INT pin for data ready
-#define GPS_INT_NODE DT_NODELABEL(gps_int) 
-
 #define GPS_CHUNK_MAX 32
 #define GPS_LINE_BUF_SIZE 128
 
@@ -25,10 +21,9 @@ static char line_buf[GPS_LINE_BUF_SIZE];
 static int line_idx = 0;
 
 static const struct device *i2c_dev;
-static const struct gpio_dt_spec gps_int_pin = GPIO_DT_SPEC_GET_OR(GPS_INT_NODE, gpios, {0});
-static struct gpio_callback gps_int_cb_data;
 
-static struct k_work gps_i2c_read_work;
+// both delayable now
+static struct k_work_delayable gps_i2c_read_work;
 static struct k_work_delayable gps_ble_notify_work;
 
 static void get_nmea_field(const char *sentence, int field_num, char *out_buf, int max_len) {
@@ -94,7 +89,7 @@ static void handle_gga_sentence(const char *sentence) {
     sys_current_gps_payload.hdop_scaled = (uint8_t)(hdop_val * 10.0f);
     
     sys_have_valid_gps = true;
-    LOG_WRN("Valid Fix: Lat %.6f | Lon %.6f", latitude, longitude);
+    // LOG_WRN("Valid Fix: Lat %.6f | Lon %.6f", latitude, longitude);
 }
 
 static void process_rx_bytes(const uint8_t *buf, size_t len) {
@@ -121,6 +116,7 @@ static void process_rx_bytes(const uint8_t *buf, size_t len) {
 
         if (c == '\n') {
             line_buf[line_idx] = '\0';
+            // LOG_INF("Raw NMEA: %s", line_buf);
             if (strncmp(line_buf, "$GNGGA", 6) == 0 || strncmp(line_buf, "$GPGGA", 6) == 0) {
                 handle_gga_sentence(line_buf);
             }
@@ -154,10 +150,9 @@ static void gps_i2c_read_worker(struct k_work *work) {
         // yield to other threads, i2c slow
         k_yield(); 
     }
-}
-// Hardware Interruptp: GPS INT pin goes high - means it has data ready in buffa
-static void gps_data_ready_isr(const struct device *dev, struct gpio_callback *cb, uint32_t pins) {
-    k_work_submit(&gps_i2c_read_work);
+
+    // Check again in exactly 1 second
+    k_work_reschedule(&gps_i2c_read_work, K_SECONDS(1));
 }
 
 static void gps_ble_notify_timer(struct k_work *work) {
@@ -187,8 +182,24 @@ static struct settings_handler gps_conf = {
     .h_set = gps_settings_set
 };
 
-void wallnet_gps_init(void) {
 
+void wallnet_gps_start(void) {
+    LOG_INF("Starting GPS Tracking.");
+    // Instantly wake up the I2C read thread
+    k_work_reschedule(&gps_i2c_read_work, K_NO_WAIT);
+    // Start the 30-second BLE blast timer
+    k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
+}
+
+void wallnet_gps_stop(void) {
+    LOG_INF("Stopping GPS Tracking.");
+    // Cancel the timers so the nRF52 can sleep
+    k_work_cancel_delayable(&gps_i2c_read_work);
+    k_work_cancel_delayable(&gps_ble_notify_work);
+}
+
+void wallnet_gps_init(void) {
+    
     settings_register(&gps_conf);
     i2c_dev = DEVICE_DT_GET(I2C_NODE);
     if (!device_is_ready(i2c_dev)) {
@@ -196,20 +207,15 @@ void wallnet_gps_init(void) {
         return;
     }
 
-    k_work_init(&gps_i2c_read_work, gps_i2c_read_worker);
+    // Initialize both delayable workers
+    k_work_init_delayable(&gps_i2c_read_work, gps_i2c_read_worker);
     k_work_init_delayable(&gps_ble_notify_work, gps_ble_notify_timer);
 
-    if (gps_int_pin.port != NULL && device_is_ready(gps_int_pin.port)) {
-        gpio_pin_configure_dt(&gps_int_pin, GPIO_INPUT);
-        gpio_pin_interrupt_configure_dt(&gps_int_pin, GPIO_INT_EDGE_RISING);
-        gpio_init_callback(&gps_int_cb_data, gps_data_ready_isr, BIT(gps_int_pin.pin));
-        gpio_add_callback(gps_int_pin.port, &gps_int_cb_data);
-        LOG_WRN("GPS Data-Ready Hardware Interrupt Configured.");
-    } else {
-        LOG_WRN("GPS INT pin not found in device tree. Interrupts disabled.");
-    }
+    // Start the 1Hz read loop 
+    // k_work_reschedule(&gps_i2c_read_work, K_NO_WAIT);
 
     // Start the 30-second notification loop
-    k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
-    LOG_WRN("GPS Subsystem Initialized.");
+    // k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
+    
+    LOG_WRN("GPS Subsystem Initialized");
 }

@@ -59,7 +59,11 @@ void wallnet_ui_init(void);
 void update_eink_display(void);
 
 void wallnet_auth_init(void);
+
 void wallnet_gps_init(void);
+void wallnet_gps_start(void);
+void wallnet_gps_stop(void);
+
 void wallnet_ble_notify_gps(void);
 
 #endif // SYSTEM_STATE_H
