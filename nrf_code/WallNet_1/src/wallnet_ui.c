@@ -6,6 +6,7 @@
 #include <zephyr/input/input.h>
 
 #include "system_state.h"
+#include "fp_commands.h"
 
 LOG_MODULE_REGISTER(wallnet_ui, LOG_LEVEL_INF);
 
@@ -66,14 +67,21 @@ static void tap_eval_handler(struct k_work *work) {
     switch (sys_current_state) {
         case STATE_INIT_WAIT_ENROLL:
             // Pretend the user scanned their finger successfully
-            LOG_WRN("SIMULATED FINGERPRINT SUCCESS.");
-
-            //sys_current_state = STATE_ENROLLING;
-            sys_current_state = STATE_INIT_WAIT_PAIRING;
-
-            // enroll fingerprint here
-
+            // LOG_WRN("SIMULATED FINGERPRINT SUCCESS.");
+            LOG_WRN("Starting enrollment process...");
+            sys_current_state = STATE_ENROLLING;
             update_eink_display();
+            fp_init();
+
+            if(start_and_enroll(1, 3, true, true, true, true)) {
+                LOG_WRN("[E-INK] Enrollment successful.");
+                sys_current_state = STATE_INIT_WAIT_PAIRING;
+                update_eink_display();
+            } else {
+                LOG_ERR("[E-INK] Enrollment failed. Please try again.");
+                sys_current_state = STATE_INIT_WAIT_ENROLL;
+                update_eink_display();
+            }
             break;
 
         case STATE_INIT_WAIT_PAIRING:
@@ -85,7 +93,10 @@ static void tap_eval_handler(struct k_work *work) {
 
         case STATE_LOCKED:
             if (sys_num_cards == 0) {
-                LOG_WRN("No cards in wallet. Ignoring taps.");
+                LOG_WRN("[E-INK] No cards in wallet. Ignoring taps.");
+            } else if (tap_count == 3) {
+                LOG_WRN("3 taps detected. Quick ID check");
+                start_and_identify();
             } else {
                 sys_active_card_idx = (sys_active_card_idx + tap_count) % sys_num_cards;
                 LOG_WRN("Registered %d taps. Active Card Index is now %d.", tap_count, sys_active_card_idx);

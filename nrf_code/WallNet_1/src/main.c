@@ -102,7 +102,35 @@ int main(void)
 
     // Main Loop
     while (1) {
-        k_sleep(K_FOREVER);
+        // k_sleep(K_FOREVER);
+
+        switch (sys_current_state) {
+            case STATE_LOCKED:
+                if (start_and_identify()) {
+                    LOG_WRN("[E-INK] Identification successful.");
+                    sys_is_armed = true; 
+                    sys_current_state = STATE_RFID_TRANSMITTING;
+                    update_eink_display();
+                } else {
+                    k_msleep(3000);
+                }
+                break;
+            case STATE_RFID_TRANSMITTING:
+                // After successful auth, stay in this state for 10s then return to locked
+
+                // write the rfid link thingy/stuff here, then go to sleep
+
+                k_msleep(10000);
+                sys_is_armed = false;
+                sys_current_state = STATE_LOCKED;
+                update_eink_display();
+                break;
+
+            default:
+                k_msleep(1000);
+                break;
+        }
+
     }
 
     return 0;
