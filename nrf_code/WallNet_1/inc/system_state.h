@@ -51,6 +51,9 @@ extern card_record_t sys_card_slots[MAX_CARDS];
 extern struct gps_telemetry_t sys_current_gps_payload;
 extern volatile bool sys_have_valid_gps;
 
+extern struct k_work_q fp_workq;
+extern struct k_work_delayable auth_check_work;
+
 void wallnet_ble_init(void);
 void wallnet_ble_adv_start(void);
 void wallnet_ble_adv_stop(void);
@@ -63,6 +66,12 @@ void wallnet_auth_init(void);
 void wallnet_gps_init(void);
 void wallnet_gps_start(void);
 void wallnet_gps_stop(void);
+
+void wallnet_auth_trigger(void);
+
+//track fps index so we know how many we have - will save to nvm eventually
+extern uint16_t sys_next_fp_id;
+void wallnet_enroll_trigger(void);
 
 void wallnet_ble_notify_gps(void);
 
