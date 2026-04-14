@@ -1,0 +1,7 @@
+default: WallNet_1
+build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_1/build_1
+domains:
+  - name: WallNet_1
+    build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_1/build_1/WallNet_1
+flash_order:
+  - WallNet_1

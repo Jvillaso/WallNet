@@ -22,10 +22,13 @@ LOG_MODULE_REGISTER(wallnet_ble, LOG_LEVEL_INF);
     BT_UUID_128_ENCODE(0x12345678, 0x1234, 0x5678, 0x1234, 0x56789abcdef1)
 #define BT_UUID_WALLET_PACKET_CHAR_VAL \
     BT_UUID_128_ENCODE(0x12345678, 0x1234, 0x5678, 0x1234, 0x56789abcdef3)
+#define BT_UUID_TEST_CHAR_VAL \
+    BT_UUID_128_ENCODE(0x12345678, 0x1234, 0x5678, 0x1234, 0x56789abcdef4)
 
 #define BT_UUID_GPS_SERVICE         BT_UUID_DECLARE_128(BT_UUID_GPS_SERVICE_VAL)
 #define BT_UUID_GPS_CHAR            BT_UUID_DECLARE_128(BT_UUID_GPS_CHAR_VAL)
 #define BT_UUID_WALLET_PACKET_CHAR  BT_UUID_DECLARE_128(BT_UUID_WALLET_PACKET_CHAR_VAL)
+#define BT_UUID_TEST_CHAR           BT_UUID_DECLARE_128(BT_UUID_TEST_CHAR_VAL)
 
 // ble Advertising data - what the phone sees when scanning for WallNet
 static const struct bt_data ad[] = {
@@ -173,6 +176,23 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
     return len;
 }
 
+static ssize_t write_test(struct bt_conn *conn,
+                                   const struct bt_gatt_attr *attr,
+                                   const void *buf, uint16_t len,
+                                   uint16_t offset, uint8_t flags) 
+{
+    LOG_WRN("Received write to wallet packet characteristic. Data length: %d\n", len);   
+    
+    const char *char_buf = (const char *)buf;
+    for (uint16_t i = 0; i < len; i++) {
+        char c = char_buf[i];
+        LOG_WRN("Byte RX: 0x%02x ('%c') ", c, (c >= 32 && c <= 126) ? c : '?');
+    }
+    LOG_WRN("\n");
+
+    return len;
+}
+
 // fires when phone requests to read GPS data
 static ssize_t read_gps_data(struct bt_conn *conn, const struct bt_gatt_attr *attr,
                              void *buf, uint16_t len, uint16_t offset)
@@ -203,8 +223,14 @@ BT_GATT_SERVICE_DEFINE(wallnet_svc,
     // Wallet Packet characteristic (how we send cards to WallNet)
     BT_GATT_CHARACTERISTIC(BT_UUID_WALLET_PACKET_CHAR,
                            BT_GATT_CHRC_WRITE,
-                           BT_GATT_PERM_WRITE_ENCRYPT, 
+                           BT_GATT_PERM_WRITE, //BT_GATT_PERM_WRITE_ENCRYPT, 
                            NULL, write_wallet_packet, NULL),
+
+    // Test characteristic for dev/debug
+    BT_GATT_CHARACTERISTIC(BT_UUID_TEST_CHAR,
+                           BT_GATT_CHRC_WRITE,
+                           BT_GATT_PERM_WRITE,
+                           NULL, write_test, NULL),
 );
 
 static void adv_restart_handler(struct k_work *work) {
