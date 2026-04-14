@@ -154,7 +154,9 @@ int main(void)
     int err;
     LOG_WRN("WallNet Booting...");
 
+    
     wallnet_ble_init();
+    //Note for Austin: to work without gps, comment out wallnet_gps_init() and wallnet_gps.c : wallnet_gps_start()
     wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
 

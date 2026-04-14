@@ -1,6 +1,7 @@
 {
     "nrf-connect.applications": [
         "${workspaceFolder}\\nrf_code\\fp_UART",
-        "${workspaceFolder}\\nrf_code\\WallNet_1"
+        "${workspaceFolder}\\nrf_code\\WallNet_1",
+        "${workspaceFolder}\\nrf_code\\peripheral_lbs_(bluetooth)"
     ]
 }

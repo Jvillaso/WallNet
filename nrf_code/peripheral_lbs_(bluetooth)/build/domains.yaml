@@ -1,7 +1,0 @@
-default: peripheral_lbs
-build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build
-domains:
-  - name: peripheral_lbs
-    build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/peripheral_lbs/build/peripheral_lbs
-flash_order:
-  - peripheral_lbs
