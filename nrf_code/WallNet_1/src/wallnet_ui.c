@@ -40,21 +40,19 @@ void update_eink_display(void) {
                 LOG_WRN("[E-INK] Cards Locked. No Cards Saved.");
             } else {
                 if (sys_active_card_idx >= sys_num_cards) sys_active_card_idx = 0;
-                card_record_t *active_card = &sys_card_slots[sys_active_card_idx];
                 
-                // Hardware fault protection
-                size_t len = strlen(active_card->cardnumber);
-                const char *last_four = (len >= 4) ? &active_card->cardnumber[len - 4] : "****";
-                
-                LOG_WRN("[E-INK] Displaying Card %d/%d: %s (...%s)", 
+                LOG_WRN("[E-INK] Displaying Card %d/%d: %s %s (...%s)", 
                         sys_active_card_idx + 1, sys_num_cards, 
-                        active_card->cardholder, 
-                        last_four);
+                        sys_card_slots[sys_active_card_idx].first_name,
+                        sys_card_slots[sys_active_card_idx].last_name,
+                        sys_card_slots[sys_active_card_idx].last_four);
             }
             break;
-        //placeholder
         case STATE_RFID_TRANSMITTING:
-            LOG_WRN("[E-INK] TRANSMITTING: %s", sys_card_slots[sys_active_card_idx].cardholder);
+            LOG_WRN("[E-INK] TRANSMITTING: %s %s - (...%s)", 
+                    sys_card_slots[sys_active_card_idx].first_name,
+                    sys_card_slots[sys_active_card_idx].last_name,
+                    sys_card_slots[sys_active_card_idx].last_four);
             break;
         default:
             break;

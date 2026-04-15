@@ -66,6 +66,7 @@
     pinctrl-names = "default", "sleep";
 };
 
+// i2c0: GPS 
 &i2c0 {
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
@@ -77,3 +78,7 @@
     zephyr,concat-buf-size = <512>;
     zephyr,flash-buf-max-size = <512>;
 };
+
+// i2c1/spi1: RFID
+
+// spi2: Eink
