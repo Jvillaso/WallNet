@@ -6,10 +6,6 @@
 #include <stddef.h>
 
 #define MAX_CARDS 16
-#define MAX_CARDHOLDER_LEN 40
-#define MAX_CARDNUMBER_LEN 24
-#define MAX_EXP_LEN 8
-#define MAX_CVV_LEN 8
 
 // Main WallNet State Machine
 typedef enum {
@@ -23,13 +19,29 @@ typedef enum {
     STATE_RFID_TRANSMITTING      // Auth successful; RFID broadcasting single selected card -> back to LOCKED after timeout... or successful write?
 } wallnet_state_t;
 
+#define MAX_NAME_LEN 20
+#define MAX_LAST_FOUR_LEN 6 // 4 digits + null terminator
+#define MAX_ENC_PAN_LEN 44 // update this and 2 below once length is finalized (i can't test encryption rn)
+#define MAX_ENC_CVV_LEN 24  
+#define MAX_ENC_EXP_LEN 24  
+
+// new encrypted card struct
 typedef struct {
     bool valid;
-    char cardholder[MAX_CARDHOLDER_LEN];
-    char cardnumber[MAX_CARDNUMBER_LEN];
-    char exp[MAX_EXP_LEN];
-    char cvv[MAX_CVV_LEN];
+    char first_name[MAX_NAME_LEN];
+    char last_name[MAX_NAME_LEN];
+    char last_four[MAX_LAST_FOUR_LEN];
+    
+    uint8_t enc_pan[MAX_ENC_PAN_LEN];
+    uint8_t enc_pan_len;
+    
+    uint8_t enc_cvv[MAX_ENC_CVV_LEN];
+    uint8_t enc_cvv_len;
+    
+    uint8_t enc_exp[MAX_ENC_EXP_LEN];
+    uint8_t enc_exp_len;
 } card_record_t;
+
 
 // packed so it doesn't pad 0s and let's me keep 14 byte packet struct
 struct __attribute__((__packed__)) gps_telemetry_t {
