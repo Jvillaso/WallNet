@@ -6,6 +6,7 @@
 #include <zephyr/input/input.h>
 
 #include "system_state.h"
+#include "fp_commands.h"
 
 LOG_MODULE_REGISTER(wallnet_ui, LOG_LEVEL_INF);
 
@@ -66,14 +67,22 @@ static void tap_eval_handler(struct k_work *work) {
     switch (sys_current_state) {
         case STATE_INIT_WAIT_ENROLL:
             // Pretend the user scanned their finger successfully
-            LOG_WRN("SIMULATED FINGERPRINT SUCCESS.");
-
-            //sys_current_state = STATE_ENROLLING;
-            sys_current_state = STATE_INIT_WAIT_PAIRING;
-
-            // enroll fingerprint here
-
+            // LOG_WRN("SIMULATED FINGERPRINT SUCCESS.");
+            LOG_WRN("Starting enrollment process...");
+            sys_current_state = STATE_ENROLLING;
             update_eink_display();
+            fp_init();
+
+            // id=1
+            if(start_and_enroll(1, 3, true, true, true, true)) {
+                LOG_WRN("[E-INK] Enrollment successful.");
+                sys_current_state = STATE_INIT_WAIT_PAIRING;
+                update_eink_display();
+            } else {
+                LOG_ERR("[E-INK] Enrollment failed. Please try again.");
+                sys_current_state = STATE_INIT_WAIT_ENROLL;
+                update_eink_display();
+            }
             break;
 
         case STATE_INIT_WAIT_PAIRING:
@@ -84,8 +93,9 @@ static void tap_eval_handler(struct k_work *work) {
             break;
 
         case STATE_LOCKED:
+        
             if (sys_num_cards == 0) {
-                LOG_WRN("No cards in wallet. Ignoring taps.");
+                LOG_WRN("[E-INK] No cards in wallet. Ignoring taps.");
             } else {
                 sys_active_card_idx = (sys_active_card_idx + tap_count) % sys_num_cards;
                 LOG_WRN("Registered %d taps. Active Card Index is now %d.", tap_count, sys_active_card_idx);
@@ -128,6 +138,9 @@ static void factory_reset_handler(struct k_work *work) {
     
     // Wipe Zephyr security keys (bonds from ble)
     bt_unpair(BT_ID_DEFAULT, BT_ADDR_LE_ANY);
+
+    // Wipe the fingerprint scanner's internal brain
+    empty();
     
     update_eink_display();
     
@@ -167,10 +180,22 @@ static void input_cb(struct input_event *evt, void *user_data) {
             
         } else if (duration >= 1000 && duration < 10000) {
             // HOLD (1s - 10s)
-            LOG_WRN("Hold detected (%lld ms). Resetting to Card Index 0.", duration);
-            sys_active_card_idx = 0;
+            LOG_WRN("Hold detected (%lld ms). Entering Fingerprint Enrollment.", duration);
+            // sys_active_card_idx = 0;
             tap_count = 0; // any amt of taps, then a hold counts as a hold
             k_work_cancel_delayable(&tap_eval_work);
+            
+            if (sys_current_state == STATE_LOCKED) {
+                // Trigger the new routine
+                LOG_WRN("Entering Additional Enrollment Mode.");
+                sys_current_state = STATE_ENROLLING;
+                update_eink_display();
+                
+                wallnet_enroll_trigger();
+            } else {
+                LOG_ERR("Hold detected but system is not in LOCKED state. Ignoring.");
+            }
+
             update_eink_display();
         } else if (duration >= 10000) {
             // fallback, doomsday should auto-trigger at 10s before this

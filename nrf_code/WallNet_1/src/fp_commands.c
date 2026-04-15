@@ -3,6 +3,7 @@
 #include <zephyr/drivers/uart.h>
 #include <math.h>
 #include "fp_commands.h"
+#include "system_state.h"
 
 
 static const struct device *fp_uart = FP_UART; //Get the UART device from the device tree
@@ -95,11 +96,11 @@ static void uart_cb(const struct device *dev, void *user_data)
         
 
         //print out buffer
-        printk("Received packet: ");
-        for(int i = 0; i < bytes_read; i++) {   
-            printk("%X ", read_buf[i]);
-        }
-        printk("\n");
+        // printk("Received packet: ");
+        // for(int i = 0; i < bytes_read; i++) {   
+        //     printk("%X ", read_buf[i]);
+        // }
+        // printk("\n");
 
         //Add PAYLOAD to backlog
         backlog_sizes[backlog_size] = bytes_read - 11; //Store size of message in backlog sizes array
@@ -120,11 +121,11 @@ static void uart_cb(const struct device *dev, void *user_data)
     //Handle sending data
     if(uart_irq_tx_ready(dev)){
 
-        printk("Transmitting data: ");
-        for(int i = 0; i < tx_len; i++) {
-            printk("%X ", tx_buf[i]);
-        }
-        printk("\n");
+        // printk("Transmitting data: ");
+        // for(int i = 0; i < tx_len; i++) {
+        //     printk("%X ", tx_buf[i]);
+        // }
+        // printk("\n");
         
     
         //Below is taken from ChatGPT w/ prompt "how to send bytes with the zephyr libraries"
@@ -363,8 +364,28 @@ void print_packet(char* packet, uint16_t len) {
     printk("\n");
 }
 
+static void flush_uart_rx(void) {
+    uint8_t c;
+    
+    // Empty the hardware FIFO buffer
+    while (uart_fifo_read(fp_uart, &c, 1) == 1) {
+        // Discard the byte
+    }
+    
+    // Nuke the software backlog
+    free_entire_backlog();
+    bytes_read = 0;
+    bytes_to_read = 9;
+    
+    // Reset the critical flag
+    response_flag = false;
+}
+
+
 bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool overwrite, bool repeat, bool remove) {
     //Wake, set work mode, and enroll a fingerprint 
+
+    flush_uart_rx(); // flush any buffer data (same as ID)
 
     printk("Starting enrollment process...\n");
     printk("Rapidly place finger on sensor three times...\n");
@@ -379,7 +400,7 @@ bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool over
     printk("Last packet received: ");
     print_packet(resp.last_payload, resp.last_payload_len);
 
-
+    // ident turns to sys_next_fp_id wheen called from main
     resp = enroll(ident, numEntries, status, overwrite, repeat, remove); //Enroll a fingerprint with ID 1, 1 entry, no return status packets, allow overwriting, allow repeated registration, request to remove finger between collections
     printk("Number of packets received: %d\n", resp.num_pckts);
     printk("Last packet received: ");
@@ -393,29 +414,48 @@ bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool over
     return false;
 }
 
+
 bool start_and_identify() {
+
+    flush_uart_rx(); // flush any buffer data
+
     //Wake, set work mode, and identify a fingerprint
     Response_Data resp = wake(); //Wake up FP scanner
-    printk("Number of packets received: %d\n", resp.num_pckts);
-    printk("Last packet received: ");
-    print_packet(resp.last_payload, resp.last_payload_len);
+    // printk("Number of packets received: %d\n", resp.num_pckts);
+    // printk("Last packet received: ");
+    // print_packet(resp.last_payload, resp.last_payload_len);
 
     resp = set_work_mode(1); //Wake up FP scanner
-    printk("Number of packets received: %d\n", resp.num_pckts);
-    printk("Last packet received: ");
-    print_packet(resp.last_payload, resp.last_payload_len);
+    // printk("Number of packets received: %d\n", resp.num_pckts);
+    // printk("Last packet received: ");
+    // print_packet(resp.last_payload, resp.last_payload_len);
 
-    resp = identify(1, 1, false); //Identify a fingerprint with security level 1, ID 1, no return status packets
-    printk("Number of packets received: %d\n", resp.num_pckts);
-    printk("Last packet received: ");
-    print_packet(resp.last_payload, resp.last_payload_len);
+    
+    // check for a match on all saved fingerprints
+    for (int i = 1 ; i < sys_next_fp_id; i++) {
+        resp = identify(1, i, false); //Identify a fingerprint with security level 1, ID i, no return status packets
+        // printk("Number of packets received: %d\n", resp.num_pckts);
+        // printk("Last packet received: ");
+        // print_packet(resp.last_payload, resp.last_payload_len);
 
-    int score = (resp.last_payload[resp.last_payload_len - 2] & 0xFF) << 8 | (resp.last_payload[resp.last_payload_len - 1] & 0xFF); //Combine 2 bytes of payload to get the score of the identification
-    printk("Identification score: %d\n", score);
-    if(score > 100) {
-        printk("Identification successful!\n");
-        return true;
+        int score = (resp.last_payload[resp.last_payload_len - 2] & 0xFF) << 8 | (resp.last_payload[resp.last_payload_len - 1] & 0xFF); //Combine 2 bytes of payload to get the score of the identification
+        printk("Identification score for ID %d: %d\n", i, score);
+        if(score > 100) {
+            printk("Identification successful for ID %d!\n", i);
+            return true;
+        }
     }
+    // resp = identify(1, 1, false); //Identify a fingerprint with security level 1, ID 1, no return status packets
+    // printk("Number of packets received: %d\n", resp.num_pckts);
+    // printk("Last packet received: ");
+    // print_packet(resp.last_payload, resp.last_payload_len);
+
+    // int score = (resp.last_payload[resp.last_payload_len - 2] & 0xFF) << 8 | (resp.last_payload[resp.last_payload_len - 1] & 0xFF); //Combine 2 bytes of payload to get the score of the identification
+    // printk("Identification score: %d\n", score);
+    // if(score > 100) {
+    //     printk("Identification successful!\n");
+    //     return true;
+    // }
     
     return false;
 }

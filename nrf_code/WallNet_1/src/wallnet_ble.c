@@ -251,8 +251,9 @@ static void connected(struct bt_conn *conn, uint8_t err) {
 
         if (sys_current_state == STATE_PAIRING_ADVERTISING) {
             // waiting for pairing
-            sys_current_state = STATE_BLE_SYNCING;
-            // E-ink show "Syncing..."
+            sys_current_state = STATE_LOCKED;
+            k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_NO_WAIT);
+
             update_eink_display(); 
         }
 

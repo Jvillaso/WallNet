@@ -70,7 +70,7 @@ static void handle_gga_sentence(const char *sentence) {
     bool got_valid_fix = !(fix_str[0] == '0' || fix_str[0] == '\0');
 
     if (!got_valid_fix) {
-        LOG_WRN("Status: No Fix Yet");
+        // LOG_WRN("Status: No Fix Yet");
         sys_have_valid_gps = false;
         return;
     }
