@@ -181,14 +181,14 @@ static ssize_t write_test(struct bt_conn *conn,
                                    const void *buf, uint16_t len,
                                    uint16_t offset, uint8_t flags) 
 {
-    LOG_WRN("Received write to wallet packet characteristic. Data length: %d\n", len);   
+    printk("Received write to wallet packet characteristic. Data length: %d\n", len);   
     
-    const char *char_buf = (const char *)buf;
+    const u_int8_t *char_buf = (const u_int8_t *)buf;
     for (uint16_t i = 0; i < len; i++) {
-        char c = char_buf[i];
-        LOG_WRN("Byte RX: 0x%02x ('%c') ", c, (c >= 32 && c <= 126) ? c : '?');
+        u_int8_t c = char_buf[i];
+        printk("0x%02X ('%c')", c, (c >= 32 && c <= 126) ? c : '?');
     }
-    LOG_WRN("\n");
+    printk("\n");
 
     return len;
 }
