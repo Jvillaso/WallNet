@@ -19,32 +19,32 @@ static struct k_work_delayable factory_reset_work;
 void update_eink_display(void) {
     switch (sys_current_state) {
         case STATE_INIT_WAIT_ENROLL:
-            LOG_WRN("[E-INK] Setup 1/2: Press button to enroll Admin Fingerprint.");
+            LOG_WRN("\n[E-INK] Setup 1/2: Press button to enroll Admin Fingerprint.");
             break;
         case STATE_ENROLLING:
-            LOG_WRN("[E-INK] Enrolling Fingerprint...");
-            LOG_WRN("[E-INK] Rapidly place finger on sensor three times...");
+            LOG_WRN("\n[E-INK] Enrolling Fingerprint...");
+            LOG_WRN("\n[E-INK] Rapidly place finger on sensor three times...");
 
             // todo add something here to show enrollment success/failure
             // maybe a section of screen that displays status message for a few seconds
             break;
 
         case STATE_INIT_WAIT_PAIRING:
-            LOG_WRN("[E-INK] Setup 2/2: Press button to begin Bluetooth pairing.");
+            LOG_WRN("\n[E-INK] Setup 2/2: Press button to begin Bluetooth pairing.");
             break;
         case STATE_PAIRING_ADVERTISING:
-            LOG_WRN("[E-INK] Pairing Mode: Open App to Connect...");
+            LOG_WRN("\n[E-INK] Pairing Mode: Open App to Connect...");
             break;
         case STATE_BLE_SYNCING:
-            LOG_WRN("[E-INK] Syncing Cards with Phone... Please Wait.");
+            LOG_WRN("\n[E-INK] Syncing Cards with Phone... Please Wait.");
             break;
         case STATE_LOCKED:
             if (sys_num_cards == 0) {
-                LOG_WRN("[E-INK] No Cards Saved.");
+                LOG_WRN("\n[E-INK] No Cards Saved.");
             } else {
                 if (sys_active_card_idx >= sys_num_cards) sys_active_card_idx = 0;
                 
-                LOG_WRN("[E-INK] Displaying Card %d/%d: %s %s (...%s)", 
+                LOG_WRN("\n[E-INK] Displaying Card %d/%d: %s %s (...%s)", 
                         sys_active_card_idx + 1, sys_num_cards, 
                         sys_card_slots[sys_active_card_idx].first_name,
                         sys_card_slots[sys_active_card_idx].last_name,
@@ -52,14 +52,14 @@ void update_eink_display(void) {
             }
             break;
         case STATE_RFID_TRANSMITTING:
-            LOG_WRN("[E-INK] TRANSMITTING: %s %s - (...%s)", 
+            LOG_WRN("\n[E-INK] TRANSMITTING: %s %s - (...%s)", 
                     sys_card_slots[sys_active_card_idx].first_name,
                     sys_card_slots[sys_active_card_idx].last_name,
                     sys_card_slots[sys_active_card_idx].last_four);
             break;
         case STATE_RESET:
-            LOG_WRN("[E-INK] !!! FACTORY RESET INITIATED !!!");
-            LOG_WRN("[E-INK] All data wiped. Rebooting...");
+            LOG_WRN("\n[E-INK] !!! FACTORY RESET INITIATED !!!");
+            LOG_WRN("\n[E-INK] All data wiped. Rebooting...");
             // todo: clear screen?
             // maybe wait for them to cancel and say "Resetting WallNet... Press Button to Cancel" otherwise it clears screen and reboots
             break;
@@ -218,5 +218,5 @@ void wallnet_ui_init(void) {
     k_work_init_delayable(&tap_eval_work, tap_eval_handler);
     k_work_init_delayable(&factory_reset_work, factory_reset_handler);
     
-    printk("UI Subsystem Initialized. Input callbacks registered.");
+    LOG_WRN("UI Subsystem Initialized. Input callbacks registered.");
 }

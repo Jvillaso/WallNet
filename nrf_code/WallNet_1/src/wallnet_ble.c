@@ -168,7 +168,7 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
                                    uint16_t offset, uint8_t flags)
 {
     const uint8_t *byte_buf = (const uint8_t *)buf;
-    
+
     k_work_cancel_delayable(&auth_check_work); // stop scanning fp while writing cards
 
     if (sys_current_state != STATE_BLE_SYNCING) {
@@ -176,6 +176,7 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
         sys_current_state = STATE_BLE_SYNCING; 
         rx_idx = 0; 
         shadow_card_idx = 0;
+        update_eink_display();
     }
 
     // incoming bytes

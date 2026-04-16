@@ -440,7 +440,7 @@ bool start_and_identify() {
 
         int score = (resp.last_payload[resp.last_payload_len - 2] & 0xFF) << 8 | (resp.last_payload[resp.last_payload_len - 1] & 0xFF); //Combine 2 bytes of payload to get the score of the identification
         printk("Identification score for ID %d: %d\n", i, score);
-        if(score > 100) {
+        if(score > 80) {
             printk("Identification successful for ID %d!\n", i);
             return true;
         }

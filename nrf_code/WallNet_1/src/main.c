@@ -103,7 +103,7 @@ static void auth_check_worker(struct k_work *work) {
 
 
     } else { // otherwise restart in 2s
-        LOG_ERR("Bad scan detected. Resting for 2 seconds...");
+        // LOG_ERR("Bad scan detected. Resting for 2 seconds...");
         k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_SECONDS(2));
     }
 }
@@ -123,8 +123,8 @@ static void fp_enroll_worker(struct k_work *work) {
     sys_current_state = STATE_LOCKED;
     update_eink_display();
     
-    // Kick the background scanner back on -- 1s wait so dont match immediately and shoot RFID off
-    k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_SECONDS(1));
+    // Kick the background scanner back on -- 3s wait so dont match immediately and shoot RFID off
+    k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_SECONDS(3));
 }
 
 // trigger to start fp enroll
