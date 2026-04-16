@@ -388,7 +388,7 @@ bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool over
     flush_uart_rx(); // flush any buffer data (same as ID)
 
     printk("Starting enrollment process...\n");
-    printk("Rapidly place finger on sensor three times...\n");
+    // printk("Rapidly place finger on sensor three times...\n");   MOVED TO EINK
 
     Response_Data resp = wake(); //Wake up FP scanner
     printk("Number of packets received: %d\n", resp.num_pckts);

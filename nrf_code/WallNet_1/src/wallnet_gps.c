@@ -186,9 +186,9 @@ static struct settings_handler gps_conf = {
 void wallnet_gps_start(void) {
     LOG_INF("Starting GPS Tracking.");
     // Instantly wake up the I2C read thread
-    // k_work_reschedule(&gps_i2c_read_work, K_NO_WAIT);
+    k_work_reschedule(&gps_i2c_read_work, K_NO_WAIT);
     // // Start the 30-second BLE blast timer
-    // k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
+    k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
 }
 
 void wallnet_gps_stop(void) {
@@ -212,10 +212,10 @@ void wallnet_gps_init(void) {
     k_work_init_delayable(&gps_ble_notify_work, gps_ble_notify_timer);
 
     // Start the 1Hz read loop 
-    // k_work_reschedule(&gps_i2c_read_work, K_NO_WAIT);
+    k_work_reschedule(&gps_i2c_read_work, K_NO_WAIT);
 
     // Start the 30-second notification loop
-    // k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
+    k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
     
     LOG_WRN("GPS Subsystem Initialized");
 }

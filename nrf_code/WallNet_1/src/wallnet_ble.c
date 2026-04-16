@@ -168,6 +168,8 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
                                    uint16_t offset, uint8_t flags)
 {
     const uint8_t *byte_buf = (const uint8_t *)buf;
+    
+    k_work_cancel_delayable(&auth_check_work); // stop scanning fp while writing cards
 
     if (sys_current_state != STATE_BLE_SYNCING) {
         LOG_WRN("New Wallet Packet. Entering BLE Sync State...");
@@ -234,6 +236,9 @@ static void wallet_save_timeout_handler(struct k_work *work) {
     
     sys_current_state = STATE_LOCKED;
     LOG_WRN("BLE Sync Complete. System Locked.");
+
+    // card transmission/saving done: save cards, start fp polling again
+    k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_NO_WAIT);
     update_eink_display();
 }
 
@@ -314,7 +319,9 @@ static void connected(struct bt_conn *conn, uint8_t err) {
         if (sys_current_state == STATE_PAIRING_ADVERTISING) {
             // waiting for pairing
             sys_current_state = STATE_LOCKED;
-            k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_NO_WAIT);
+            if (sys_num_cards > 0) { // if have cards, start looking for fp
+                k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_NO_WAIT);
+            }
 
             update_eink_display(); 
         }

@@ -152,12 +152,11 @@ void wallnet_enroll_trigger(void) {
 int main(void)
 {
     int err;
-    LOG_WRN("WallNet Booting...");
+    printk("WallNet Booting...");
 
-    
     wallnet_ble_init();
     //Note for Austin: to work without gps, comment out wallnet_gps_init() and wallnet_gps.c : wallnet_gps_start()
-    //wallnet_gps_init(); // takes care of gps_conf before settings_load()
+    wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
 
 
@@ -184,17 +183,17 @@ int main(void)
 
     if (sys_num_cards == 0) {
         sys_current_state = STATE_INIT_WAIT_ENROLL;
-        LOG_WRN("Entering First-Time Setup.");
+        printk("Entering First-Time Setup.");
     } else { // if we have cards, we must have fingerprint so go right into locked
         sys_current_state = STATE_LOCKED;
-        LOG_WRN("Existing data found. Vault Locked.");
+        printk("Existing data found. Vault Locked.");
         wallnet_ble_adv_start(); // Automatically start searching for phone
 
         fp_init();
         k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_NO_WAIT);
     }
 
-    LOG_WRN("Fingerprint/Bluetooth setup, moving on to event interrupts.");
+    printk("Fingerprint/Bluetooth setup, moving on to event interrupts.");
     
     update_eink_display();
 

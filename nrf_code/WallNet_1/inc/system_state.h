@@ -16,7 +16,8 @@ typedef enum {
     STATE_PAIRING_ADVERTISING,   // BLE radio active; wait for BT connection and pairing success / or timeout
     STATE_LOCKED,                // Default regular state; E-ink masked, RFID off
     STATE_BLE_SYNCING,           // Active BLE write; locking out button presses, wait for card data to finish syncing, back to LOCKED
-    STATE_RFID_TRANSMITTING      // Auth successful; RFID broadcasting single selected card -> back to LOCKED after timeout... or successful write?
+    STATE_RFID_TRANSMITTING,     // Auth successful; RFID broadcasting single selected card -> back to LOCKED after timeout... or successful write?
+    STATE_RESET                  // Factory reset state, wipes cards/gps from NVM and resets system
 } wallnet_state_t;
 
 #define MAX_NAME_LEN 20

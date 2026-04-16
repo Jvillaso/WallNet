@@ -18,12 +18,15 @@ static struct k_work_delayable factory_reset_work;
 
 void update_eink_display(void) {
     switch (sys_current_state) {
-        //fp placeholders
         case STATE_INIT_WAIT_ENROLL:
             LOG_WRN("[E-INK] Setup 1/2: Press button to enroll Admin Fingerprint.");
             break;
         case STATE_ENROLLING:
             LOG_WRN("[E-INK] Enrolling Fingerprint...");
+            LOG_WRN("[E-INK] Rapidly place finger on sensor three times...");
+
+            // todo add something here to show enrollment success/failure
+            // maybe a section of screen that displays status message for a few seconds
             break;
 
         case STATE_INIT_WAIT_PAIRING:
@@ -37,7 +40,7 @@ void update_eink_display(void) {
             break;
         case STATE_LOCKED:
             if (sys_num_cards == 0) {
-                LOG_WRN("[E-INK] Cards Locked. No Cards Saved.");
+                LOG_WRN("[E-INK] No Cards Saved.");
             } else {
                 if (sys_active_card_idx >= sys_num_cards) sys_active_card_idx = 0;
                 
@@ -54,6 +57,12 @@ void update_eink_display(void) {
                     sys_card_slots[sys_active_card_idx].last_name,
                     sys_card_slots[sys_active_card_idx].last_four);
             break;
+        case STATE_RESET:
+            LOG_WRN("[E-INK] !!! FACTORY RESET INITIATED !!!");
+            LOG_WRN("[E-INK] All data wiped. Rebooting...");
+            // todo: clear screen?
+            // maybe wait for them to cancel and say "Resetting WallNet... Press Button to Cancel" otherwise it clears screen and reboots
+            break;
         default:
             break;
     }
@@ -66,18 +75,18 @@ static void tap_eval_handler(struct k_work *work) {
         case STATE_INIT_WAIT_ENROLL:
             // Pretend the user scanned their finger successfully
             // LOG_WRN("SIMULATED FINGERPRINT SUCCESS.");
-            LOG_WRN("Starting enrollment process...");
+            // printk("Starting enrollment process...");
             sys_current_state = STATE_ENROLLING;
             update_eink_display();
             fp_init();
 
             // id=1
             if(start_and_enroll(1, 3, true, true, true, true)) {
-                LOG_WRN("[E-INK] Enrollment successful.");
+                // LOG_WRN("[E-INK] Enrollment successful.");
                 sys_current_state = STATE_INIT_WAIT_PAIRING;
                 update_eink_display();
             } else {
-                LOG_ERR("[E-INK] Enrollment failed. Please try again.");
+                LOG_ERR("Enrollment failed. Please try again.");
                 sys_current_state = STATE_INIT_WAIT_ENROLL;
                 update_eink_display();
             }
@@ -93,16 +102,16 @@ static void tap_eval_handler(struct k_work *work) {
         case STATE_LOCKED:
         
             if (sys_num_cards == 0) {
-                LOG_WRN("[E-INK] No cards in wallet. Ignoring taps.");
+                printk("No cards in wallet. Ignoring taps."); // dont update eink for this: still says "No Cards Saved"
             } else {
                 sys_active_card_idx = (sys_active_card_idx + tap_count) % sys_num_cards;
-                LOG_WRN("Registered %d taps. Active Card Index is now %d.", tap_count, sys_active_card_idx);
+                printk("Registered %d taps. Active Card Index is now %d.", tap_count, sys_active_card_idx);
                 update_eink_display();
             }
             break;
 
         case STATE_BLE_SYNCING:
-            LOG_WRN("Device is syncing over BLE. Ignoring button tap.");
+            printk("Device is syncing over BLE. Ignoring button tap."); // don't update eink 
             break;
 
         default:
@@ -122,7 +131,8 @@ static void factory_reset_handler(struct k_work *work) {
         return;
     }
 
-    LOG_WRN("!!! FACTORY RESET INITIATED !!!");
+    sys_current_state = STATE_RESET;
+    update_eink_display();
 
     // Wipe WallNet
     memset(sys_card_slots, 0, sizeof(sys_card_slots));
@@ -137,12 +147,12 @@ static void factory_reset_handler(struct k_work *work) {
     // Wipe Zephyr security keys (bonds from ble)
     bt_unpair(BT_ID_DEFAULT, BT_ADDR_LE_ANY);
 
-    // Wipe the fingerprint scanner's internal brain
+    // Wipe the fingerprint scanner
     empty();
     
     update_eink_display();
     
-    LOG_WRN("Wallet wiped. Rebooting system in 2 seconds to clear state...");
+    printk("Wallet wiped. Rebooting system in 2 seconds to clear state...");
     
     // I was thinking wait for the eink to redraw
     k_sleep(K_SECONDS(2));
@@ -178,23 +188,22 @@ static void input_cb(struct input_event *evt, void *user_data) {
             
         } else if (duration >= 1000 && duration < 10000) {
             // HOLD (1s - 10s)
-            LOG_WRN("Hold detected (%lld ms). Entering Fingerprint Enrollment.", duration);
-            // sys_active_card_idx = 0;
+
             tap_count = 0; // any amt of taps, then a hold counts as a hold
             k_work_cancel_delayable(&tap_eval_work);
             
             if (sys_current_state == STATE_LOCKED) {
-                // Trigger the new routine
-                LOG_WRN("Entering Additional Enrollment Mode.");
+                // Trigger the enrollment routine
+                printk("Hold detected (%lld ms). Entering Fingerprint Enrollment.", duration);
+                printk("Entering Additional Enrollment Mode.");
                 sys_current_state = STATE_ENROLLING;
                 update_eink_display();
                 
                 wallnet_enroll_trigger();
             } else {
-                LOG_ERR("Hold detected but system is not in LOCKED state. Ignoring.");
+                printk("Hold detected but system is not in LOCKED state. Ignoring.");
             }
 
-            update_eink_display();
         } else if (duration >= 10000) {
             // fallback, doomsday should auto-trigger at 10s before this
             k_work_reschedule(&factory_reset_work, K_NO_WAIT);
@@ -209,5 +218,5 @@ void wallnet_ui_init(void) {
     k_work_init_delayable(&tap_eval_work, tap_eval_handler);
     k_work_init_delayable(&factory_reset_work, factory_reset_handler);
     
-    LOG_WRN("UI Subsystem Initialized. Input callbacks registered.");
+    printk("UI Subsystem Initialized. Input callbacks registered.");
 }
