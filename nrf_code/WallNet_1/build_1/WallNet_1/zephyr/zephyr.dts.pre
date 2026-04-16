@@ -1050,6 +1050,13 @@ arduino_spi: &spi2 {
         };
     };
 
+    buzzer {
+        compatible = "gpio-leds";
+        buzzer0: buzzer_0 {
+            gpios = <&gpio0 14 (0 << 0)>;
+            label = "Buzzer";
+        };
+    };
 };
 
 &pinctrl {
@@ -1099,6 +1106,7 @@ arduino_spi: &spi2 {
     pinctrl-1 = <&uart0_sleep>;
     pinctrl-names = "default", "sleep";
 };
+
 
 &i2c0 {
     status = "okay";
