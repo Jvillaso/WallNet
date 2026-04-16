@@ -29,17 +29,21 @@ int wallnet_rfid_init(void)
 }
 
 
-static void i2c_scan(void)
+void i2c_scan(void)
 {
     for (int addr = 0x08; addr < 0x78; addr++) {
+
         if (i2c_write(i2c_dev, NULL, 0, addr) == 0) {
             printk("FOUND DEVICE @ 0x%02X\n", addr);
+        }
+        else {
+            //printk("no device @ 0x%02X\n", addr);
         }
     }
 }
 
 
-static int st25dv_write_bytes(uint16_t mem_addr, uint8_t *data, size_t len)
+int st25dv_write_bytes(uint16_t mem_addr, uint8_t *data, size_t len)
 {
     uint8_t buf[258];
 
@@ -75,7 +79,7 @@ int wallnet_rfid_write_url(const char *url)
     ndef[i++] = url_len + 1; // payload len
 
     ndef[i++] = 0x55; // 'U'
-    ndef[i++] = 0x01; // https:// prefix
+    ndef[i++] = 0x04; // https:// prefix
 
     memcpy(&ndef[i], url, url_len);
     i += url_len;

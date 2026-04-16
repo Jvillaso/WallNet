@@ -1,0 +1,13 @@
+# Target labels
+ rachel_NRF
+# Source files and their labels
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF-complete.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-build.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-configure.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-download.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-install.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-mkdir.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-patch.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-update.rule

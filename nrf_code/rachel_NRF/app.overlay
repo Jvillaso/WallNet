@@ -1,16 +1,20 @@
 / {
     aliases {
-        i2c_rfid = &i2c1;
+        i2crfid = &i2c1;
     };
 };
 
 &i2c1 {
     status = "okay";
-    compatible = "nordic,nrf-twi";
+    compatible = "nordic,nrf-twim";
 
     pinctrl-0 = <&i2c1_default>;
     pinctrl-1 = <&i2c1_sleep>;
     pinctrl-names = "default", "sleep";
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+    
+    zephyr,concat-buf-size = <512>;
+    zephyr,flash-buf-max-size = <512>;
 };
 
 &pinctrl {

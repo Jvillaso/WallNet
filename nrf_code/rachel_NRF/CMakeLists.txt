@@ -6,4 +6,5 @@ project(rfid_test)
 target_sources(app PRIVATE
     src/main.c
     src/wallnet_rfid.c
+    src/wallnet_rfid.h
 )

@@ -1,0 +1,5 @@
+{
+    "nrf-connect.debugging.bindings": {
+        "${workspaceFolder}/build/rachel_NRF": "Launch rachel_NRF/build/rachel_NRF"
+    }
+}

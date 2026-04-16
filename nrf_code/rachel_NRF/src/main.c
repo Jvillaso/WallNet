@@ -18,16 +18,31 @@ int main(void)
 
     printk("RFID init OK\n");
 
-        uint8_t cc[4] = {
-        0xE1,
-        0x40,
-        0x00,
-        0xFF
+    uint8_t cc[4] = {
+    0xE1,
+    0x40,
+    0x0C,
+    0x00
     };
-
     st25dv_write_bytes(0x0000, cc, 4);
 
-    ret = wallnet_rfid_write_url("https://rachelchen22.github.io");
+    ret = wallnet_rfid_write_url("rachelchen22.github.io/#xjXWxqw7+DNXkR2HLfrfjXt+dgIoKGOc5ZitMSNKFbg82qtBi1TscZM/Ys46784s");
+
+    // uint8_t ndef[] = {
+    //     0x03, 
+    //     0x0F,
+
+    //     0xD1,
+    //     0x01,
+    //     0x0B,
+    //     0x55,
+    //     0x00,
+    //     'h', 'e', 'l', 'l', 'o','.', 'c', 'o', 'm',
+
+    //     0xFE
+    // };
+
+    // ret = st25dv_write_bytes(0x0004, ndef, sizeof(ndef));
 
     if (ret == 0) {
         printk("i think we wrote something?\n");

@@ -1,0 +1,22 @@
+cmake:
+  board:
+    name: 'nrf52dk'
+    path:
+     - 'C:/ncs/v3.2.3/zephyr/boards/nordic/nrf52dk'
+    qualifiers: 'nrf52832'
+    revision: ''
+  images:
+   - name: 'rachel_NRF'
+     source-dir: 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF'
+     type: 'MAIN'
+  kconfig:
+    files:
+     - 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/empty.conf'
+     - 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/empty.conf'
+    user-files:
+     - 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/empty.conf'
+version: '0.1.0'
+west:
+  command: 'C:\ncs\toolchains\fd21892d0f\opt\bin\Scripts\west build --build-dir c:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build c:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF --pristine --board nrf52dk/nrf52832 -- -DCONF_FILE=prj.conf -DDTC_OVERLAY_FILE=app.overlay -DDEBUG_THREAD_INFO=On -DCONFIG_DEBUG_THREAD_INFO=y -Drachel_NRF_DEBUG_THREAD_INFO=On'
+  topdir: 'c:\ncs\v3.2.3'
+  version: '1.4.0'
