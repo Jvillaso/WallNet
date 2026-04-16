@@ -76,20 +76,24 @@ static void tap_eval_handler(struct k_work *work) {
             // Pretend the user scanned their finger successfully
             // LOG_WRN("SIMULATED FINGERPRINT SUCCESS.");
             // printk("Starting enrollment process...");
-            sys_current_state = STATE_ENROLLING;
-            update_eink_display();
-            fp_init();
+            
+            //TODO: delete below and uncomment out the rest
+            sys_current_state = STATE_INIT_WAIT_PAIRING;
+            
+            // sys_current_state = STATE_ENROLLING;
+            // update_eink_display();
+            // fp_init();
 
-            // id=1
-            if(start_and_enroll(1, 3, true, true, true, true)) {
-                // LOG_WRN("[E-INK] Enrollment successful.");
-                sys_current_state = STATE_INIT_WAIT_PAIRING;
-                update_eink_display();
-            } else {
-                LOG_ERR("Enrollment failed. Please try again.");
-                sys_current_state = STATE_INIT_WAIT_ENROLL;
-                update_eink_display();
-            }
+            // // id=1
+            // if(start_and_enroll(1, 3, true, true, true, true)) {
+            //     // LOG_WRN("[E-INK] Enrollment successful.");
+            //     sys_current_state = STATE_INIT_WAIT_PAIRING;
+            //     update_eink_display();
+            // } else {
+            //     LOG_ERR("Enrollment failed. Please try again.");
+            //     sys_current_state = STATE_INIT_WAIT_ENROLL;
+            //     update_eink_display();
+            // }
             break;
 
         case STATE_INIT_WAIT_PAIRING:

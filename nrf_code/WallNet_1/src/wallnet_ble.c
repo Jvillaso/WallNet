@@ -12,7 +12,10 @@
 #include <stdbool.h>
 #include <zephyr/sys/util.h> // Required for MIN() macro (parsing encrypted cards)
 
+
 #include "system_state.h"
+
+#include "buzzer.h"
 
 LOG_MODULE_REGISTER(wallnet_ble, LOG_LEVEL_INF);
 
@@ -25,11 +28,14 @@ LOG_MODULE_REGISTER(wallnet_ble, LOG_LEVEL_INF);
     BT_UUID_128_ENCODE(0x12345678, 0x1234, 0x5678, 0x1234, 0x56789abcdef3)
 #define BT_UUID_TEST_CHAR_VAL \
     BT_UUID_128_ENCODE(0x12345678, 0x1234, 0x5678, 0x1234, 0x56789abcdef4)
+#define BT_UUID_TOGGLE_BUZZER \
+    BT_UUID_128_ENCODE(0x12345678, 0x1234, 0x5678, 0x1234, 0x56789abcdef5)
 
 #define BT_UUID_GPS_SERVICE         BT_UUID_DECLARE_128(BT_UUID_GPS_SERVICE_VAL)
 #define BT_UUID_GPS_CHAR            BT_UUID_DECLARE_128(BT_UUID_GPS_CHAR_VAL)
 #define BT_UUID_WALLET_PACKET_CHAR  BT_UUID_DECLARE_128(BT_UUID_WALLET_PACKET_CHAR_VAL)
 #define BT_UUID_TEST_CHAR           BT_UUID_DECLARE_128(BT_UUID_TEST_CHAR_VAL)
+#define BT_UUID_TOGGLE_BUZZER_CHAR  BT_UUID_DECLARE_128(BT_UUID_TOGGLE_BUZZER)
 
 // ble Advertising data - what the phone sees when scanning for WallNet
 static const struct bt_data ad[] = {
@@ -261,6 +267,41 @@ static ssize_t write_test(struct bt_conn *conn,
     return len;
 }
 
+static ssize_t toggle_buzzer(struct bt_conn *conn,
+                                   const struct bt_gatt_attr *attr,
+                                   const void *buf, uint16_t len,
+                                   uint16_t offset, uint8_t flags) 
+{
+    const u_int8_t *char_buf = (const u_int8_t *)buf;
+
+    uint8_t flag = char_buf[0]; // first byte
+    uint8_t length = char_buf[1]; // second byte
+    uint16_t packet_size = 2 + length + 1;  // size of packet
+    
+    const uint8_t *data_ptr = &char_buf[2]; // ptr starts at data begin
+    uint8_t expected_checksum = char_buf[2 + length]; // last byte checksum
+
+    uint8_t calculated_chk = flag ^ length;
+    for (uint8_t d = 0; d < length; d++) {
+        calculated_chk ^= data_ptr[d]; // calculate checksum w/ xor
+    }
+
+    if (calculated_chk != expected_checksum) {
+        LOG_ERR("Checksum failed for flag: 0x%02X", flag);
+    } else {
+        if (flag == 0x0C) { // Toggle Buzzer Command
+            buzzer_toggle();
+
+        } else {
+            LOG_ERR("Unknown flag received for buzzer control: 0x%02X", flag);
+        }
+    }
+
+
+
+    return len;
+}
+
 // fires when phone requests to read GPS data
 static ssize_t read_gps_data(struct bt_conn *conn, const struct bt_gatt_attr *attr,
                              void *buf, uint16_t len, uint16_t offset)
@@ -299,6 +340,12 @@ BT_GATT_SERVICE_DEFINE(wallnet_svc,
                            BT_GATT_CHRC_WRITE,
                            BT_GATT_PERM_WRITE,
                            NULL, write_test, NULL),
+
+    BT_GATT_CHARACTERISTIC(BT_UUID_TOGGLE_BUZZER_CHAR,
+                           BT_GATT_CHRC_WRITE,
+                           BT_GATT_PERM_WRITE,
+                           NULL, toggle_buzzer, NULL),
+                           
 );
 
 static void adv_restart_handler(struct k_work *work) {

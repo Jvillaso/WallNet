@@ -12,4 +12,6 @@ target_sources(app PRIVATE
     src/fp_commands.c
     src/fp_commands.h
     src/wallnet_gps.c
+    src/buzzer.c
+    src/buzzer.h
 )
