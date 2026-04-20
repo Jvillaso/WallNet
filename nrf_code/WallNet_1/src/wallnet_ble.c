@@ -217,6 +217,16 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
     // 2-second timeout to see if we get more chunks (cards)
     k_work_reschedule(&wallet_save_work, K_MSEC(2000));
 
+    for(int i = 0; i < shadow_card_idx + 1; i++) {
+        printk("Name: %s %s Last 4: %s First 12: %d CVV: %d Expiration: %d", shadow_card_slots[i].first_name, 
+            shadow_card_slots[i].last_name,
+            shadow_card_slots[i].enc_pan,
+            shadow_card_slots[i].enc_cvv,
+            shadow_card_slots[i].enc_exp
+        );
+    }
+    
+
     return len;
 }
 
@@ -290,8 +300,14 @@ static ssize_t toggle_buzzer(struct bt_conn *conn,
         LOG_ERR("Checksum failed for flag: 0x%02X", flag);
     } else {
         if (flag == 0x0C) { // Toggle Buzzer Command
+            printk("Received command to toggle buzzer.\n");
             buzzer_toggle();
 
+        } else if (flag == 0x01) { // Set Buzzer State Command
+            
+            printk("Received start of buzzer command.\n");
+        } else if (flag == 0x02) { // Stop Buzzer Command
+            printk("Received stop of buzzer command.\n");
         } else {
             LOG_ERR("Unknown flag received for buzzer control: 0x%02X", flag);
         }

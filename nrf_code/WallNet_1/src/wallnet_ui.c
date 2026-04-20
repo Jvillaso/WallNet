@@ -170,15 +170,15 @@ static void input_cb(struct input_event *evt, void *user_data) {
         return;
     }
 
-    if (evt->value == 1) { 
-        // RISING EDGE (PRESSED)
+    if (evt->value == 0) { 
+        // Falling EDGE (PRESSED)
         press_start_time = k_uptime_get();
         
         // Start the 10s doomsday
         k_work_reschedule(&factory_reset_work, K_SECONDS(10));
         
     } else { 
-        // FALLING EDGE (RELEASED)
+        // Rising EDGE (RELEASED)
         int64_t duration = k_uptime_get() - press_start_time;
         
         // cancel doomsdasy if button released before 10s

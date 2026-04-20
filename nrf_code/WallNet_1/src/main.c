@@ -6,6 +6,8 @@
 
 #include "system_state.h"
 
+#include "buzzer.h"
+
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
 volatile wallnet_state_t sys_current_state = STATE_BOOT_CHECK;
 
@@ -162,6 +164,8 @@ int main(void)
     //Note for Austin: to work without gps, comment out wallnet_gps_init() and wallnet_gps.c : wallnet_gps_start()
     //wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
+
+    buzzer_init();
 
 
     // NVM storage for cards/gps

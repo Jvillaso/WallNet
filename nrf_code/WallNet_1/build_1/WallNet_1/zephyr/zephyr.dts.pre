@@ -1044,7 +1044,7 @@ arduino_spi: &spi2 {
         debounce-interval-ms = <50>;
 
         button0: button_0 {
-            gpios = <&gpio0 13 ((1 << 4) | (1 << 0))>;
+            gpios = <&gpio0 26 ((1 << 4) | (1 << 0))>;
             label = "Push button switch 0";
             zephyr,code = <11>;
         };
