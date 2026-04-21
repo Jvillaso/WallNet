@@ -1056,8 +1056,20 @@ arduino_spi: &spi2 {
 
         buzzer0: buzzer_0 {
             label = "Buzzer";
-            pwms = <&pwm0 0 4 125000 0>;
+            pwms = <&pwm0 0 250000 125000 0>;
         };
+    };
+};
+
+&pwm0_default {
+    group1 {
+        psels = <((((((0) * 32U) + (12)) & 0x1FFU) << 0U) | ((22U & 0xFFU) << 24U))>;
+    };
+};
+
+&pwm0_sleep {
+    group1 {
+        psels = <((((((0) * 32U) + (12)) & 0x1FFU) << 0U) | ((22U & 0xFFU) << 24U))>;
     };
 };
 
@@ -1067,6 +1079,7 @@ arduino_spi: &spi2 {
 
     pinctrl-0 = <&pwm0_default>;
     pinctrl-names = "default", "sleep";
+
 };
 
 
@@ -1103,11 +1116,6 @@ arduino_spi: &spi2 {
             psels = <((((((0) * 32U) + (6)) & 0x1FFU) << 0U) | ((0U & 0xFFU) << 24U))>,
                     <((((((0) * 32U) + (11)) & 0x1FFU) << 0U) | ((1U & 0xFFU) << 24U))>;
             low-power-enable;
-        };
-    };
-    pwm0_default: pwm0_default {
-        group1 {
-            psels = <((((((0) * 32U) + (12)) & 0x1FFU) << 0U) | ((22U & 0xFFU) << 24U))>;
         };
     };
 

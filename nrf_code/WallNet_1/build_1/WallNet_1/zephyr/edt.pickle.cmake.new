@@ -951,7 +951,7 @@ set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_REG|/pin-controller/pw
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_REG|/pin-controller/pwm0_sleep|ADDR" "")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_REG|/pin-controller/pwm0_sleep|SIZE" "")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_NODE|/pin-controller/pwm0_sleep/group1" TRUE)
-set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/pwm0_sleep/group1|psels" "369098769;")
+set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/pwm0_sleep/group1|psels" "369098764;")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/pwm0_sleep/group1|nordic,drive-mode" "0")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/pwm0_sleep/group1|nordic,invert" "False")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/pwm0_sleep/group1|bias-disable" "False")

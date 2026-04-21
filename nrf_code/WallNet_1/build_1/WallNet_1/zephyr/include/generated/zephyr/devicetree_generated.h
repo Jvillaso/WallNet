@@ -4160,9 +4160,9 @@
 #define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_PINCTRL_NUM 0
 
 /* Generic property macros: */
-#define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels {369098769 /* 0x16000011 */}
+#define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels {369098764 /* 0x1600000c */}
 #define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels_IDX_0_EXISTS 1
-#define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels_IDX_0 369098769
+#define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels_IDX_0 369098764
 #define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels_FOREACH_PROP_ELEM(fn) fn(DT_N_S_pin_controller_S_pwm0_sleep_S_group1, psels, 0)
 #define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_pin_controller_S_pwm0_sleep_S_group1, psels, 0)
 #define DT_N_S_pin_controller_S_pwm0_sleep_S_group1_P_psels_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_pin_controller_S_pwm0_sleep_S_group1, psels, 0, __VA_ARGS__)
@@ -5978,7 +5978,7 @@
 #define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_PH DT_N_S_soc_S_pwm_4001c000
 #define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_VAL_channel 0
 #define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_VAL_channel_EXISTS 1
-#define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_VAL_period 4
+#define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_VAL_period 250000
 #define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_VAL_period_EXISTS 1
 #define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_VAL_flags 125000
 #define DT_N_S_pwm_buzzer_S_buzzer_0_P_pwms_IDX_0_VAL_flags_EXISTS 1
