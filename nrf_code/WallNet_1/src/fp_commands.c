@@ -16,7 +16,6 @@ static char read_buf[BYTE_MAX_LEN];
 static uint16_t bytes_read = 0;
 static uint16_t bytes_to_read = 9;
 static bool response_flag = false; //Flag to indicate when a response packet is received 
-static bool fp_match_latched = false; //True after a match/enroll until we observe a non-match cycle
 
 
 //Transmission variables
@@ -401,7 +400,7 @@ bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool over
     printk("Last packet received: ");
     print_packet(resp.last_payload, resp.last_payload_len);
 
-    // ident turns to sys_next_fp_id wheen called from main
+    // ident is chosen by the caller based on how many fingerprints we have saved
     resp = enroll(ident, numEntries, status, overwrite, repeat, remove); //Enroll a fingerprint with ID 1, 1 entry, no return status packets, allow overwriting, allow repeated registration, request to remove finger between collections
     printk("Number of packets received: %d\n", resp.num_pckts);
     printk("Last packet received: ");
@@ -409,7 +408,6 @@ bool start_and_enroll(uint16_t ident, uint8_t numEntries, bool status, bool over
 
     if (resp.last_payload[resp.last_payload_len - 2] == 0x06 && resp.last_payload[resp.last_payload_len - 1] == 0xf2) {
         printk("Enrollment successful!\n");
-        fp_match_latched = true;
         return true;
     }
 
@@ -436,10 +434,8 @@ bool start_and_identify() {
     // print_packet(resp.last_payload, resp.last_payload_len);
 
     
-    bool found_match = false;
-
     // check for a match on all saved fingerprints
-    for (int i = 1 ; i < sys_next_fp_id; i++) {
+    for (uint16_t i = 1; i <= sys_num_fingers; i++) {
         resp = identify(1, i, false); //Identify a fingerprint with security level 1, ID i, no return status packets
         // printk("Number of packets received: %d\n", resp.num_pckts);
         // printk("Last packet received: ");
@@ -452,21 +448,10 @@ bool start_and_identify() {
         int score = (resp.last_payload[resp.last_payload_len - 2] & 0xFF) << 8 | (resp.last_payload[resp.last_payload_len - 1] & 0xFF); //Combine 2 bytes of payload to get the score of the identification
         printk("Identification score for ID %d: %d\n", i, score);
         if(score >= 80) {
-            found_match = true;
-            break;
-        }
-    }
-
-    if (found_match) {
-        if (!fp_match_latched) {
-            fp_match_latched = true;
-            printk("Identification successful!\n");
+            printk("Identification successful for ID %d!\n", i);
             return true;
         }
-        return false;
     }
-
-    fp_match_latched = false;
     // resp = identify(1, 1, false); //Identify a fingerprint with security level 1, ID 1, no return status packets
     // printk("Number of packets received: %d\n", resp.num_pckts);
     // printk("Last packet received: ");

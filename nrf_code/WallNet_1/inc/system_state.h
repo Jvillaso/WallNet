@@ -82,9 +82,9 @@ void wallnet_gps_stop(void);
 
 void wallnet_auth_trigger(void);
 int wallnet_save_cards_to_nvm(void);
+int wallnet_save_fingerprint_count_to_nvm(void);
 
-//track fps index so we know how many we have - will save to nvm eventually
-extern uint16_t sys_next_fp_id;
+extern uint16_t sys_num_fingers;
 void wallnet_enroll_trigger(void);
 
 void wallnet_ble_notify_gps(void);

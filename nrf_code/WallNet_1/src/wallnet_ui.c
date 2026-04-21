@@ -83,6 +83,10 @@ static void tap_eval_handler(struct k_work *work) {
 
             // id=1
             if(start_and_enroll(1, 3, true, true, true, true)) {
+                sys_num_fingers = 1;
+                if (wallnet_save_fingerprint_count_to_nvm()) {
+                    LOG_ERR("Initial fingerprint enrolled, but finger count save failed.");
+                }
                 // LOG_WRN("[E-INK] Enrollment successful.");
                 sys_current_state = STATE_INIT_WAIT_PAIRING;
                 update_eink_display();
@@ -140,9 +144,11 @@ static void factory_reset_handler(struct k_work *work) {
     sys_num_cards = 0;
     sys_active_card_idx = 0;
     sys_is_bonded = false;
+    sys_num_fingers = 0;
 
     // Wipe WallNet NVM
     settings_delete("wallet/cards");
+    settings_delete("wallet/finger_count");
     settings_delete("gps/last_fix");
     
     // Wipe Zephyr security keys (bonds from ble)

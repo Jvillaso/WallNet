@@ -29,7 +29,7 @@ struct k_work_delayable auth_check_work;
 struct k_work_delayable rfid_timeout_work;
 // enrollment worker
 static struct k_work_delayable fp_enroll_work;
-uint16_t sys_next_fp_id = 2; 
+uint16_t sys_num_fingers = 0;
 
 // NVM Boot loader
 // Called automatically by settings_load()
@@ -39,13 +39,15 @@ static int wallet_settings_set(const char *name, size_t len, settings_read_cb re
     int rc;
 
     if (settings_name_steq(name, "cards", &next) && !next) {
-        if (len != sizeof(sys_card_slots)) {
-            LOG_ERR("Settings length mismatch for cards! Expected %zu, got %zu", sizeof(sys_card_slots), len);
+        if ((len > sizeof(sys_card_slots)) || ((len % sizeof(card_record_t)) != 0U)) {
+            LOG_ERR("Settings length mismatch for cards! Max %zu, got %zu", sizeof(sys_card_slots), len);
             return -EINVAL;
         }
 
+        memset(sys_card_slots, 0, sizeof(sys_card_slots));
+
         // Pull data from Flash into our global RAM array
-        rc = read_cb(cb_arg, sys_card_slots, sizeof(sys_card_slots));
+        rc = read_cb(cb_arg, sys_card_slots, len);
         if (rc >= 0) {
             // Boot-up math: Count how many valid cards were just loaded
             sys_num_cards = 0;
@@ -61,6 +63,25 @@ static int wallet_settings_set(const char *name, size_t len, settings_read_cb re
         }
         return rc;
     }
+
+    if (settings_name_steq(name, "finger_count", &next) && !next) {
+        uint16_t loaded_finger_count = 0;
+
+        if (len != sizeof(loaded_finger_count)) {
+            LOG_ERR("Settings length mismatch for finger_count! Expected %zu, got %zu",
+                    sizeof(loaded_finger_count), len);
+            return -EINVAL;
+        }
+
+        rc = read_cb(cb_arg, &loaded_finger_count, sizeof(loaded_finger_count));
+        if (rc >= 0) {
+            sys_num_fingers = loaded_finger_count;
+            LOG_WRN("Restored %u fingerprints from storage.", sys_num_fingers);
+            return 0;
+        }
+        return rc;
+    }
+
     return -ENOENT;
 }
 
@@ -113,11 +134,19 @@ static void auth_check_worker(struct k_work *work) {
 
 // Additional Enrollment Worker
 static void fp_enroll_worker(struct k_work *work) {
-    LOG_WRN("Starting Add Fingerprint routine for ID: %d", sys_next_fp_id);
+    uint16_t next_fp_id = sys_num_fingers + 1;
+
+    LOG_WRN("Starting Add Fingerprint routine for ID: %d", next_fp_id);
         
-    if (start_and_enroll(sys_next_fp_id, 3, true, true, true, true)) {
+    if (start_and_enroll(next_fp_id, 3, true, true, true, true)) {
+        int err;
+
         LOG_WRN("New fingerprint successfully added!");
-        sys_next_fp_id++; // Increment so the next finger gets a new ID
+        sys_num_fingers++;
+        err = wallnet_save_fingerprint_count_to_nvm();
+        if (err) {
+            LOG_ERR("Fingerprint enrolled, but finger count save failed.");
+        }
     } else {
         LOG_ERR("Failed to add fingerprint.");
     }
@@ -157,13 +186,36 @@ int wallnet_save_cards_to_nvm(void) {
         return -ENOTSUP;
     }
 
-    err = settings_save_one("wallet/cards", sys_card_slots, sizeof(sys_card_slots));
+    if (sys_num_cards == 0) {
+        err = settings_delete("wallet/cards"); // if sending 0 cards, delete wallet? like a user wants to overwrite all cards
+    } else {
+        err = settings_save_one("wallet/cards", sys_card_slots, sys_num_cards * sizeof(card_record_t));
+    }
+
     if (err) {
         LOG_ERR("Failed to save wallet cards to NVM (%d)", err);
         return err;
     }
 
     LOG_WRN("Wallet cards saved to NVM.");
+    return 0;
+}
+
+int wallnet_save_fingerprint_count_to_nvm(void) {
+    int err;
+
+    if (!IS_ENABLED(CONFIG_SETTINGS)) {
+        LOG_ERR("Cannot save fingerprint count: settings subsystem is disabled.");
+        return -ENOTSUP;
+    }
+
+    err = settings_save_one("wallet/finger_count", &sys_num_fingers, sizeof(sys_num_fingers));
+    if (err) {
+        LOG_ERR("Failed to save finger_count to NVM (%d)", err);
+        return err;
+    }
+
+    LOG_WRN("Fingerprint count saved to NVM: %u", sys_num_fingers);
     return 0;
 }
 

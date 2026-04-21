@@ -181,8 +181,10 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
     if (sys_current_state != STATE_BLE_SYNCING) {
         LOG_WRN("New Wallet Packet. Entering BLE Sync State...");
         sys_current_state = STATE_BLE_SYNCING; 
-        rx_idx = 0; 
+        rx_idx = 0;
+        memset(rx_buffer, 0, sizeof(rx_buffer));
         shadow_card_idx = 0;
+        memset(shadow_card_slots, 0, sizeof(shadow_card_slots));
         update_eink_display();
     }
 
@@ -246,6 +248,7 @@ static void wallet_save_timeout_handler(struct k_work *work) {
         int err;
 
         LOG_WRN("Validation passed. Promoting shadow cards to NVM.");
+        memset(sys_card_slots, 0, sizeof(sys_card_slots));
         memcpy(sys_card_slots, shadow_card_slots, sizeof(sys_card_slots));
         sys_num_cards = valid_count;
         sys_active_card_idx = 0; 
