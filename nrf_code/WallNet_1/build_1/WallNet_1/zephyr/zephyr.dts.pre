@@ -1044,20 +1044,31 @@ arduino_spi: &spi2 {
         debounce-interval-ms = <50>;
 
         button0: button_0 {
-            gpios = <&gpio0 26 ((1 << 4) | (1 << 0))>;
+            gpios = <&gpio0 13 ((1 << 4) | (1 << 0))>;
             label = "Push button switch 0";
             zephyr,code = <11>;
         };
     };
 
-    buzzer {
-        compatible = "gpio-leds";
+
+    buzzer_pwm: pwm-buzzer {
+        compatible = "pwm-leds";
+
         buzzer0: buzzer_0 {
-            gpios = <&gpio0 14 (0 << 0)>;
             label = "Buzzer";
+            pwms = <&pwm0 0 4 125000 0>;
         };
     };
 };
+
+&pwm0 {
+    status = "okay";
+
+
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-names = "default", "sleep";
+};
+
 
 &pinctrl {
     i2c0_default: i2c0_default {
@@ -1094,6 +1105,12 @@ arduino_spi: &spi2 {
             low-power-enable;
         };
     };
+    pwm0_default: pwm0_default {
+        group1 {
+            psels = <((((((0) * 32U) + (12)) & 0x1FFU) << 0U) | ((22U & 0xFFU) << 24U))>;
+        };
+    };
+
 };
 
 

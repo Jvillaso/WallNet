@@ -114,7 +114,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_1/build_1/WallNet_1/zephyr/drivers/led/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_1/build_1/WallNet_1/zephyr/drivers/pinctrl/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_1/build_1/WallNet_1/zephyr/drivers/pwm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

@@ -10,20 +10,31 @@
         debounce-interval-ms = <50>;
         
         button0: button_0 {
-            gpios = <&gpio0 26 (GPIO_ACTIVE_LOW)>;
+            gpios = <&gpio0 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
             label = "Push button switch 0";
             zephyr,code = <INPUT_KEY_0>;
         };
     };
 
-    buzzer {
-        compatible = "gpio-leds";
+    /* PWM-controlled buzzer */
+    buzzer_pwm: pwm-buzzer {
+        compatible = "pwm-leds";
+
         buzzer0: buzzer_0 {
-            gpios = <&gpio0 14 GPIO_ACTIVE_HIGH>;
             label = "Buzzer";
+            pwms = <&pwm0 0 250000 125000 0>; /* PWM on pwm0, channel 0, 250000ns period, 50% duty cycle, active high */
         };
     };
 };
+
+&pwm0 {
+    status = "okay";
+
+    /* THIS is what selects the GPIO pin */
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-names = "default", "sleep";
+};
+
 
 &pinctrl {
     i2c0_default: i2c0_default {
@@ -60,6 +71,12 @@
             low-power-enable;
         };
     };
+    pwm0_default: pwm0_default {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 0, 12)>;  /* <-- CHANGE PIN HERE */
+        };
+    };
+
 };
 
 /* UART0 peripheral configuration - used for FP data at 115200 baud */

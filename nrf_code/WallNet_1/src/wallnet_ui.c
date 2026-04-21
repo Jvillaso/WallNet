@@ -170,7 +170,8 @@ static void input_cb(struct input_event *evt, void *user_data) {
         return;
     }
 
-    if (evt->value == 0) { 
+    //TODO: change below to 0 for active low button, this is just for the dev board
+    if (evt->value == 1) { 
         // Falling EDGE (PRESSED)
         press_start_time = k_uptime_get();
         

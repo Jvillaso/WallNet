@@ -300,15 +300,9 @@ static ssize_t toggle_buzzer(struct bt_conn *conn,
         LOG_ERR("Checksum failed for flag: 0x%02X", flag);
     } else {
         if (flag == 0x0C) { // Toggle Buzzer Command
-            printk("Received command to toggle buzzer.\n");
             buzzer_toggle();
 
-        } else if (flag == 0x01) { // Set Buzzer State Command
-            
-            printk("Received start of buzzer command.\n");
-        } else if (flag == 0x02) { // Stop Buzzer Command
-            printk("Received stop of buzzer command.\n");
-        } else {
+        } else if (flag != 0x01 && flag != 0x02) { 
             LOG_ERR("Unknown flag received for buzzer control: 0x%02X", flag);
         }
     }
