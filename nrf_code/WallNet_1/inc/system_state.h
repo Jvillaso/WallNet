@@ -21,7 +21,7 @@ typedef enum {
 } wallnet_state_t;
 
 #define MAX_NAME_LEN 20
-#define MAX_LAST_FOUR_LEN 6 // 4 digits + null terminator
+#define MAX_LAST_FOUR_LEN 5 // 4 digits + null terminator
 #define MAX_ENC_PAN_LEN 44 // update this and 2 below once length is finalized (i can't test encryption rn)
 #define MAX_ENC_CVV_LEN 24  
 #define MAX_ENC_EXP_LEN 24  
@@ -81,6 +81,7 @@ void wallnet_gps_start(void);
 void wallnet_gps_stop(void);
 
 void wallnet_auth_trigger(void);
+int wallnet_save_cards_to_nvm(void);
 
 //track fps index so we know how many we have - will save to nvm eventually
 extern uint16_t sys_next_fp_id;

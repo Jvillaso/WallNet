@@ -149,6 +149,24 @@ static struct settings_handler wallet_conf = {
     .h_set = wallet_settings_set
 };
 
+int wallnet_save_cards_to_nvm(void) {
+    int err;
+
+    if (!IS_ENABLED(CONFIG_SETTINGS)) {
+        LOG_ERR("Cannot save cards: settings subsystem is disabled.");
+        return -ENOTSUP;
+    }
+
+    err = settings_save_one("wallet/cards", sys_card_slots, sizeof(sys_card_slots));
+    if (err) {
+        LOG_ERR("Failed to save wallet cards to NVM (%d)", err);
+        return err;
+    }
+
+    LOG_WRN("Wallet cards saved to NVM.");
+    return 0;
+}
+
 // trigger to start fp auth
 void wallnet_auth_trigger(void) {
     k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_NO_WAIT);
@@ -162,7 +180,7 @@ int main(void)
 
     wallnet_ble_init();
     //Note for Austin: to work without gps, comment out wallnet_gps_init() and wallnet_gps.c : wallnet_gps_start()
-    //wallnet_gps_init(); // takes care of gps_conf before settings_load()
+    wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
 
     buzzer_init();

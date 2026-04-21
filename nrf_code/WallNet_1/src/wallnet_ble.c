@@ -155,9 +155,10 @@ static void parse_card(uint8_t *buffer, uint16_t len) {
 
                 case 0x02: // Stop Byte
                     current_card->valid = true;
-                    LOG_WRN("Parsed Card %d: %s %s (...%s)", shadow_card_idx + 1, 
-                            current_card->first_name, current_card->last_name, current_card->last_four);
-                    
+                    LOG_WRN("Parsed Card %d: %s %s (...%s)\n Encrypted PAN: %u CVV: %u Expiration: %u", shadow_card_idx + 1, 
+                            current_card->first_name, current_card->last_name, current_card->last_four,
+                            current_card->enc_pan, current_card->enc_cvv, current_card->enc_exp);
+
                     // Setup for the next card to arrive
                     shadow_card_idx++;
                     break;
@@ -190,6 +191,7 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
         if (rx_idx < sizeof(rx_buffer)) rx_buffer[rx_idx++] = byte_buf[k];
     }
 
+    // returns card len if has complete [start...stop] chunk, otherwise 0 (wait for full card)
     uint16_t card_len = get_card_chunk_length(rx_buffer, rx_idx);
     
     while (card_len > 0) {
@@ -217,14 +219,15 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
     // 2-second timeout to see if we get more chunks (cards)
     k_work_reschedule(&wallet_save_work, K_MSEC(2000));
 
-    for(int i = 0; i < shadow_card_idx + 1; i++) {
-        printk("Name: %s %s Last 4: %s First 12: %d CVV: %d Expiration: %d", shadow_card_slots[i].first_name, 
-            shadow_card_slots[i].last_name,
-            shadow_card_slots[i].enc_pan,
-            shadow_card_slots[i].enc_cvv,
-            shadow_card_slots[i].enc_exp
-        );
-    }
+    // for(int i = 0; i < shadow_card_idx + 1; i++) {
+    //     printk("Name: %s %s Last 4: %s First 12: %s CVV: %s Expiration: %s", shadow_card_slots[i].first_name, 
+    //         shadow_card_slots[i].last_name,
+    //         shadow_card_slots[i].last_four,
+    //         shadow_card_slots[i].enc_pan,
+    //         shadow_card_slots[i].enc_cvv,
+    //         shadow_card_slots[i].enc_exp
+    //     );
+    // }
     
 
     return len;
@@ -240,13 +243,19 @@ static void wallet_save_timeout_handler(struct k_work *work) {
     }
 
     if (valid_count > 0) {
+        int err;
+
         LOG_WRN("Validation passed. Promoting shadow cards to NVM.");
         memcpy(sys_card_slots, shadow_card_slots, sizeof(sys_card_slots));
         sys_num_cards = valid_count;
         sys_active_card_idx = 0; 
-        
-        LOG_WRN("NVM Save Success: System holds %d cards.", valid_count);
-        // NVM Save function call goes here...
+
+        err = wallnet_save_cards_to_nvm();
+        if (err) {
+            LOG_ERR("Wallet sync completed, but NVM save failed.");
+        } else {
+            LOG_WRN("NVM Save Success: System holds %d cards.", valid_count);
+        }
     } else {
         LOG_ERR("BLE Sync Timeout: No valid cards received.");
     }
@@ -383,7 +392,6 @@ static void connected(struct bt_conn *conn, uint8_t err) {
 
             update_eink_display(); 
         }
-
         
         wallnet_gps_start();
     }
@@ -396,8 +404,8 @@ static void disconnected(struct bt_conn *conn, uint8_t reason) {
     // if have valid gps and we disconnect, save the last known to nrf NVM
     if (sys_have_valid_gps) {
         int err = settings_save_one("gps/last_fix", &sys_current_gps_payload, sizeof(sys_current_gps_payload));
-        if (err) LOG_ERR("Failed to anchor GPS to NVM (%d)", err);
-        else LOG_INF("Anchored Last Known GPS to NVM.");
+        if (err) LOG_ERR("Failed to save GPS to NVM (%d)", err);
+        else LOG_INF("Saved Last Known GPS to NVM.");
     }
 
     wallnet_gps_stop();
