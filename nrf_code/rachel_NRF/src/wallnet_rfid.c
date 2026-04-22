@@ -61,31 +61,49 @@ int st25dv_write_bytes(uint16_t mem_addr, uint8_t *data, size_t len)
 
 int wallnet_rfid_write_url(const char *url)
 {
-    uint8_t ndef[256];
-    size_t url_len = strlen(url);
+    static uint8_t ndef[300];  // give yourself headroom
 
-    // check valid
-    if (url_len > 200) return -EINVAL;
+    size_t url_len = strlen(url);
+    if (url_len > 220) return -EINVAL;
 
     int i = 0;
 
-    // tlv but i kinda dont know what this means
+    // --- reserve TLV ---
     ndef[i++] = 0x03;
-    ndef[i++] = url_len + 5; // len of NDEF record
+    int len_index = i++;  // placeholder
 
-    // NDEF record
-    ndef[i++] = 0xD1; // header
-    ndef[i++] = 0x01; // type len
-    ndef[i++] = url_len + 1; // payload len
+    // --- NDEF RECORD ---
+    ndef[i++] = 0xC1; // long record
+    ndef[i++] = 0x01;
 
-    ndef[i++] = 0x55; // 'U'
-    ndef[i++] = 0x04; // https:// prefix
+    uint32_t payload_len = url_len + 1;
+
+    ndef[i++] = (payload_len >> 24) & 0xFF;
+    ndef[i++] = (payload_len >> 16) & 0xFF;
+    ndef[i++] = (payload_len >> 8) & 0xFF;
+    ndef[i++] = payload_len & 0xFF;
+
+    ndef[i++] = 0x55;
+    ndef[i++] = 0x04;  // URL prefix: https://
 
     memcpy(&ndef[i], url, url_len);
     i += url_len;
 
-    ndef[i++] = 0xFE; // terminator
+    int ndef_len = i - 2;
 
-    // IM NOT SURE IF ITS 0004 OR SOMETHING ELSE
+    // --- FIX TLV LENGTH ---
+    if (ndef_len < 0xFF) {
+        ndef[len_index] = ndef_len;
+    } else {
+        // shift data forward for extended TLV
+        memmove(&ndef[len_index + 2], &ndef[len_index + 1], ndef_len);
+        ndef[len_index] = 0xFF;
+        ndef[len_index + 1] = (ndef_len >> 8) & 0xFF;
+        ndef[len_index + 2] = ndef_len & 0xFF;
+        i += 2;
+    }
+
+    ndef[i++] = 0xFE;
+
     return st25dv_write_bytes(0x0004, ndef, i);
 }

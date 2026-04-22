@@ -21,12 +21,13 @@ int main(void)
     uint8_t cc[4] = {
     0xE1,
     0x40,
-    0x0C,
+    0x20,
     0x00
     };
     st25dv_write_bytes(0x0000, cc, 4);
 
-    ret = wallnet_rfid_write_url("rachelchen22.github.io/#xjXWxqw7+DNXkR2HLfrfjXt+dgIoKGOc5ZitMSNKFbg82qtBi1TscZM/Ys46784s");
+    ret = wallnet_rfid_write_url("rachelchen22.github.io/#6767|austin|lugo|2BK4yU65jNOnVTSD5FtWvQ==|C5a3QknZ39EdiI7DUj4Wwg==|jzwhGTW98zi8PZlWyxHH5w==");
+    printk("length: %d\n", strlen("rachelchen22.github.io/#6767|austin|lugo|2BK4yU65jNOnVTSD5FtWvQ==|C5a3QknZ39EdiI7DUj4Wwg==|jzwhGTW98zi8PZlWyxHH5w=="));
 
     // uint8_t ndef[] = {
     //     0x03, 

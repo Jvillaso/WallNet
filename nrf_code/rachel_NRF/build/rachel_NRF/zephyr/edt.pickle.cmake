@@ -242,7 +242,7 @@ set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|easydma-maxcnt-bits" "8")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|sq-size" "4")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|cq-size" "4")
-set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|status" "disabled")
+set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|status" "okay")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|compatible" "nordic,nrf-twi;")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|zephyr,deferred-init" "False")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/soc/i2c@40003000|wakeup-source" "False")

@@ -1038,10 +1038,6 @@ arduino_spi: &spi2 {
     };
 };
 
-&i2c0 {
-    status = "disabled";
-};
-
 &i2c1 {
     status = "okay";
     compatible = "nordic,nrf-twim";
