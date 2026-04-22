@@ -1,8 +1,12 @@
-#include "wallnet_rfid.h"
 #include <zephyr/device.h>
 #include <zephyr/drivers/i2c.h>
-#include <zephyr/kernel.h>
 #include <string.h>
+#include <zephyr/logging/log.h>
+
+#include "wallnet_rfid.h"
+
+LOG_MODULE_REGISTER(wallnet_rfid, LOG_LEVEL_INF);
+
 
 #define ST25DV_ADDR 0x53
 
@@ -11,21 +15,17 @@
 
 static const struct device *i2c_dev;
 
-int wallnet_rfid_init(void)
+void wallnet_rfid_init(void)
 {
     i2c_dev = DEVICE_DT_GET(I2C_NODE);
 
     if (!device_is_ready(i2c_dev)) {
-        return -ENODEV;
+        LOG_ERR("RFID INIT FAILED: i2c DEVICE NOT READY\n");
+        return;
     }
 
-    printk("RFID: checking I2C device...\n");
-    if (!device_is_ready(i2c_dev)) {
-        printk("I2C NOT READY\n");
-        return -ENODEV;
-    }
+    LOG_WRN("RFID INITIALIZED.");
 
-    return 0;
 }
 
 

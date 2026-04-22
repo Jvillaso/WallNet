@@ -65,6 +65,8 @@ static void append_to_field(uint8_t *dest_array, uint8_t *current_len,
     if (to_copy > 0) {
         // copy data starting at the end of what we already have
         memcpy(&dest_array[*current_len], new_data, to_copy);
+        printk("Appended %d bytes to field\n", to_copy);
+        printk("Current field value: %.*s\n", *current_len + to_copy, dest_array);
         
         // update the length tracker 
         *current_len += to_copy;
@@ -120,6 +122,7 @@ static void parse_card(uint8_t *buffer, uint16_t len) {
         } else {
             switch (flag) {
                 case 0x01: // Start Byte
+                    printk("Found start byte");
                     memset(current_card, 0, sizeof(card_record_t));
                     break;
                     
@@ -155,9 +158,11 @@ static void parse_card(uint8_t *buffer, uint16_t len) {
 
                 case 0x02: // Stop Byte
                     current_card->valid = true;
-                    LOG_WRN("Parsed Card %d: %s %s (...%s)\n Encrypted PAN: %u CVV: %u Expiration: %u", shadow_card_idx + 1, 
-                            current_card->first_name, current_card->last_name, current_card->last_four,
-                            current_card->enc_pan, current_card->enc_cvv, current_card->enc_exp);
+                    LOG_WRN("Parsed Card %d: %s %s (...%s)",
+                            shadow_card_idx + 1,
+                            current_card->first_name,
+                            current_card->last_name,
+                            current_card->last_four);
 
                     // Setup for the next card to arrive
                     shadow_card_idx++;
@@ -190,7 +195,10 @@ static ssize_t write_wallet_packet(struct bt_conn *conn,
 
     // incoming bytes
     for (uint16_t k = 0; k < len; k++) {
-        if (rx_idx < sizeof(rx_buffer)) rx_buffer[rx_idx++] = byte_buf[k];
+        // printk("Received byte: 0x%02X ('%c')\n", byte_buf[k], (byte_buf[k] >= 32 && byte_buf[k] <= 126) ? byte_buf[k] : '?');
+        if (rx_idx < sizeof(rx_buffer)){
+            rx_buffer[rx_idx++] = byte_buf[k];
+        }
     }
 
     // returns card len if has complete [start...stop] chunk, otherwise 0 (wait for full card)

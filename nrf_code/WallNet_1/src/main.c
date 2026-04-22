@@ -7,9 +7,13 @@
 #include "system_state.h"
 
 #include "buzzer.h"
+#include "wallnet_rfid.h"
 
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
 volatile wallnet_state_t sys_current_state = STATE_BOOT_CHECK;
+
+#define RFID_PACKET_MAX_LEN (MAX_LAST_FOUR_LEN + MAX_NAME_LEN + MAX_NAME_LEN + \
+                             MAX_ENC_PAN_LEN + MAX_ENC_CVV_LEN + MAX_ENC_EXP_LEN + 6)
 
 volatile bool sys_is_connected = false;
 volatile bool sys_is_bonded = false;
@@ -30,6 +34,29 @@ struct k_work_delayable rfid_timeout_work;
 // enrollment worker
 static struct k_work_delayable fp_enroll_work;
 uint16_t sys_num_fingers = 0;
+
+static int build_rfid_packet(const card_record_t *card, char *packet_buf, size_t packet_buf_size)
+{
+    size_t first_name_len = strnlen(card->first_name, sizeof(card->first_name));
+    size_t last_name_len = strnlen(card->last_name, sizeof(card->last_name));
+    size_t last_four_len = strnlen(card->last_four, sizeof(card->last_four));
+
+    int written = snprintk(packet_buf, packet_buf_size,
+                           "%.*s|%.*s|%.*s|%.*s|%.*s|%.*s",
+                           (int)last_four_len, card->last_four,
+                           (int)first_name_len, card->first_name,
+                           (int)last_name_len, card->last_name,
+                           (int)card->enc_pan_len, card->enc_pan,
+                           (int)card->enc_cvv_len, card->enc_cvv,
+                           (int)card->enc_exp_len, card->enc_exp);
+
+    if ((written < 0) || ((size_t)written >= packet_buf_size)) {
+        LOG_ERR("RFID packet build failed: buffer too small.");
+        return -ENOMEM;
+    }
+
+    return written;
+}
 
 // NVM Boot loader
 // Called automatically by settings_load()
@@ -101,6 +128,7 @@ static void rfid_timeout_handler(struct k_work *work) {
 
 
 static void auth_check_worker(struct k_work *work) {
+    char rfid_packet[RFID_PACKET_MAX_LEN];
 
     // only check auth in locked state, check back in 500ms
     if (sys_current_state != STATE_LOCKED) {
@@ -121,6 +149,19 @@ static void auth_check_worker(struct k_work *work) {
         // stop fp while RFID is active
         k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_SECONDS(11));
         wallnet_gps_stop();// gps off during rfid for i2c
+
+        if ((sys_num_cards == 0) || (sys_active_card_idx >= sys_num_cards)) {
+            LOG_ERR("RFID transmit aborted: active card index is invalid.");
+        } else {
+            int packet_len = build_rfid_packet(&sys_card_slots[sys_active_card_idx],
+                                               rfid_packet, sizeof(rfid_packet));
+            if (packet_len > 0) {
+                LOG_WRN("RFID packet ready (%d bytes): %s", packet_len, rfid_packet);
+            }
+
+
+
+        }
 
         // rfid write link here
 
@@ -236,6 +277,8 @@ int main(void)
     wallnet_ui_init();
 
     buzzer_init();
+
+    wallnet_rfid_init();
 
 
     // NVM storage for cards/gps

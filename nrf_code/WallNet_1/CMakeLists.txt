@@ -14,4 +14,7 @@ target_sources(app PRIVATE
     src/wallnet_gps.c
     src/buzzer.c
     src/buzzer.h
+    src/wallnet_rfid.c
+    src/wallnet_rfid.h
+
 )
