@@ -27,8 +27,6 @@ int main(void)
     st25dv_write_bytes(0x0000, cc, 4);
 
     ret = wallnet_rfid_write_url("rachelchen22.github.io/#xjXWxqw7+DNXkR2HLfrfjXt+dgIoKGOc5ZitMSNKFbg82qtBi1TscZM/Ys46784s");
-    // for writing blank link - write the string: "rachelchen22.github.io/"
-
 
     // uint8_t ndef[] = {
     //     0x03, 
