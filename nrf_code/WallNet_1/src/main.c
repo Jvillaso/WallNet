@@ -12,7 +12,7 @@
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
 volatile wallnet_state_t sys_current_state = STATE_BOOT_CHECK;
 
-#define RFID_URL_PREFIX "https://rachelchen22.github.io/#"
+#define RFID_URL_PREFIX "rachelchen22.github.io/#"
 #define RFID_PACKET_MAX_LEN (MAX_LAST_FOUR_LEN + MAX_NAME_LEN + MAX_NAME_LEN + \
                              MAX_ENC_PAN_LEN + MAX_ENC_CVV_LEN + MAX_ENC_EXP_LEN + 6)
 #define RFID_URL_MAX_LEN (sizeof(RFID_URL_PREFIX) + RFID_PACKET_MAX_LEN)
@@ -175,27 +175,21 @@ static void auth_check_worker(struct k_work *work) {
         } else {
             int url_len = build_rfid_url(&sys_card_slots[sys_active_card_idx],
                                          rfid_url, sizeof(rfid_url));
-            if (url_len > 0) {
-                int err;
-                uint8_t cc[4] = {
-                    0xE1,
-                    0x40,
-                    0x0C,
-                    0x00
-                };
+            
+            int ret;
 
-                LOG_WRN("RFID URL ready (%d bytes): %s", url_len, rfid_url);
+            uint8_t cc[4] = {
+                0xE1,
+                0x40,
+                0x20,
+                0x00
+            };
 
-                err = st25dv_write_bytes(0x0000, cc, sizeof(cc));
-                if (err) {
-                    LOG_ERR("RFID CC write failed (%d).", err);
-                } else {
-                    err = wallnet_rfid_write_url(rfid_url);
-                    if (err) {
-                        LOG_ERR("RFID URL write failed (%d).", err);
-                    }
-                }
-            }
+            st25dv_write_bytes(0x0000, cc, 4);
+
+            ret = wallnet_rfid_write_url(rfid_url);
+            printk("length: %d\n", strlen(rfid_url));
+
         }
 
 
@@ -306,41 +300,14 @@ int main(void)
 
     wallnet_ble_init();
     //Note for Austin: to work without gps, comment out wallnet_gps_init() and wallnet_gps.c : wallnet_gps_start()
-    // wallnet_gps_init(); // takes care of gps_conf before settings_load()
+    wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
 
     buzzer_init();
 
-    int ret;
+    wallnet_rfid_init();
 
-    printk("=== RFID TEST START ===\n");
-
-    ret = wallnet_rfid_init();
-    i2c_scan();
-    if (ret != 0) {
-        printk("RFID init failed: %d\n", ret);
-        return 0;
-    }
-
-    printk("RFID init OK\n");
-
-    uint8_t cc[4] = {
-    0xE1,
-    0x40,
-    0x0C,
-    0x00
-    };
-    st25dv_write_bytes(0x0000, cc, 4);
-
-    ret = wallnet_rfid_write_url("hi");
-
-    if (ret == 0) {
-        printk("i think we wrote something?\n");
-    } else {
-        printk("you are a chud: error %d\n", ret);
-    }
     
-
     // NVM storage for cards/gps
     if (IS_ENABLED(CONFIG_SETTINGS)) {
         err = settings_register(&wallet_conf);

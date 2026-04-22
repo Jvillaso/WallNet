@@ -21,6 +21,7 @@ static char line_buf[GPS_LINE_BUF_SIZE];
 static int line_idx = 0;
 
 static const struct device *i2c_dev;
+static bool gps_initialized;
 
 // both delayable now
 static struct k_work_delayable gps_i2c_read_work;
@@ -184,6 +185,11 @@ static struct settings_handler gps_conf = {
 
 
 void wallnet_gps_start(void) {
+    if (!gps_initialized) {
+        LOG_WRN("GPS start requested before init; ignoring.");
+        return;
+    }
+
     LOG_INF("Starting GPS Tracking.");
     // Instantly wake up the I2C read thread
     k_work_reschedule(&gps_i2c_read_work, K_NO_WAIT);
@@ -192,6 +198,11 @@ void wallnet_gps_start(void) {
 }
 
 void wallnet_gps_stop(void) {
+    if (!gps_initialized) {
+        LOG_WRN("GPS stop requested before init; ignoring.");
+        return;
+    }
+
     LOG_INF("Stopping GPS Tracking.");
     // Cancel the timers so the nRF52 can sleep
     k_work_cancel_delayable(&gps_i2c_read_work);
@@ -199,6 +210,7 @@ void wallnet_gps_stop(void) {
 }
 
 void wallnet_gps_init(void) {
+    gps_initialized = false;
     
     settings_register(&gps_conf);
     i2c_dev = DEVICE_DT_GET(I2C_NODE);
@@ -216,6 +228,8 @@ void wallnet_gps_init(void) {
 
     // Start the 30-second notification loop
     k_work_reschedule(&gps_ble_notify_work, K_SECONDS(30));
+
+    gps_initialized = true;
     
     LOG_WRN("GPS Subsystem Initialized");
 }

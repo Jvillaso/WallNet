@@ -1,17 +1,13 @@
+#include "wallnet_rfid.h"
 #include <zephyr/device.h>
 #include <zephyr/drivers/i2c.h>
+#include <zephyr/kernel.h>
 #include <string.h>
-#include <zephyr/logging/log.h>
-
-#include "wallnet_rfid.h"
-
-LOG_MODULE_REGISTER(wallnet_rfid, LOG_LEVEL_INF);
-
 
 #define ST25DV_ADDR 0x53
 
 // idk the correct i2c node
-#define I2C_NODE DT_NODELABEL(i2c0)
+#define I2C_NODE DT_NODELABEL(i2c1)
 
 static const struct device *i2c_dev;
 
@@ -35,13 +31,13 @@ int wallnet_rfid_init(void)
 
 void i2c_scan(void)
 {
-    for (int addr = 0x4F; addr < 0x60; addr++) {
+    for (int addr = 0x08; addr < 0x78; addr++) {
 
         if (i2c_write(i2c_dev, NULL, 0, addr) == 0) {
             printk("FOUND DEVICE @ 0x%02X\n", addr);
         }
         else {
-            printk("no device @ 0x%02X\n", addr);
+            //printk("no device @ 0x%02X\n", addr);
         }
     }
 }
@@ -58,52 +54,56 @@ int st25dv_write_bytes(uint16_t mem_addr, uint8_t *data, size_t len)
 
     int ret = i2c_write(i2c_dev, buf, len + 2, ST25DV_ADDR);
 
-    k_msleep(15); // eeprom write delay
+    k_msleep(5); // eeprom write delay
 
     return ret;
 }
 
 int wallnet_rfid_write_url(const char *url)
 {
-    uint8_t ndef[256];
-    const char *payload = url;
-    uint8_t uri_prefix_code = 0x00;
-    size_t payload_len;
+    static uint8_t ndef[300];  // give yourself headroom
 
-    if (strncmp(url, "https://", strlen("https://")) == 0) {
-        uri_prefix_code = 0x04;
-        payload = url + strlen("https://");
-    } else if (strncmp(url, "http://", strlen("http://")) == 0) {
-        uri_prefix_code = 0x03;
-        payload = url + strlen("http://");
-    }
-
-    payload_len = strlen(payload);
-
-    // TLV + short-record NDEF must fit in our fixed buffer.
-    if (payload_len > 249) {
-        return -EINVAL;
-    }
+    size_t url_len = strlen(url);
+    if (url_len > 220) return -EINVAL;
 
     int i = 0;
 
-    // tlv but i kinda dont know what this means
+    // --- reserve TLV ---
     ndef[i++] = 0x03;
-    ndef[i++] = payload_len + 5; // len of NDEF record
+    int len_index = i++;  // placeholder
 
-    // NDEF record
-    ndef[i++] = 0xD1; // header
-    ndef[i++] = 0x01; // type len
-    ndef[i++] = payload_len + 1; // payload len
+    // --- NDEF RECORD ---
+    ndef[i++] = 0xC1; // long record
+    ndef[i++] = 0x01;
 
-    ndef[i++] = 0x55; // 'U'
-    ndef[i++] = uri_prefix_code;
+    uint32_t payload_len = url_len + 1;
 
-    memcpy(&ndef[i], payload, payload_len);
-    i += payload_len;
+    ndef[i++] = (payload_len >> 24) & 0xFF;
+    ndef[i++] = (payload_len >> 16) & 0xFF;
+    ndef[i++] = (payload_len >> 8) & 0xFF;
+    ndef[i++] = payload_len & 0xFF;
 
-    ndef[i++] = 0xFE; // terminator
+    ndef[i++] = 0x55;
+    ndef[i++] = 0x04;  // URL prefix: https://
 
-    // IM NOT SURE IF ITS 0004 OR SOMETHING ELSE
+    memcpy(&ndef[i], url, url_len);
+    i += url_len;
+
+    int ndef_len = i - 2;
+
+    // --- FIX TLV LENGTH ---
+    if (ndef_len < 0xFF) {
+        ndef[len_index] = ndef_len;
+    } else {
+        // shift data forward for extended TLV
+        memmove(&ndef[len_index + 2], &ndef[len_index + 1], ndef_len);
+        ndef[len_index] = 0xFF;
+        ndef[len_index + 1] = (ndef_len >> 8) & 0xFF;
+        ndef[len_index + 2] = ndef_len & 0xFF;
+        i += 2;
+    }
+
+    ndef[i++] = 0xFE;
+
     return st25dv_write_bytes(0x0004, ndef, i);
 }
