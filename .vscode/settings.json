@@ -6,6 +6,9 @@
         "${workspaceFolder}\\nrf_code\\blinky",
         "${workspaceFolder}\\nrf_code\\blinky_1",
         "${workspaceFolder}\\nrf_code\\pwm",
-        "${workspaceFolder}\\nrf_code\\pwm_common"
+        "${workspaceFolder}\\nrf_code\\pwm_common",
+        "${workspaceFolder}\\nrf_code\\blocking",
+        "${workspaceFolder}\\nrf_code\\eink",
+        "${workspaceFolder}\\nrf_code\\non_blocking"
     ]
 }
