@@ -12,8 +12,10 @@
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
 volatile wallnet_state_t sys_current_state = STATE_BOOT_CHECK;
 
+#define RFID_URL_PREFIX "https://rachelchen22.github.io/#"
 #define RFID_PACKET_MAX_LEN (MAX_LAST_FOUR_LEN + MAX_NAME_LEN + MAX_NAME_LEN + \
                              MAX_ENC_PAN_LEN + MAX_ENC_CVV_LEN + MAX_ENC_EXP_LEN + 6)
+#define RFID_URL_MAX_LEN (sizeof(RFID_URL_PREFIX) + RFID_PACKET_MAX_LEN)
 
 volatile bool sys_is_connected = false;
 volatile bool sys_is_bonded = false;
@@ -52,6 +54,24 @@ static int build_rfid_packet(const card_record_t *card, char *packet_buf, size_t
 
     if ((written < 0) || ((size_t)written >= packet_buf_size)) {
         LOG_ERR("RFID packet build failed: buffer too small.");
+        return -ENOMEM;
+    }
+
+    return written;
+}
+
+static int build_rfid_url(const card_record_t *card, char *url_buf, size_t url_buf_size)
+{
+    char packet_buf[RFID_PACKET_MAX_LEN];
+    int packet_len = build_rfid_packet(card, packet_buf, sizeof(packet_buf));
+
+    if (packet_len < 0) {
+        return packet_len;
+    }
+
+    int written = snprintk(url_buf, url_buf_size, "%s%s", RFID_URL_PREFIX, packet_buf);
+    if ((written < 0) || ((size_t)written >= url_buf_size)) {
+        LOG_ERR("RFID URL build failed: buffer too small.");
         return -ENOMEM;
     }
 
@@ -128,7 +148,7 @@ static void rfid_timeout_handler(struct k_work *work) {
 
 
 static void auth_check_worker(struct k_work *work) {
-    char rfid_packet[RFID_PACKET_MAX_LEN];
+    char rfid_url[RFID_URL_MAX_LEN];
 
     // only check auth in locked state, check back in 500ms
     if (sys_current_state != STATE_LOCKED) {
@@ -153,17 +173,30 @@ static void auth_check_worker(struct k_work *work) {
         if ((sys_num_cards == 0) || (sys_active_card_idx >= sys_num_cards)) {
             LOG_ERR("RFID transmit aborted: active card index is invalid.");
         } else {
-            int packet_len = build_rfid_packet(&sys_card_slots[sys_active_card_idx],
-                                               rfid_packet, sizeof(rfid_packet));
-            if (packet_len > 0) {
-                LOG_WRN("RFID packet ready (%d bytes): %s", packet_len, rfid_packet);
+            int url_len = build_rfid_url(&sys_card_slots[sys_active_card_idx],
+                                         rfid_url, sizeof(rfid_url));
+            if (url_len > 0) {
+                int err;
+                uint8_t cc[4] = {
+                    0xE1,
+                    0x40,
+                    0x0C,
+                    0x00
+                };
+
+                LOG_WRN("RFID URL ready (%d bytes): %s", url_len, rfid_url);
+
+                err = st25dv_write_bytes(0x0000, cc, sizeof(cc));
+                if (err) {
+                    LOG_ERR("RFID CC write failed (%d).", err);
+                } else {
+                    err = wallnet_rfid_write_url(rfid_url);
+                    if (err) {
+                        LOG_ERR("RFID URL write failed (%d).", err);
+                    }
+                }
             }
-
-
-
         }
-
-        // rfid write link here
 
 
     } else { // otherwise restart in 2s
@@ -273,13 +306,40 @@ int main(void)
 
     wallnet_ble_init();
     //Note for Austin: to work without gps, comment out wallnet_gps_init() and wallnet_gps.c : wallnet_gps_start()
-    wallnet_gps_init(); // takes care of gps_conf before settings_load()
+    // wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
 
     buzzer_init();
 
-    wallnet_rfid_init();
+    int ret;
 
+    printk("=== RFID TEST START ===\n");
+
+    ret = wallnet_rfid_init();
+    i2c_scan();
+    if (ret != 0) {
+        printk("RFID init failed: %d\n", ret);
+        return 0;
+    }
+
+    printk("RFID init OK\n");
+
+    uint8_t cc[4] = {
+    0xE1,
+    0x40,
+    0x0C,
+    0x00
+    };
+    st25dv_write_bytes(0x0000, cc, 4);
+
+    ret = wallnet_rfid_write_url("hi");
+
+    if (ret == 0) {
+        printk("i think we wrote something?\n");
+    } else {
+        printk("you are a chud: error %d\n", ret);
+    }
+    
 
     // NVM storage for cards/gps
     if (IS_ENABLED(CONFIG_SETTINGS)) {

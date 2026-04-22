@@ -404,7 +404,7 @@ static void connected(struct bt_conn *conn, uint8_t err) {
             update_eink_display(); 
         }
         
-        wallnet_gps_start();
+        // wallnet_gps_start();
     }
 }
 

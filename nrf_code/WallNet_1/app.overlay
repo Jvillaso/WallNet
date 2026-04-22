@@ -2,7 +2,7 @@
 / {
     aliases {
         sw0 = &button0;
-        i2crfid = &i2c1;
+        // i2crfid = &i2c0;
     };
 
     // whatever main control button is
@@ -51,22 +51,22 @@
 
 
 &pinctrl {
-    i2c0_default: i2c0_default {
-        // gooked up to gps rn
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 27)>;
-            bias-pull-up;
-        };
-    };
+    // i2c0_default: i2c0_default {
+    //     // gooked up to gps rn
+    //     group1 {
+    //         psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+    //                 <NRF_PSEL(TWIM_SCL, 0, 27)>;
+    //         bias-pull-up;
+    //     };
+    // };
 
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 27)>;
-            low-power-enable;
-        };
-    };
+    // i2c0_sleep: i2c0_sleep {
+    //     group1 {
+    //         psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+    //                 <NRF_PSEL(TWIM_SCL, 0, 27)>;
+    //         low-power-enable;
+    //     };
+    // };
 
     uart0_default: uart0_default {
         group1 {
@@ -86,17 +86,17 @@
         };
     };
 
-    i2c1_default: i2c1_default {
+    i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 9)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 10)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 27)>;
         };
     };
 
-    i2c1_sleep: i2c1_sleep {
+    i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 9)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 10)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 27)>;
             low-power-enable;
         };
     };
@@ -115,27 +115,27 @@
 };
 
 // i2c0: GPS 
-&i2c0 {
-    status = "okay";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>;
-    compatible = "nordic,nrf-twim";
+// &i2c0 {
+//     status = "okay";
+//     pinctrl-0 = <&i2c0_default>;
+//     pinctrl-1 = <&i2c0_sleep>;
+//     pinctrl-names = "default", "sleep";
+//     clock-frequency = <I2C_BITRATE_STANDARD>;
+//     compatible = "nordic,nrf-twim";
 
-    zephyr,concat-buf-size = <512>;
-    zephyr,flash-buf-max-size = <512>;
-};
+//     zephyr,concat-buf-size = <512>;
+//     zephyr,flash-buf-max-size = <512>;
+// };
 
 // disable spi1 so we can use i2c1
 &spi1 {
     status = "disabled";
 };
 
-&i2c1 {
+&i2c0 {
     status = "okay";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
     clock-frequency = <I2C_BITRATE_STANDARD>;
     compatible = "nordic,nrf-twim";
