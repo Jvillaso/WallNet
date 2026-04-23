@@ -9,6 +9,9 @@
 #include "buzzer.h"
 #include "wallnet_rfid.h"
 
+#include "eink.h"
+#include "draw.c"
+
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
 volatile wallnet_state_t sys_current_state = STATE_BOOT_CHECK;
 
@@ -317,6 +320,24 @@ void wallnet_auth_trigger(void) {
 
 int main(void)
 {
+
+    printk("Started\n");
+        if (eink_init() != 0) {
+                printk("Failed to initialize eink\n");
+                return -1;
+        }
+
+    card_record_t austinCard;
+    //card_record_t numba2;
+    austinCard.valid = 1;
+    strcpy(austinCard.first_name, "joshua");
+    strcpy(austinCard.last_name, "Lugo");
+    strcpy(austinCard.last_four, "1234");
+
+    displayCard(austinCard);
+
+
+
     int err;
     printk("WallNet Booting...");
 

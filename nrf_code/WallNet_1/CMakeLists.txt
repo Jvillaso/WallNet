@@ -16,5 +16,6 @@ target_sources(app PRIVATE
     src/buzzer.h
     src/wallnet_rfid.c
     src/wallnet_rfid.h
-
+    src/eink.h
+    src/eink.c
 )
