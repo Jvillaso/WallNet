@@ -1,0 +1,7 @@
+default: WallNet_Board_Model
+build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2
+domains:
+  - name: WallNet_Board_Model
+    build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/WallNet_Board_Model
+flash_order:
+  - WallNet_Board_Model

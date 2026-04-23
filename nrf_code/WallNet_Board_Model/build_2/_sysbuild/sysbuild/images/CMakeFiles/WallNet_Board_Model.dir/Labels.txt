@@ -1,0 +1,13 @@
+# Target labels
+ WallNet_Board_Model
+# Source files and their labels
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/CMakeFiles/WallNet_Board_Model
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/CMakeFiles/WallNet_Board_Model.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/CMakeFiles/WallNet_Board_Model-complete.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-build.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-configure.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-download.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-install.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-mkdir.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-patch.rule
+C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-update.rule

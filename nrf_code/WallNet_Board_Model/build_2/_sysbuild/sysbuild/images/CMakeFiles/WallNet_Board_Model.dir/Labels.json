@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/CMakeFiles/WallNet_Board_Model"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/CMakeFiles/WallNet_Board_Model.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/CMakeFiles/WallNet_Board_Model-complete.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-build.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-configure.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-download.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-install.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-patch.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/WallNet_Board_Model/build_2/_sysbuild/sysbuild/images/WallNet_Board_Model-prefix/src/WallNet_Board_Model-stamp/WallNet_Board_Model-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"WallNet_Board_Model"
+		],
+		"name" : "WallNet_Board_Model"
+	}
+}

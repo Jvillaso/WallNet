@@ -79,10 +79,16 @@ CONFIG_DEBUG_THREAD_INFO:UNINITIALIZED=y
 CONF_FILE:UNINITIALIZED=prj.conf
 
 //No help, variable specified on the command line.
+DEBUG_THREAD_INFO:UNINITIALIZED=On
+
+//No help, variable specified on the command line.
 DTC_OVERLAY_FILE:UNINITIALIZED=app.overlay
 
 //No help, variable specified on the command line.
 WEST_PYTHON:UNINITIALIZED=C:/ncs/toolchains/c717907b94/opt/bin/python.exe
+
+//No help, variable specified on the command line.
+WallNet_1_DEBUG_THREAD_INFO:UNINITIALIZED=On
 
 //Zephyr base
 ZEPHYR_BASE:PATH=C:/ncs/v3.2.2/zephyr

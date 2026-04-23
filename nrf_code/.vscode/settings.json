@@ -1,6 +1,7 @@
 {
     "nrf-connect.applications": [
         "${workspaceFolder}\\WallNet_1",
-        "${workspaceFolder}\\eink"
+        "${workspaceFolder}\\eink",
+        "${workspaceFolder}\\WallNet_Board_Model"
     ]
 }
