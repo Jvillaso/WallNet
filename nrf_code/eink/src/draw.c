@@ -1,0 +1,487 @@
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <stdio.h>
+#include "eink.h"
+
+void saveRawPBM(const char* filename, uint8_t* buffer, int width, int height);
+int draw(char* string);
+int drawScaled(char* string, int startX, int startY);
+int drawLarge(char* string);
+void reset();
+void drawCentered(char* string);
+
+#define WIDTH 256
+#define HEIGHT 120
+
+
+uint8_t frameBuffer[IMG_BUF_SIZE];
+uint8_t frameBufferCpy[IMG_BUF_SIZE];
+
+static inline void setTransformedPixel(int x_src, int y_src) {
+    if (x_src < 0 || x_src >= WIDTH || y_src < 0 || y_src >= HEIGHT) {
+        return;
+    }
+    int x_dst = y_src;
+    int y_dst = x_src;
+    if (x_dst < 0 || x_dst >= EPD_WIDTH || y_dst < 0 || y_dst >= EPD_HEIGHT) {
+        return;
+    }
+    int bytesPerRow = (EPD_WIDTH + 7) / 8;
+    int dstIndex = y_dst * bytesPerRow + (x_dst / 8);
+    int dstBit = 7 - (x_dst % 8);
+    frameBuffer[dstIndex] |= (1 << dstBit);
+}
+
+uint8_t alph[][12]={
+/*-- 0  --*/
+{0x00,0x00,0x70,0x88,0x88,0x88,0x88,0x88,0x88,0x70,0x00,0x00},
+/*-- 1  --*/
+{0x00,0x00,0x20,0x60,0x20,0x20,0x20,0x20,0x20,0x70,0x00,0x00},
+/*-- 2  --*/
+{0x00,0x00,0x70,0x88,0x88,0x10,0x20,0x40,0x80,0xF8,0x00,0x00},
+/*-- 3  --*/
+{0x00,0x00,0x70,0x88,0x08,0x30,0x08,0x08,0x88,0x70,0x00,0x00},
+/*-- 4  --*/
+{0x00,0x00,0x10,0x30,0x50,0x50,0x90,0x78,0x10,0x18,0x00,0x00},
+/*-- 5  --*/
+{0x00,0x00,0xF8,0x80,0x80,0xF0,0x08,0x08,0x88,0x70,0x00,0x00},
+/*-- 6  --*/
+{0x00,0x00,0x70,0x90,0x80,0xF0,0x88,0x88,0x88,0x70,0x00,0x00},
+/*-- 7  --*/
+{0x00,0x00,0xF8,0x90,0x10,0x20,0x20,0x20,0x20,0x20,0x00,0x00},
+/*-- 8  --*/
+{0x00,0x00,0x70,0x88,0x88,0x70,0x88,0x88,0x88,0x70,0x00,0x00},
+/*-- 9  --*/
+{0x00,0x00,0x70,0x88,0x88,0x88,0x78,0x08,0x48,0x70,0x00,0x00},
+
+/*-- a  --*/
+{0x00,0x00,0x00,0x00,0x00,0x30,0x48,0x38,0x48,0x3C,0x00,0x00},
+/*-- b  --*/
+{0x00,0x00,0xC0,0x40,0x40,0x70,0x48,0x48,0x48,0x70,0x00,0x00},
+/*-- c  --*/
+{0x00,0x00,0x00,0x00,0x00,0x38,0x48,0x40,0x40,0x38,0x00,0x00},
+/*-- d  --*/
+{0x00,0x00,0x18,0x08,0x08,0x38,0x48,0x48,0x48,0x3C,0x00,0x00},
+/*-- e  --*/
+{0x00,0x00,0x00,0x00,0x00,0x30,0x48,0x78,0x40,0x38,0x00,0x00},
+/*-- f  --*/
+{0x00,0x00,0x1C,0x20,0x20,0x78,0x20,0x20,0x20,0x78,0x00,0x00},
+/*-- g  --*/
+{0x00,0x00,0x00,0x00,0x00,0x3C,0x48,0x30,0x40,0x78,0x44,0x38},
+/*-- h  --*/
+{0x00,0x00,0xC0,0x40,0x40,0x70,0x48,0x48,0x48,0xEC,0x00,0x00},
+/*-- i  --*/
+{0x00,0x00,0x20,0x00,0x00,0x60,0x20,0x20,0x20,0x70,0x00,0x00},
+/*-- j  --*/
+{0x00,0x00,0x10,0x00,0x00,0x30,0x10,0x10,0x10,0x10,0x10,0xE0},
+/*-- k  --*/
+{0x00,0x00,0xC0,0x40,0x40,0x5C,0x50,0x70,0x48,0xEC,0x00,0x00},
+/*-- l  --*/
+{0x00,0x00,0xE0,0x20,0x20,0x20,0x20,0x20,0x20,0xF8,0x00,0x00},
+/*-- m  --*/
+{0x00,0x00,0x00,0x00,0x00,0xF0,0xA8,0xA8,0xA8,0xA8,0x00,0x00},
+/*-- n  --*/
+{0x00,0x00,0x00,0x00,0x00,0xF0,0x48,0x48,0x48,0xEC,0x00,0x00},
+/*-- o  --*/
+{0x00,0x00,0x00,0x00,0x00,0x30,0x48,0x48,0x48,0x30,0x00,0x00},
+/*-- p  --*/
+{0x00,0x00,0x00,0x00,0x00,0xF0,0x48,0x48,0x48,0x70,0x40,0xE0},
+/*-- q  --*/
+{0x00,0x00,0x00,0x00,0x00,0x38,0x48,0x48,0x48,0x38,0x08,0x1C},
+/*-- r  --*/
+{0x00,0x00,0x00,0x00,0x00,0xD8,0x60,0x40,0x40,0xE0,0x00,0x00},
+/*-- s  --*/
+{0x00,0x00,0x00,0x00,0x00,0x78,0x40,0x30,0x08,0x78,0x00,0x00},
+/*-- t  --*/
+{0x00,0x00,0x00,0x20,0x20,0x70,0x20,0x20,0x20,0x18,0x00,0x00},
+/*-- u  --*/
+{0x00,0x00,0x00,0x00,0x00,0xD8,0x48,0x48,0x48,0x3C,0x00,0x00},
+/*-- v  --*/
+{0x00,0x00,0x00,0x00,0x00,0xEC,0x48,0x50,0x30,0x20,0x00,0x00},
+/*-- w  --*/
+{0x00,0x00,0x00,0x00,0x00,0xA8,0xA8,0x70,0x50,0x50,0x00,0x00},
+/*-- x  --*/
+{0x00,0x00,0x00,0x00,0x00,0xD8,0x50,0x20,0x50,0xD8,0x00,0x00},
+/*-- y  --*/
+{0x00,0x00,0x00,0x00,0x00,0xEC,0x48,0x50,0x30,0x20,0x20,0xC0},
+/*-- z  --*/
+{0x00,0x00,0x00,0x00,0x00,0x78,0x10,0x20,0x20,0x78,0x00,0x00},
+
+/*--     --*/
+{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00},
+/*-- Error --*/
+{0xAA,0x55,0xAA,0x55,0xAA,0x55,0xAA,0x55,0xAA,0x55,0xAA,0x55},
+};   
+
+static uint16_t alph_scaled[sizeof(alph) / sizeof(alph[0])][24];
+static int alph_scaled_ready = 0;
+
+static void buildAlphScaled(float scale, int out_width, int out_height, uint16_t* output, int row_size) {
+    int chars = sizeof(alph) / sizeof(alph[0]);
+    for (int ci = 0; ci < chars; ci++) {
+        for (int ry = 0; ry < out_height; ry++) {
+            int sy = (int)((ry * 12) / out_height);
+            if (sy >= 12) sy = 11;
+            uint16_t row = 0;
+            for (int rx = 0; rx < out_width; rx++) {
+                int sx = (int)((rx * 8) / out_width);
+                if (sx >= 8) sx = 7;
+                if (alph[ci][sy] & (1 << (7 - sx))) {
+                    row |= (1u << (15 - rx));
+                }
+            }
+            output[ci * row_size + ry] = row;
+        }
+    }
+}
+
+static int twoXWidth = 16;
+static int twoXHeight = 24;
+static int vertical_border = 4;
+static int horizontal_border = 10;
+static void buildAlph2x(void) {
+    if (alph_scaled_ready) {
+        return;
+    }
+    buildAlphScaled(2.0, twoXWidth, twoXHeight, (uint16_t*)alph_scaled, twoXHeight);
+    alph_scaled_ready = 1;
+}
+
+const uint16_t digits[11][24] = {
+    // 0
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x1F80,0x30C0,0x6060,0x6060,
+        0x60E0,0x61E0,0x6360,0x6660,
+        0x6C60,0x7860,0x7060,0x6060,
+        0x6060,0x30C0,0x1F80,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 1
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x0E00,0x1E00,0x3600,0x2600,
+        0x0600,0x0600,0x0600,0x0600,
+        0x0600,0x0600,0x0600,0x0600,
+        0x0600,0x0600,0x3FC0,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 2
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x1F80,0x30C0,0x6060,0x0060,
+        0x0060,0x0060,0x00C0,0x0180,
+        0x0300,0x0600,0x0C00,0x1800,
+        0x3000,0x6060,0x7FE0,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 3
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x1F80,0x30C0,0x6060,0x0060,
+        0x0060,0x00C0,0x0F80,0x00C0,
+        0x0060,0x0060,0x0060,0x0060,
+        0x6060,0x30C0,0x1F80,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 4
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x6000,0x6000,0x6000,0x6180,
+        0x6180,0x6180,0x6180,0x6180,
+        0x6180,0x6180,0x7FE0,0x0180,
+        0x0180,0x0180,0x0180,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 5
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x7FE0,0x6060,0x6000,0x6000,
+        0x6000,0x6000,0x7F80,0x00C0,
+        0x0060,0x0060,0x0060,0x0060,
+        0x6060,0x30C0,0x1F80,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 6
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x1FC0,0x3060,0x6000,0x6000,
+        0x6000,0x6000,0x7F80,0x60C0,
+        0x6060,0x6060,0x6060,0x6060,
+        0x6060,0x30C0,0x1F80,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 7
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x7FE0,0x6060,0x0060,0x0060,
+        0x0060,0x00C0,0x0180,0x0300,
+        0x0600,0x0C00,0x0C00,0x0C00,
+        0x0C00,0x0C00,0x0C00,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 8
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x1F80,0x30C0,0x6060,0x6060,
+        0x6060,0x30C0,0x1F80,0x30C0,
+        0x6060,0x6060,0x6060,0x6060,
+        0x6060,0x30C0,0x1F80,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+
+    // 9
+    {
+        0x0000,0x0000,0x0000,0x0000,
+        0x1F80,0x30C0,0x6060,0x6060,
+        0x6060,0x6060,0x6060,0x3060,
+        0x1FE0,0x0060,0x0060,0x0060,
+        0x0060,0x60C0,0x3F80,0x0000,
+        0x0000,0x0000,0x0000,0x0000
+    },
+    //BROKEN
+    {
+    0x0000, 0x0000, 0x0000, 0x0000, 
+    0x0000, 0x0000, 0x0000, 0x0000, 
+    0x0000, 0x0800, 0x0800, 0x0800, 
+    0x6B60, 0x1C70, 0x0800, 0x1C70, 
+    0x0800, 0x6B60, 0x0800, 0x0800, 
+    0x0000, 0x0000, 0x0000, 0x0000
+    }
+};
+
+// int main() {
+
+
+
+//     //drawCentered("********01234");
+//     drawLarge("WOW letters and numbers only 12345");
+//     //saveRawPBM("Out.pbm", frameBuffer, WIDTH, HEIGHT);
+//     printf("We done");
+// }
+
+
+
+void drawCentered(char* string) {
+    int len = strlen(string);
+    int startX = 0;
+    int startY = (HEIGHT - 24) / 2;
+
+    for (int i = 0; i < len; i++) {
+        // 2. Get character data (using your previous mapping logic)
+        const uint16_t* drawChar;
+        char c = string[i];
+        
+        if (c >= '0' && c <= '9')      drawChar = digits[c - '0'];
+        else                           drawChar = digits[11];
+
+        // 3. Draw the character
+        for (int j = 0; j < 24; j++) {
+            uint16_t rowData = drawChar[j];
+            int currentY = startY + j;
+            
+            // Calculate pixel position for the start of this character
+            int currentX = startX + (i * 12);
+
+            // Since we are bit-packed, we have to be careful with 12-pixel widths.
+            // We draw bit-by-bit to ensure we don't overwrite neighboring chars.
+            for (int bit = 0; bit < 12; bit++) {
+                if (rowData & (1 << (15 - bit))) {
+                    int pixelX = currentX + bit;
+                    setTransformedPixel(pixelX, currentY);
+                }
+            }
+        }
+    }
+}
+
+int displayCard(card_record_t cardData){
+    reset();
+    if (cardData.valid) {
+        drawScaled(cardData.last_four, horizontal_border, vertical_border);
+        char fullName[40];
+        sprintf(fullName, "%s %s", cardData.first_name, cardData.last_name);
+        drawScaled(fullName, horizontal_border, twoXHeight + vertical_border);
+    }
+
+    Display(frameBuffer);
+    return 0;
+}
+
+int displayErr(char* errMsg, int length){
+    int startX = horizontal_border; 
+    int startY = (twoXHeight * 3) + vertical_border; 
+    drawScaled(errMsg, startX, startY); 
+    
+    Display(frameBuffer);
+
+    return 0;
+}
+
+// int clearError(){
+//     int startX = horizontal_border;
+//     int startY = (twoXHeight * 3) + vertical_border;
+
+//     drawScaled(errMsg, startX, startY);
+
+//     return 0;
+// }
+
+void reset(){
+    buildAlph2x();
+    for (int i = 0; i < IMG_BUF_SIZE; i++) {
+        frameBuffer[i] = 0;
+    }
+}
+
+int draw(char* string){
+    int charPerRow = 16;
+
+    for(int i = 0; string[i] != '\0'; i++){
+        if(i >= 10 * charPerRow){
+            draw("String too long");
+            return -1;
+        }
+
+        char curChar = string[i];
+        uint8_t* drawChar;
+
+        if (curChar >= '0' && curChar <= '9') {
+            drawChar = alph[curChar - '0'];
+        }
+        else if (curChar >= 'A' && curChar <= 'Z') {
+            drawChar = alph[curChar - 'A' + 10];
+        }
+        else if (curChar >= 'a' && curChar <= 'z') {
+            drawChar = alph[curChar - 'a' + 10]; 
+        }
+        else if (curChar == ' ') {
+            drawChar = alph[36];
+        }
+        else {
+            drawChar = alph[37];
+        }
+
+        int charX = i % charPerRow;
+        int charY = i / charPerRow;
+
+        for(int j = 0; j < 12; j++) {
+            uint8_t row = drawChar[j];
+            int y_src = charY * 12 + j;
+            for (int bit = 0; bit < 8; bit++) {
+                if (row & (1 << (7 - bit))) {
+                    int x_src = charX * 8 + bit;
+                    setTransformedPixel(x_src, y_src);
+                }
+            }
+        }
+
+    }
+    return 0;
+}
+
+int drawScaled(char* string, int startX, int startY) {
+    int charPerRow = 16;
+
+    for (int i = 0; string[i] != '\0'; i++) {
+        if (i >= 10 * charPerRow) {
+            return -1;
+        }
+
+        const uint16_t* drawChar;
+        char c = string[i];
+
+        if (c >= '0' && c <= '9')      drawChar = alph_scaled[c - '0'];
+        else if (c >= 'A' && c <= 'Z') drawChar = alph_scaled[c - 'A' + 10];
+        else if (c >= 'a' && c <= 'z') drawChar = alph_scaled[c - 'a' + 10];
+        else if (c == ' ')             drawChar = alph_scaled[36];
+        else                           drawChar = alph_scaled[37];
+
+        int charX = i % charPerRow;
+        int charY = i / charPerRow;
+
+        for (int j = 0; j < 24; j++) {
+            uint16_t row = drawChar[j];
+            int y_src = startY + charY * 24 + j;
+            if (y_src >= HEIGHT) continue;
+
+            for (int bit = 0; bit < 16; bit++) {
+                if (row & (1 << (15 - bit))) {
+                    int x_src = startX + charX * 16 + bit;
+                    setTransformedPixel(x_src, y_src);
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+int drawLarge(char* string) {
+    reset();
+    int charPerRow = 16;        // 256 pixels / 16 pixels per char = 16
+
+    for (int i = 0; string[i] != '\0'; i++) {
+        if (i >= 5 * charPerRow) {
+            reset();
+            drawLarge("String too long");
+            return -1;
+        }
+        const uint8_t* drawChar;
+        char c = string[i];
+
+        if (c >= '0' && c <= '9')      drawChar = alph[c - '0'];
+        else if (c >= 'A' && c <= 'Z') drawChar = alph[c - 'A' + 10];
+        else if (c >= 'a' && c <= 'z') drawChar = alph[c - 'a' + 10];
+        else if (c == ' ')             drawChar = alph[36];
+        else                           drawChar = alph[37];
+
+        int charX = i % charPerRow;
+        int charY = i / charPerRow;
+
+        for (int j = 0; j < 12; j++) {
+            uint8_t fontByte = drawChar[j];
+            uint16_t expandedRow = 0;
+
+            for (int bit = 0; bit < 8; bit++) {
+                if (fontByte & (1 << (7 - bit))) {
+                    expandedRow |= (3 << (14 - (bit * 2)));
+                }
+            }
+
+            for (int v = 0; v < 2; v++) {
+                int pixelRow = (charY * 24) + (j * 2 + v);
+                if (pixelRow >= HEIGHT) continue;
+
+                for (int bit = 0; bit < 16; bit++) {
+                    if (expandedRow & (1 << (15 - bit))) {
+                        int x_src = charX * 16 + bit;
+                        int y_src = pixelRow;
+                        setTransformedPixel(x_src, y_src);
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+void saveRawPBM(const char* filename, uint8_t* buffer, int width, int height){
+    FILE* f = fopen(filename, "wb");
+
+    fprintf(f, "P4\n%d %d \n", width, height);
+
+    int bufferSize = (width*height)/8;
+    fwrite(buffer, 1, bufferSize, f);
+
+    fclose(f);
+}
+

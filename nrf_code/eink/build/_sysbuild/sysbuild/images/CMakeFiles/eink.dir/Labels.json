@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink-complete.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-build.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-configure.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-download.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-install.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-patch.rule"
+		},
+		{
+			"file" : "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"eink"
+		],
+		"name" : "eink"
+	}
+}
