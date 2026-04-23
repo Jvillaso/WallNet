@@ -174,5 +174,3 @@
     zephyr,flash-buf-max-size = <512>;
 };
 
-
-// spi2: Eink

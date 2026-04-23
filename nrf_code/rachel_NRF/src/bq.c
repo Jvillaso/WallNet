@@ -82,8 +82,6 @@ int BQ_init(void)
     return 0;
 }
 
-static const struct device *i2c_dev;
-
 int BQ_write(uint8_t reg, uint8_t value)
 {
     uint8_t buf[2] = {reg, value};
