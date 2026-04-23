@@ -5,8 +5,9 @@
  */
 
 #include <stdint.h>
+#include "bq.h"
 #include "i2c_nrf.h"
-#include "nrf.h"
+#include <zephyr/drivers/i2c.h>
 
 #define BQ_ADDR 0x6A
 
@@ -28,11 +29,11 @@ int BQ_status(){
    uint8_t data = 0x00;
    int err = BQ_read(0x0B, &data);
    if (err) {
-      printf("BQ_status: I AM A CHUD. there has been an error\r\n");
+      printk("BQ_status: I AM A CHUD. there has been an error\r\n");
       return -1;
    }
 
-   printf("BQ REG0B = 0x%02X\r\n", data);
+   printk("BQ REG0B = 0x%02X\r\n", data);
 
    return data;
 }

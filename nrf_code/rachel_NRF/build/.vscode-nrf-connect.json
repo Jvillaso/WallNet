@@ -1,10 +1,10 @@
 {
-  "toolchainPath": "c:\\ncs\\toolchains\\fd21892d0f",
-  "sdkPath": "c:\\ncs\\v3.2.3",
+  "toolchainPath": "/opt/nordic/ncs/toolchains/0c0f19d91c",
+  "sdkPath": "/opt/nordic/ncs/v3.3.0",
   "board": "nrf52dk/nrf52832",
-  "boardDir": "c:\\ncs\\v3.2.3\\zephyr\\boards\\nordic\\nrf52dk",
+  "boardDir": "/opt/nordic/ncs/v3.3.0/zephyr/boards/nordic/nrf52dk",
   "boardDirs": [
-    "c:\\ncs\\v3.2.3\\zephyr\\boards\\nordic\\nrf52dk"
+    "/opt/nordic/ncs/v3.3.0/zephyr/boards/nordic/nrf52dk"
   ],
   "optimizations": "none",
   "cmakeArgs": [],

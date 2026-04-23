@@ -39,6 +39,9 @@ case K_OBJ_RTIO_IODEV: ret = "rtio_iodev"; break;
 #ifdef CONFIG_RTIO
 case K_OBJ_RTIO_POOL: ret = "rtio_pool"; break;
 #endif
+#ifdef CONFIG_ADC_STREAM
+case K_OBJ_ADC_DECODER_API: ret = "adc_decoder_api"; break;
+#endif
 #ifdef CONFIG_SENSOR_ASYNC_API
 case K_OBJ_SENSOR_DECODER_API: ret = "sensor_decoder_api"; break;
 #endif
@@ -89,6 +92,8 @@ case K_OBJ_DRIVER_MDIO: ret = "mdio driver"; break;
 case K_OBJ_DRIVER_MIPI_DBI: ret = "mipi_dbi driver"; break;
 case K_OBJ_DRIVER_MIPI_DSI: ret = "mipi_dsi driver"; break;
 case K_OBJ_DRIVER_MSPI: ret = "mspi driver"; break;
+case K_OBJ_DRIVER_OPAMP: ret = "opamp driver"; break;
+case K_OBJ_DRIVER_OTP: ret = "otp driver"; break;
 case K_OBJ_DRIVER_PECI: ret = "peci driver"; break;
 case K_OBJ_DRIVER_PS2: ret = "ps2 driver"; break;
 case K_OBJ_DRIVER_PTP_CLOCK: ret = "ptp_clock driver"; break;
@@ -103,6 +108,7 @@ case K_OBJ_DRIVER_SENSOR: ret = "sensor driver"; break;
 case K_OBJ_DRIVER_SMBUS: ret = "smbus driver"; break;
 case K_OBJ_DRIVER_SPI: ret = "spi driver"; break;
 case K_OBJ_DRIVER_STEPPER: ret = "stepper driver"; break;
+case K_OBJ_DRIVER_STEPPER_DRV: ret = "stepper_drv driver"; break;
 case K_OBJ_DRIVER_SYSCON: ret = "syscon driver"; break;
 case K_OBJ_DRIVER_TEE: ret = "tee driver"; break;
 case K_OBJ_DRIVER_VIDEO: ret = "video driver"; break;

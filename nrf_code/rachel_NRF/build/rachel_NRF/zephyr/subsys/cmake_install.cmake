@@ -1,8 +1,8 @@
-# Install script for directory: C:/ncs/v3.2.3/zephyr/subsys
+# Install script for directory: /opt/nordic/ncs/v3.3.0/zephyr/subsys
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Zephyr-Kernel")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,118 +32,129 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "TRUE")
 endif()
 
-# Set default install directory permissions.
+# Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/ncs/toolchains/fd21892d0f/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "/opt/nordic/ncs/toolchains/0c0f19d91c/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/canbus/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/canbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/debug/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/debug/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/fb/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/fb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/fs/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/fs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/gnss/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/gnss/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/ipc/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/instrumentation/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/logging/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/ipc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/mem_mgmt/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/logging/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/mgmt/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/mem_mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/modbus/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/pm/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/modbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/pmci/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/pm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/portability/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/pmci/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/random/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/portability/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/rtio/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/random/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/sd/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/rtio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/stats/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/sd/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/storage/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/stats/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/task_wdt/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/storage/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/testsuite/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/task_wdt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/tracing/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/testsuite/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/usb/cmake_install.cmake")
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/tracing/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/usb/cmake_install.cmake")
+endif()
+
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+if(CMAKE_INSTALL_LOCAL_ONLY)
+  file(WRITE "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF/zephyr/subsys/install_local_manifest.txt"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
+endif()

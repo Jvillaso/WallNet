@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF-complete.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/CMakeFiles/rachel_NRF-complete.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-build.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-build.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-configure.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-configure.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-download.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-download.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-install.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-install.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-mkdir.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-mkdir.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-patch.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-patch.rule"
 		},
 		{
-			"file" : "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-update.rule"
+			"file" : "/Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/_sysbuild/sysbuild/images/rachel_NRF-prefix/src/rachel_NRF-stamp/rachel_NRF-update.rule"
 		}
 	],
 	"target" : 

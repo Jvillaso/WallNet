@@ -1,7 +1,7 @@
-# 0 "C:/ncs/v3.2.3/zephyr/misc/empty_file.c"
+# 0 "/opt/nordic/ncs/v3.3.0/zephyr/misc/empty_file.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "C:/ncs/v3.2.3/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 1
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 1
 
 
 
@@ -10,34 +10,36 @@
 
 
 /dts-v1/;
-# 1 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832_qfaa.dtsi" 1 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832_qfaa.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "C:/ncs/v3.2.3/zephyr/dts/common/mem.h" 1 3 4
-# 8 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832_qfaa.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832.dtsi" 1 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/common/mem.h" 1 3 4
+# 8 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832_qfaa.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "C:/ncs/v3.2.3/zephyr/dts/arm/armv7-m.dtsi" 1 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/armv7-m.dtsi" 1 3 4
 
 
-# 1 "C:/ncs/v3.2.3/zephyr/dts/common/skeleton.dtsi" 1 3 4
-# 9 "C:/ncs/v3.2.3/zephyr/dts/common/skeleton.dtsi" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "/opt/nordic/ncs/v3.3.0/zephyr/dts/common/skeleton.dtsi" 3 4
 / {
  #address-cells = <1>;
  #size-cells = <1>;
- chosen { };
- aliases { };
+
+ chosen {};
+
+ aliases {};
 };
-# 4 "C:/ncs/v3.2.3/zephyr/dts/arm/armv7-m.dtsi" 2 3 4
+# 4 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/armv7-m.dtsi" 2 3 4
 
 / {
  soc {
@@ -61,63 +63,63 @@
   };
  };
 };
-# 8 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 1 3 4
+# 8 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
-# 9 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/adc/adc.h" 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
-# 19 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
-# 34 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_macro.h" 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
-# 18 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
-# 1083 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_loops.h" 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_listify.h" 1 3 4
-# 1084 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_loops.h" 2 3 4
-# 19 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
-# 162 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal_is_eq.h" 1 3 4
-# 163 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
-# 193 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal_util_inc.h" 1 3 4
-# 194 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
+# 9 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/adc/adc.h" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
+# 19 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
+# 34 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_macro.h" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
+# 18 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
+# 1083 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_loops.h" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_listify.h" 1 3 4
+# 1084 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_loops.h" 2 3 4
+# 19 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 203 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal_is_eq.h" 1 3 4
+# 204 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 234 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal_util_inc.h" 1 3 4
+# 235 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
 
 
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal_util_dec.h" 1 3 4
-# 197 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal_util_dec.h" 1 3 4
+# 238 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
 
 
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal_util_x2.h" 1 3 4
-# 200 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
-# 35 "C:/ncs/v3.2.3/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
-# 20 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
-# 10 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/adc/adc.h" 2 3 4
-# 8 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
-# 9 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
-# 10 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/input/input-event-codes.h" 1 3 4
-# 11 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/pinctrl/nrf-pinctrl.h" 1 3 4
-# 12 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/pwm/pwm.h" 1 3 4
-# 13 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/sensor/qdec_nrf.h" 1 3 4
-# 14 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal_util_x2.h" 1 3 4
+# 241 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 35 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
+# 20 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
+# 10 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/adc/adc.h" 2 3 4
+# 8 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
+# 9 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
+# 10 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/input/input-event-codes.h" 1 3 4
+# 11 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/pinctrl/nrf-pinctrl.h" 1 3 4
+# 12 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/pwm/pwm.h" 1 3 4
+# 13 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/sensor/qdec_nrf.h" 1 3 4
+# 14 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
 
-# 1 "C:/ncs/v3.2.3/zephyr/dts/common/freq.h" 1 3 4
-# 16 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/override.dtsi" 1 3 4
-# 17 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
-# 25 "C:/ncs/v3.2.3/zephyr/dts/vendor/nordic/nrf_common.dtsi" 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/common/freq.h" 1 3 4
+# 16 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/override.dtsi" 1 3 4
+# 17 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 2 3 4
+# 25 "/opt/nordic/ncs/v3.3.0/zephyr/dts/vendor/nordic/nrf_common.dtsi" 3 4
 / {
  pinctrl: pin-controller {
 
@@ -140,11 +142,11 @@
   #pwm-cells = <3>;
  };
 };
-# 9 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/adc/nrf-saadc.h" 1 3 4
-# 10 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/regulator/nrf5x.h" 1 3 4
-# 11 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
+# 9 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/adc/nrf-saadc.h" 1 3 4
+# 10 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/regulator/nrf5x.h" 1 3 4
+# 11 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832.dtsi" 2 3 4
 
 / {
  chosen {
@@ -192,11 +194,16 @@
   uicr: uicr@10001000 {
    compatible = "nordic,nrf-uicr";
    reg = <0x10001000 0x1000>;
+   ranges = <0x0 0x10001000 0x1000>;
    status = "okay";
+   #address-cells = <1>;
+   #size-cells = <1>;
   };
 
   sram0: memory@20000000 {
    compatible = "mmio-sram";
+   #address-cells = <1>;
+   #size-cells = <1>;
   };
 
   clock: clock@40000000 {
@@ -646,7 +653,7 @@
 
  status = "disabled";
 };
-# 9 "C:/ncs/v3.2.3/zephyr/dts/arm/nordic/nrf52832_qfaa.dtsi" 2 3 4
+# 9 "/opt/nordic/ncs/v3.3.0/zephyr/dts/arm/nordic/nrf52832_qfaa.dtsi" 2 3 4
 
 &flash0 {
  reg = <0x00000000 ((512) * 1024)>;
@@ -654,6 +661,7 @@
 
 &sram0 {
  reg = <0x20000000 ((64) * 1024)>;
+ ranges = <0x0 0x20000000 ((64) * 1024)>;
 };
 
 / {
@@ -661,8 +669,8 @@
   compatible = "simple-bus";
  };
 };
-# 10 "C:/ncs/v3.2.3/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 2
-# 1 "C:/ncs/v3.2.3/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832-pinctrl.dtsi" 1
+# 10 "/opt/nordic/ncs/v3.3.0/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 2
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832-pinctrl.dtsi" 1
 
 
 
@@ -680,11 +688,16 @@
 
  uart0_sleep: uart0_sleep {
   group1 {
-   psels = <((((((0) * 32U) + (6)) & 0x1FFU) << 0U) | ((0U & 0xFFU) << 24U))>,
-    <((((((0) * 32U) + (8)) & 0x1FFU) << 0U) | ((1U & 0xFFU) << 24U))>,
+   psels = <((((((0) * 32U) + (8)) & 0x1FFU) << 0U) | ((1U & 0xFFU) << 24U))>,
     <((((((0) * 32U) + (5)) & 0x1FFU) << 0U) | ((2U & 0xFFU) << 24U))>,
     <((((((0) * 32U) + (7)) & 0x1FFU) << 0U) | ((3U & 0xFFU) << 24U))>;
    low-power-enable;
+  };
+
+  group2 {
+   psels = <((((((0) * 32U) + (6)) & 0x1FFU) << 0U) | ((0U & 0xFFU) << 24U))>;
+   low-power-enable;
+   bias-pull-up;
   };
  };
 
@@ -771,6 +784,7 @@
    psels = <((((((0) * 32U) + (25)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
     <((((((0) * 32U) + (23)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>,
     <((((((0) * 32U) + (24)) & 0x1FFU) << 0U) | ((6U & 0xFFU) << 24U))>;
+   nordic,drive-mode = <3U>;
   };
  };
 
@@ -783,9 +797,9 @@
   };
  };
 };
-# 11 "C:/ncs/v3.2.3/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 2
-# 1 "C:/ncs/v3.2.3/zephyr/include/zephyr/dt-bindings/gpio/arduino-header-r3.h" 1 3 4
-# 12 "C:/ncs/v3.2.3/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 2
+# 11 "/opt/nordic/ncs/v3.3.0/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 2
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/include/zephyr/dt-bindings/gpio/arduino-header-r3.h" 1 3 4
+# 12 "/opt/nordic/ncs/v3.3.0/zephyr/boards/nordic/nrf52dk/nrf52dk_nrf52832.dts" 2
 
 
 / {
@@ -1016,7 +1030,7 @@ arduino_spi: &spi2 {
 
   slot0_partition: partition@c000 {
    label = "image-0";
-   reg = <0x0000C000 0x37000>;
+   reg = <0x0000c000 0x37000>;
   };
 
   slot1_partition: partition@43000 {
@@ -1068,4 +1082,4 @@ arduino_spi: &spi2 {
     };
 };
 # 0 "<command-line>" 2
-# 1 "C:/ncs/v3.2.3/zephyr/misc/empty_file.c"
+# 1 "/opt/nordic/ncs/v3.3.0/zephyr/misc/empty_file.c"

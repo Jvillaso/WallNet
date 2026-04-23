@@ -1,7 +1,7 @@
 default: rachel_NRF
-build_dir: C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build
+build_dir: /Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build
 domains:
   - name: rachel_NRF
-    build_dir: C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/rachel_NRF/build/rachel_NRF
+    build_dir: /Users/rachelchen/Projects/WallNet/nrf_code/rachel_NRF/build/rachel_NRF
 flash_order:
   - rachel_NRF
