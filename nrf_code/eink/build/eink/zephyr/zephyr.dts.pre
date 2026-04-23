@@ -1038,13 +1038,13 @@ arduino_spi: &spi2 {
 
 
 &pinctrl {
- spi1_default: spi1_default {
+ spi2_default: spi2_default {
   group1 {
    psels = <((((((0) * 32U) + (15)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
     <((((((0) * 32U) + (13)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
   };
  };
- spi1_sleep: spi1_sleep {
+ spi2_sleep: spi2_sleep {
   group1 {
    psels = <((((((0) * 32U) + (15)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
     <((((((0) * 32U) + (13)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
@@ -1055,8 +1055,8 @@ arduino_spi: &spi2 {
 &spi2 {
         compatible = "nordic,nrf-spi";
         status = "okay";
-        pinctrl-0 = <&spi1_default>;
-        pinctrl-1 = <&spi1_sleep>;
+        pinctrl-0 = <&spi2_default>;
+        pinctrl-1 = <&spi2_sleep>;
         pinctrl-names = "default", "sleep";
 
         gendev: gendev@0 {

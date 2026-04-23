@@ -9,6 +9,8 @@
 #include "buzzer.h"
 #include "wallnet_rfid.h"
 
+#include "eink.h"
+
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
 volatile wallnet_state_t sys_current_state = STATE_BOOT_CHECK;
 
@@ -317,6 +319,13 @@ void wallnet_auth_trigger(void) {
 
 int main(void)
 {
+
+    
+
+    
+
+
+
     int err;
     printk("WallNet Booting...");
 
@@ -324,6 +333,19 @@ int main(void)
     //Note for Austin: to work without gps, comment out wallnet_gps_init() and wallnet_gps.c : wallnet_gps_start()
     wallnet_gps_init(); // takes care of gps_conf before settings_load()
     wallnet_ui_init();
+
+    if (eink_init() != 0) {
+            printk("Failed to initialize eink\n");
+            return -1;
+    }
+    // card_record_t austinCard;
+    // //card_record_t numba2;
+    // austinCard.valid = 1;
+    // strcpy(austinCard.first_name, "joshua");
+    // strcpy(austinCard.last_name, "Lugo");
+    // strcpy(austinCard.last_four, "1234");
+
+    // displayCard(austinCard);
 
     buzzer_init();
 
@@ -355,6 +377,7 @@ int main(void)
     if (sys_num_cards == 0) {
         sys_current_state = STATE_INIT_WAIT_ENROLL;
         printk("Entering First-Time Setup.");
+        
     } else { // if we have cards, we must have fingerprint so go right into locked
         sys_current_state = STATE_LOCKED;
         printk("Existing data found. Vault Locked.");

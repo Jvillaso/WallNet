@@ -1084,23 +1084,7 @@ arduino_spi: &spi2 {
 
 
 &pinctrl {
-    i2c0_default: i2c0_default {
-
-        group1 {
-            psels = <((((((0) * 32U) + (26)) & 0x1FFU) << 0U) | ((12U & 0xFFU) << 24U))>,
-                    <((((((0) * 32U) + (27)) & 0x1FFU) << 0U) | ((11U & 0xFFU) << 24U))>;
-            bias-pull-up;
-        };
-    };
-
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <((((((0) * 32U) + (26)) & 0x1FFU) << 0U) | ((12U & 0xFFU) << 24U))>,
-                    <((((((0) * 32U) + (27)) & 0x1FFU) << 0U) | ((11U & 0xFFU) << 24U))>;
-            low-power-enable;
-        };
-    };
-
+# 72 "./app.overlay"
     uart0_default: uart0_default {
         group1 {
 
@@ -1119,6 +1103,50 @@ arduino_spi: &spi2 {
         };
     };
 
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <((((((0) * 32U) + (26)) & 0x1FFU) << 0U) | ((12U & 0xFFU) << 24U))>,
+                    <((((((0) * 32U) + (27)) & 0x1FFU) << 0U) | ((11U & 0xFFU) << 24U))>;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <((((((0) * 32U) + (26)) & 0x1FFU) << 0U) | ((12U & 0xFFU) << 24U))>,
+                    <((((((0) * 32U) + (27)) & 0x1FFU) << 0U) | ((11U & 0xFFU) << 24U))>;
+            low-power-enable;
+        };
+    };
+
+    spi2_default: spi2_default {
+  group1 {
+   psels = <((((((0) * 32U) + (15)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
+    <((((((0) * 32U) + (13)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
+  };
+ };
+ spi2_sleep: spi2_sleep {
+  group1 {
+   psels = <((((((0) * 32U) + (15)) & 0x1FFU) << 0U) | ((4U & 0xFFU) << 24U))>,
+    <((((((0) * 32U) + (13)) & 0x1FFU) << 0U) | ((5U & 0xFFU) << 24U))>;
+  };
+ };
+
+};
+
+
+&spi2 {
+        compatible = "nordic,nrf-spi";
+        status = "okay";
+        pinctrl-0 = <&spi2_default>;
+        pinctrl-1 = <&spi2_sleep>;
+        pinctrl-names = "default", "sleep";
+
+        gendev: gendev@0 {
+                compatible = "vnd,spi-device";
+                reg = <0>;
+                spi-max-frequency = <2000000>;
+                label = "GenDev";
+        };
 };
 
 
@@ -1134,9 +1162,26 @@ arduino_spi: &spi2 {
 
 
 &i2c0 {
-    status = "okay";
+    status = "disabled";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>;
+    compatible = "nordic,nrf-twim";
+
+    zephyr,concat-buf-size = <512>;
+    zephyr,flash-buf-max-size = <512>;
+};
+
+
+&spi1 {
+    status = "disabled";
+};
+
+&i2c1 {
+    status = "okay";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>;
     compatible = "nordic,nrf-twim";

@@ -27,6 +27,9 @@ typedef enum {
 #define MAX_ENC_EXP_LEN 24  
 
 // new encrypted card struct
+
+#ifndef CARD_RECORD
+#define CARD_RECORD
 typedef struct {
     bool valid;
     char first_name[MAX_NAME_LEN];
@@ -42,6 +45,8 @@ typedef struct {
     uint8_t enc_exp[MAX_ENC_EXP_LEN];
     uint8_t enc_exp_len;
 } card_record_t;
+
+#endif // CARD_RECORD
 
 
 // packed so it doesn't pad 0s and let's me keep 14 byte packet struct

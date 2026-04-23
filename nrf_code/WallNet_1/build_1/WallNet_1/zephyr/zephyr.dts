@@ -163,12 +163,12 @@
 			reg = < 0x40002000 0x1000 >;     /* in zephyr\dts\arm\nordic\nrf52832.dtsi:131 */
 			interrupts = < 0x2 0x1 >;        /* in zephyr\dts\arm\nordic\nrf52832.dtsi:132 */
 			compatible = "nordic,nrf-uarte"; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:172 */
-			status = "okay";                 /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:92 */
-			current-speed = < 0x1c200 >;     /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:93 */
-			pinctrl-0 = < &uart0_default >;  /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:95 */
-			pinctrl-1 = < &uart0_sleep >;    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:97 */
+			status = "okay";                 /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:138 */
+			current-speed = < 0x1c200 >;     /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:139 */
+			pinctrl-0 = < &uart0_default >;  /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:141 */
+			pinctrl-1 = < &uart0_sleep >;    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:143 */
 			pinctrl-names = "default",
-			                "sleep";         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:98 */
+			                "sleep";         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:144 */
 		};
 
 		/* node '/soc/i2c@40003000' defined in zephyr\dts\arm\nordic\nrf52832.dtsi:136 */
@@ -179,15 +179,15 @@
 			interrupts = < 0x3 0x1 >;              /* in zephyr\dts\arm\nordic\nrf52832.dtsi:148 */
 			easydma-maxcnt-bits = < 0x8 >;         /* in zephyr\dts\arm\nordic\nrf52832.dtsi:149 */
 			zephyr,pm-device-runtime-auto;         /* in zephyr\dts\arm\nordic\nrf52832.dtsi:151 */
-			status = "okay";                       /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:103 */
-			pinctrl-0 = < &i2c0_default >;         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:104 */
-			pinctrl-1 = < &i2c0_sleep >;           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:105 */
+			status = "disabled";                   /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:149 */
+			pinctrl-0 = < &i2c0_default >;         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:150 */
+			pinctrl-1 = < &i2c0_sleep >;           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:151 */
 			pinctrl-names = "default",
-			                "sleep";               /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:106 */
-			clock-frequency = < 0x186a0 >;         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:107 */
-			compatible = "nordic,nrf-twim";        /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:108 */
-			zephyr,concat-buf-size = < 0x200 >;    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:110 */
-			zephyr,flash-buf-max-size = < 0x200 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:111 */
+			                "sleep";               /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:152 */
+			clock-frequency = < 0x186a0 >;         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:153 */
+			compatible = "nordic,nrf-twim";        /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:154 */
+			zephyr,concat-buf-size = < 0x200 >;    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:156 */
+			zephyr,flash-buf-max-size = < 0x200 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:157 */
 		};
 
 		/* node '/soc/spi@40003000' defined in zephyr\dts\arm\nordic\nrf52832.dtsi:154 */
@@ -208,18 +208,21 @@
 
 		/* node '/soc/i2c@40004000' defined in zephyr\dts\arm\nordic\nrf52832.dtsi:172 */
 		i2c1: i2c@40004000 {
-			#address-cells = < 0x1 >;      /* in zephyr\dts\arm\nordic\nrf52832.dtsi:181 */
-			#size-cells = < 0x0 >;         /* in zephyr\dts\arm\nordic\nrf52832.dtsi:182 */
-			reg = < 0x40004000 0x1000 >;   /* in zephyr\dts\arm\nordic\nrf52832.dtsi:183 */
-			interrupts = < 0x4 0x1 >;      /* in zephyr\dts\arm\nordic\nrf52832.dtsi:184 */
-			easydma-maxcnt-bits = < 0x8 >; /* in zephyr\dts\arm\nordic\nrf52832.dtsi:185 */
-			status = "disabled";           /* in zephyr\dts\arm\nordic\nrf52832.dtsi:186 */
-			zephyr,pm-device-runtime-auto; /* in zephyr\dts\arm\nordic\nrf52832.dtsi:187 */
-			compatible = "nordic,nrf-twi"; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:188 */
-			pinctrl-0 = < &i2c1_default >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:191 */
-			pinctrl-1 = < &i2c1_sleep >;   /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:192 */
+			#address-cells = < 0x1 >;              /* in zephyr\dts\arm\nordic\nrf52832.dtsi:181 */
+			#size-cells = < 0x0 >;                 /* in zephyr\dts\arm\nordic\nrf52832.dtsi:182 */
+			reg = < 0x40004000 0x1000 >;           /* in zephyr\dts\arm\nordic\nrf52832.dtsi:183 */
+			interrupts = < 0x4 0x1 >;              /* in zephyr\dts\arm\nordic\nrf52832.dtsi:184 */
+			easydma-maxcnt-bits = < 0x8 >;         /* in zephyr\dts\arm\nordic\nrf52832.dtsi:185 */
+			zephyr,pm-device-runtime-auto;         /* in zephyr\dts\arm\nordic\nrf52832.dtsi:187 */
+			status = "okay";                       /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:166 */
+			pinctrl-0 = < &i2c1_default >;         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:167 */
+			pinctrl-1 = < &i2c1_sleep >;           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:168 */
 			pinctrl-names = "default",
-			                "sleep";       /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:193 */
+			                "sleep";               /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:169 */
+			clock-frequency = < 0x186a0 >;         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:170 */
+			compatible = "nordic,nrf-twim";        /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:171 */
+			zephyr,concat-buf-size = < 0x200 >;    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:173 */
+			zephyr,flash-buf-max-size = < 0x200 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:174 */
 		};
 
 		/* node '/soc/spi@40004000' defined in zephyr\dts\arm\nordic\nrf52832.dtsi:190 */
@@ -231,11 +234,11 @@
 			max-frequency = < 0x7a1200 >;  /* in zephyr\dts\arm\nordic\nrf52832.dtsi:203 */
 			easydma-maxcnt-bits = < 0x8 >; /* in zephyr\dts\arm\nordic\nrf52832.dtsi:204 */
 			compatible = "nordic,nrf-spi"; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:213 */
-			status = "okay";               /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:214 */
 			pinctrl-0 = < &spi1_default >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:215 */
 			pinctrl-1 = < &spi1_sleep >;   /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:216 */
 			pinctrl-names = "default",
 			                "sleep";       /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:217 */
+			status = "disabled";           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:162 */
 		};
 
 		/* node '/soc/nfct@40005000' defined in zephyr\dts\arm\nordic\nrf52832.dtsi:208 */
@@ -565,13 +568,21 @@
 			interrupts = < 0x23 0x1 >;               /* in zephyr\dts\arm\nordic\nrf52832.dtsi:467 */
 			max-frequency = < 0x7a1200 >;            /* in zephyr\dts\arm\nordic\nrf52832.dtsi:468 */
 			easydma-maxcnt-bits = < 0x8 >;           /* in zephyr\dts\arm\nordic\nrf52832.dtsi:469 */
-			compatible = "nordic,nrf-spi";           /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:221 */
-			status = "okay";                         /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:222 */
 			cs-gpios = < &arduino_header 0x10 0x1 >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:223 */
-			pinctrl-0 = < &spi2_default >;           /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:224 */
-			pinctrl-1 = < &spi2_sleep >;             /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:225 */
+			compatible = "nordic,nrf-spi";           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:122 */
+			status = "okay";                         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:123 */
+			pinctrl-0 = < &spi2_default >;           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:124 */
+			pinctrl-1 = < &spi2_sleep >;             /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:125 */
 			pinctrl-names = "default",
-			                "sleep";                 /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:226 */
+			                "sleep";                 /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:126 */
+
+			/* node '/soc/spi@40023000/gendev@0' defined in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:128 */
+			gendev: gendev@0 {
+				compatible = "vnd,spi-device";    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:129 */
+				reg = < 0x0 >;                    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:130 */
+				spi-max-frequency = < 0x1e8480 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:131 */
+				label = "GenDev";                 /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:132 */
+			};
 		};
 
 		/* node '/soc/rtc@40024000' defined in zephyr\dts\arm\nordic\nrf52832.dtsi:473 */
@@ -614,71 +625,70 @@
 
 		/* node '/pin-controller/uart0_default' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:7 */
 		uart0_default: uart0_default {
-			phandle = < 0x2 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:95 */
+			phandle = < 0x2 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:141 */
 
 			/* node '/pin-controller/uart0_default/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:8 */
 			group1 {
 				psels = < 0x6 >,
-				        < 0x100000b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:74 */
+				        < 0x100000b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:76 */
 			};
 		};
 
 		/* node '/pin-controller/uart0_sleep' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:16 */
 		uart0_sleep: uart0_sleep {
-			phandle = < 0x3 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:97 */
+			phandle = < 0x3 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:143 */
 
 			/* node '/pin-controller/uart0_sleep/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:17 */
 			group1 {
 				psels = < 0x6 >,
-				        < 0x100000b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:82 */
-				low-power-enable;      /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:84 */
+				        < 0x100000b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:84 */
+				low-power-enable;      /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:86 */
 			};
 		};
 
 		/* node '/pin-controller/i2c0_default' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:26 */
 		i2c0_default: i2c0_default {
-			phandle = < 0x4 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:104 */
+			phandle = < 0x4 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:150 */
 
 			/* node '/pin-controller/i2c0_default/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:27 */
 			group1 {
 				psels = < 0xc00001a >,
-				        < 0xb00001b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:56 */
-				bias-pull-up;          /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:58 */
+				        < 0xb00001b >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:28 */
 			};
 		};
 
 		/* node '/pin-controller/i2c0_sleep' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:33 */
 		i2c0_sleep: i2c0_sleep {
-			phandle = < 0x5 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:105 */
+			phandle = < 0x5 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:151 */
 
 			/* node '/pin-controller/i2c0_sleep/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:34 */
 			group1 {
 				psels = < 0xc00001a >,
-				        < 0xb00001b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:64 */
-				low-power-enable;      /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:66 */
+				        < 0xb00001b >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:35 */
+				low-power-enable;      /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:37 */
 			};
 		};
 
 		/* node '/pin-controller/i2c1_default' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:41 */
 		i2c1_default: i2c1_default {
-			phandle = < 0x8 >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:191 */
+			phandle = < 0x8 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:167 */
 
 			/* node '/pin-controller/i2c1_default/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:42 */
 			group1 {
-				psels = < 0xc00001e >,
-				        < 0xb00001f >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:43 */
+				psels = < 0xc00001a >,
+				        < 0xb00001b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:92 */
 			};
 		};
 
 		/* node '/pin-controller/i2c1_sleep' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:48 */
 		i2c1_sleep: i2c1_sleep {
-			phandle = < 0x9 >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:192 */
+			phandle = < 0x9 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:168 */
 
 			/* node '/pin-controller/i2c1_sleep/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:49 */
 			group1 {
-				psels = < 0xc00001e >,
-				        < 0xb00001f >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:50 */
-				low-power-enable;      /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:52 */
+				psels = < 0xc00001a >,
+				        < 0xb00001b >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:99 */
+				low-power-enable;      /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:101 */
 			};
 		};
 
@@ -756,26 +766,24 @@
 
 		/* node '/pin-controller/spi2_default' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:104 */
 		spi2_default: spi2_default {
-			phandle = < 0xf >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:224 */
+			phandle = < 0xf >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:124 */
 
 			/* node '/pin-controller/spi2_default/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:105 */
 			group1 {
-				psels = < 0x4000019 >,
-				        < 0x5000017 >,
-				        < 0x6000018 >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:106 */
+				psels = < 0x400000f >,
+				        < 0x500000d >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:107 */
 			};
 		};
 
 		/* node '/pin-controller/spi2_sleep' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:112 */
 		spi2_sleep: spi2_sleep {
-			phandle = < 0x10 >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:225 */
+			phandle = < 0x10 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:125 */
 
 			/* node '/pin-controller/spi2_sleep/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:113 */
 			group1 {
-				psels = < 0x4000019 >,
-				        < 0x5000017 >,
-				        < 0x6000018 >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:114 */
 				low-power-enable;      /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:117 */
+				psels = < 0x400000f >,
+				        < 0x500000d >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:113 */
 			};
 		};
 	};

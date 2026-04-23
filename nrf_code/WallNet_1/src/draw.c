@@ -1,3 +1,6 @@
+#ifndef DRAW_H
+#define DRAW_H
+
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
@@ -322,6 +325,32 @@ int displayCard(card_record_t cardData){
     return 0;
 }
 
+void clearPortion(int startX, int startY) {
+    // CLEAR REGION FIRST
+    for (int y_src = startY; y_src < HEIGHT; y_src++) {
+
+        int x_begin = (y_src == startY) ? startX : 0;
+
+        for (int x_src = x_begin; x_src < WIDTH; x_src++) {
+
+            // same transform as draw
+            int x_dst = y_src;
+            int y_dst = (EPD_HEIGHT - 1) - x_src;
+
+            if (x_dst < 0 || x_dst >= EPD_WIDTH ||
+                y_dst < 0 || y_dst >= EPD_HEIGHT) {
+                continue;
+            }
+
+            int bytesPerRow = (EPD_WIDTH + 7) / 8;
+            int dstIndex = y_dst * bytesPerRow + (x_dst / 8);
+            int dstBit = 7 - (x_dst % 8);
+
+            //clearing bit
+            frameBuffer[dstIndex] &= ~(1 << dstBit);
+        }
+    }
+}
 int displayErr(char* errMsg){
     Reset();
     if(alph_scaled_ready == 0){
@@ -329,6 +358,14 @@ int displayErr(char* errMsg){
     }
     int startX = horizontal_border; 
     int startY = (twoXHeight * 3) + vertical_border; 
+
+    clearPortion(startX, startY);
+    
+    int len = strlen(errMsg);
+
+
+    
+
     drawScaled(errMsg, startX, startY); 
     
     Display(frameBuffer);
@@ -397,11 +434,15 @@ int draw(char* string){
     }
     return 0;
 }
-
 int drawScaled(char* string, int startX, int startY) {
-    int charPerRow = 16;
+
+    // 🔥 compute how many chars fit given horizontal offset
+    int usableWidth = WIDTH - startX;
+    int charPerRow = usableWidth / 16;
+    if (charPerRow <= 0) return -1;
 
     for (int i = 0; string[i] != '\0'; i++) {
+
         if (i >= 10 * charPerRow) {
             return -1;
         }
@@ -419,18 +460,24 @@ int drawScaled(char* string, int startX, int startY) {
         int charY = i / charPerRow;
 
         for (int j = 0; j < 24; j++) {
-            uint16_t row = drawChar[j];
             int y_src = startY + charY * 24 + j;
             if (y_src >= HEIGHT) continue;
 
+            uint16_t row = drawChar[j];
+
             for (int bit = 0; bit < 16; bit++) {
                 if (row & (1 << (15 - bit))) {
-                    int x_src = startX + charX * 16 + bit;
+
+                    int x_src = startX + (charX * 16) + bit;
+
+                    if (x_src >= WIDTH) continue;
+
                     setTransformedPixel(x_src, y_src);
                 }
             }
         }
     }
+
     return 0;
 }
 
@@ -494,3 +541,4 @@ void saveRawPBM(const char* filename, uint8_t* buffer, int width, int height){
     fclose(f);
 }
 
+#endif
