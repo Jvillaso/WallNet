@@ -322,9 +322,11 @@ int displayCard(card_record_t cardData){
     return 0;
 }
 
-int displayErr(char* errMsg, int length){
+int displayErr(char* errMsg){
     Reset();
-    
+    if(alph_scaled_ready == 0){
+        buildAlph2x();
+    }
     int startX = horizontal_border; 
     int startY = (twoXHeight * 3) + vertical_border; 
     drawScaled(errMsg, startX, startY); 

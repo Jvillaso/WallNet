@@ -5,6 +5,9 @@
 #include <zephyr/sys/reboot.h>
 #include <zephyr/input/input.h>
 
+#include "eink.h"
+#include "draw.c"
+
 #include "system_state.h"
 #include "fp_commands.h"
 
@@ -19,11 +22,13 @@ static struct k_work_delayable factory_reset_work;
 void update_eink_display(void) {
     switch (sys_current_state) {
         case STATE_INIT_WAIT_ENROLL:
-            LOG_WRN("\n[E-INK] Setup 1/2: Press button to enroll Admin Fingerprint.");
+            LOG_WRN("\n[E-INK] Setup 1/2: Press button to enroll Fingerprint.");
+            displayErr("Press button to enroll Fingerprint");
             break;
         case STATE_ENROLLING:
             LOG_WRN("\n[E-INK] Enrolling Fingerprint...");
             LOG_WRN("\n[E-INK] Rapidly place finger on sensor three times...");
+            displayErr("Place finger on sensor 3x");
 
             // todo add something here to show enrollment success/failure
             // maybe a section of screen that displays status message for a few seconds
@@ -31,16 +36,20 @@ void update_eink_display(void) {
 
         case STATE_INIT_WAIT_PAIRING:
             LOG_WRN("\n[E-INK] Setup 2/2: Press button to begin Bluetooth pairing.");
+            displayErr("Press button to begin Bluetooth pairing");
             break;
         case STATE_PAIRING_ADVERTISING:
             LOG_WRN("\n[E-INK] Pairing Mode: Open App to Connect...");
+            displayErr("pen App to Connect");
             break;
         case STATE_BLE_SYNCING:
             LOG_WRN("\n[E-INK] Syncing Cards with Phone... Please Wait.");
+            displayErr("Syncing Cards with Phone Please Wait");
             break;
         case STATE_LOCKED:
             if (sys_num_cards == 0) {
                 LOG_WRN("\n[E-INK] No Cards Saved.");
+                displayErr("No Cards Saved");
             } else {
                 if (sys_active_card_idx >= sys_num_cards) sys_active_card_idx = 0;
                 
@@ -49,6 +58,8 @@ void update_eink_display(void) {
                         sys_card_slots[sys_active_card_idx].first_name,
                         sys_card_slots[sys_active_card_idx].last_name,
                         sys_card_slots[sys_active_card_idx].last_four);
+
+                displayCard(sys_card_slots[sys_active_card_idx]);
             }
             break;
         case STATE_RFID_TRANSMITTING:
@@ -56,12 +67,15 @@ void update_eink_display(void) {
                     sys_card_slots[sys_active_card_idx].first_name,
                     sys_card_slots[sys_active_card_idx].last_name,
                     sys_card_slots[sys_active_card_idx].last_four);
+            displayErr("Transmitting Card Data");
             break;
         case STATE_RESET:
             LOG_WRN("\n[E-INK] !!! FACTORY RESET INITIATED !!!");
             LOG_WRN("\n[E-INK] All data wiped. Rebooting...");
             // todo: clear screen?
             // maybe wait for them to cancel and say "Resetting WallNet... Press Button to Cancel" otherwise it clears screen and reboots
+
+            displayErr("Resetting");
             break;
         default:
             break;
