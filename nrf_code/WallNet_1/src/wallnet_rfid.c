@@ -3,8 +3,12 @@
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/kernel.h>
 #include <string.h>
+#include <zephyr/logging/log.h>
+
 
 #define ST25DV_ADDR 0x53
+
+LOG_MODULE_REGISTER(wallnet_rfid, LOG_LEVEL_INF);
 
 // idk the correct i2c node
 #define I2C_NODE DT_NODELABEL(i2c1)
@@ -15,15 +19,17 @@ int wallnet_rfid_init(void)
 {
     i2c_dev = DEVICE_DT_GET(I2C_NODE);
 
-    if (!device_is_ready(i2c_dev)) {
-        return -ENODEV;
-    }
+    // if (!device_is_ready(i2c_dev)) {
+    //     return -ENODEV;
+    // }
 
     printk("RFID: checking I2C device...\n");
     if (!device_is_ready(i2c_dev)) {
-        printk("I2C NOT READY\n");
+        LOG_WRN("I2C NOT READY\n");
         return -ENODEV;
     }
+
+    LOG_WRN("RFID i2c Initialized");
 
     return 0;
 }

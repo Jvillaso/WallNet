@@ -65,8 +65,8 @@ static void append_to_field(uint8_t *dest_array, uint8_t *current_len,
     if (to_copy > 0) {
         // copy data starting at the end of what we already have
         memcpy(&dest_array[*current_len], new_data, to_copy);
-        printk("Appended %d bytes to field\n", to_copy);
-        printk("Current field value: %.*s\n", *current_len + to_copy, dest_array);
+        // printk("Appended %d bytes to field\n", to_copy);
+        // printk("Current field value: %.*s\n", *current_len + to_copy, dest_array);
         
         // update the length tracker 
         *current_len += to_copy;
@@ -306,7 +306,7 @@ static ssize_t toggle_buzzer(struct bt_conn *conn,
 
     uint8_t flag = char_buf[0]; // first byte
     uint8_t length = char_buf[1]; // second byte
-    uint16_t packet_size = 2 + length + 1;  // size of packet
+    // uint16_t packet_size = 2 + length + 1;  // size of packet
     
     const uint8_t *data_ptr = &char_buf[2]; // ptr starts at data begin
     uint8_t expected_checksum = char_buf[2 + length]; // last byte checksum

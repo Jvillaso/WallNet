@@ -11,7 +11,7 @@
 
 LOG_MODULE_REGISTER(wallnet_gps, LOG_LEVEL_INF);
 
-#define I2C_NODE DT_NODELABEL(i2c0)
+#define I2C_NODE DT_NODELABEL(i2c1)
 #define GPS_I2C_ADDR 0x42
 
 #define GPS_CHUNK_MAX 32

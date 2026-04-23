@@ -137,6 +137,19 @@ static int wallet_settings_set(const char *name, size_t len, settings_read_cb re
 static void rfid_timeout_handler(struct k_work *work) {
     LOG_WRN("RFID Timeout reached. Relocking.");
     
+    uint8_t cc[4] = {
+        0xE1,
+        0x40,
+        0x20,
+        0x00
+    };
+
+    st25dv_write_bytes(0x0000, cc, 4);
+    int ret;
+
+    ret = wallnet_rfid_write_url("rachelchen22.github.io/#");
+
+
     wallnet_gps_start(); // restart gps after rfid timeout
     sys_is_armed = false;
     sys_current_state = STATE_LOCKED;
@@ -158,23 +171,32 @@ static void auth_check_worker(struct k_work *work) {
 
     // poll fp scanner
     if (start_and_identify()) {
-        LOG_WRN("MATCH! Unlocking...");
+        LOG_WRN("Fingerprint Match! Validating RFID Payload...");
         sys_is_armed = true; 
-        sys_current_state = STATE_RFID_TRANSMITTING;
-        update_eink_display(); 
-        
-        // start RFID timeout clk
-        k_work_reschedule(&rfid_timeout_work, K_SECONDS(10));
-        
-        // stop fp while RFID is active
-        k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_SECONDS(11));
-        wallnet_gps_stop();// gps off during rfid for i2c
 
         if ((sys_num_cards == 0) || (sys_active_card_idx >= sys_num_cards)) {
             LOG_ERR("RFID transmit aborted: active card index is invalid.");
         } else {
             int url_len = build_rfid_url(&sys_card_slots[sys_active_card_idx],
                                          rfid_url, sizeof(rfid_url));
+            
+            if (url_len > 0) {
+                LOG_WRN("Built RFID URL: %s", rfid_url);
+            } else {
+                LOG_ERR("Failed to build RFID URL. Aborting transmit.");
+                return;
+            }
+
+            sys_current_state = STATE_RFID_TRANSMITTING;
+            update_eink_display(); 
+            
+            // start RFID timeout clk
+            k_work_reschedule(&rfid_timeout_work, K_SECONDS(10));
+            
+            // stop fp while RFID is active
+            k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_SECONDS(11));
+            wallnet_gps_stop();// gps off during rfid for i2c
+
             
             int ret;
 
