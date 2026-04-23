@@ -39,7 +39,8 @@ int main(void)
 
        
         k_busy_wait(5000000); // wait for 5 seconds
-        displayErr("     ", strlen(errMsg));
+        displayCard(austinCard);
+        
 
 
         return 0;
