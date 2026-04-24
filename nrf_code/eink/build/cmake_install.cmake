@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v3.2.2/zephyr/share/sysbuild
+# Install script for directory: C:/ncs/v3.2.3/zephyr/share/sysbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

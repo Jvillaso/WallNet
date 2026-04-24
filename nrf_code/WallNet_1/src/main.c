@@ -11,6 +11,7 @@
 
 #include "eink.h"
 
+
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
 volatile wallnet_state_t sys_current_state = STATE_BOOT_CHECK;
 
@@ -194,13 +195,13 @@ static void auth_check_worker(struct k_work *work) {
 
             sys_current_state = STATE_RFID_TRANSMITTING;
             update_eink_display(); 
+            wallnet_gps_stop();// gps off during rfid for i2c
             
             // start RFID timeout clk
             k_work_reschedule(&rfid_timeout_work, K_SECONDS(10));
             
             // stop fp while RFID is active
             k_work_reschedule_for_queue(&fp_workq, &auth_check_work, K_SECONDS(11));
-            wallnet_gps_stop();// gps off during rfid for i2c
 
             
             int ret;
@@ -323,12 +324,6 @@ void wallnet_auth_trigger(void) {
 int main(void)
 {
 
-    
-
-    
-
-
-
     int err;
     printk("WallNet Booting...");
 
@@ -341,14 +336,7 @@ int main(void)
             printk("Failed to initialize eink\n");
             return -1;
     }
-    // card_record_t austinCard;
-    // //card_record_t numba2;
-    // austinCard.valid = 1;
-    // strcpy(austinCard.first_name, "joshua");
-    // strcpy(austinCard.last_name, "Lugo");
-    // strcpy(austinCard.last_four, "1234");
-
-    // displayCard(austinCard);
+    
 
     buzzer_init();
 
@@ -373,7 +361,6 @@ int main(void)
     k_work_queue_start(&fp_workq, fp_workq_stack, K_THREAD_STACK_SIZEOF(fp_workq_stack), 7, NULL);
     k_work_init_delayable(&auth_check_work, auth_check_worker);
     k_work_init_delayable(&rfid_timeout_work, rfid_timeout_handler);
-    
     k_work_init_delayable(&fp_enroll_work, fp_enroll_worker);
 
 

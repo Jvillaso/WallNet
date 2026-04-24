@@ -1,25 +1,22 @@
 cmake:
-  application:
-    source-dir: 'C:/ncs/v3.2.2/zephyr/share/sysbuild'
   board:
     name: 'nrf52dk'
     path:
-     - 'C:/ncs/v3.2.2/zephyr/boards/nordic/nrf52dk'
+     - 'C:/ncs/v3.2.3/zephyr/boards/nordic/nrf52dk'
     qualifiers: 'nrf52832'
     revision: ''
   images:
    - name: 'eink'
-     source-dir: 'C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink'
+     source-dir: 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink'
      type: 'MAIN'
   kconfig:
     files:
-     - 'C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/empty.conf'
-     - 'C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/empty.conf'
+     - 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/empty.conf'
+     - 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/empty.conf'
     user-files:
-     - 'C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/empty.conf'
-  sysbuild: 'true'
+     - 'C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/empty.conf'
 version: '0.1.0'
 west:
-  command: 'C:\ncs\toolchains\c717907b94\opt\bin\Scripts\west build --build-dir c:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build c:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink --pristine --board nrf52dk/nrf52832 -- -DCONF_FILE=prj.conf -DDTC_OVERLAY_FILE=app.overlay -DDEBUG_THREAD_INFO=On -DCONFIG_DEBUG_THREAD_INFO=y -Deink_DEBUG_THREAD_INFO=On'
-  topdir: 'c:\ncs\v3.2.2'
+  command: 'C:\ncs\toolchains\fd21892d0f\opt\bin\Scripts\west build --build-dir c:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build c:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink --pristine --board nrf52dk/nrf52832 -- -DCONFIG_DEBUG_THREAD_INFO=y -DCONF_FILE=prj.conf -DDTC_OVERLAY_FILE=app.overlay'
+  topdir: 'c:\ncs\v3.2.3'
   version: '1.4.0'

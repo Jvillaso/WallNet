@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v3.2.2/zephyr/subsys
+# Install script for directory: C:/ncs/v3.2.3/zephyr/subsys
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,116 +34,116 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/ncs/toolchains/c717907b94/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/ncs/toolchains/fd21892d0f/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/canbus/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/canbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/debug/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/debug/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/fb/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/fb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/fs/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/fs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/gnss/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/gnss/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/ipc/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/ipc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/logging/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/logging/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/mem_mgmt/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/mem_mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/mgmt/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/modbus/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/modbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/pm/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/pm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/pmci/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/pmci/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/portability/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/portability/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/random/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/random/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/rtio/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/rtio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/sd/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/sd/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/stats/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/stats/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/storage/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/storage/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/task_wdt/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/task_wdt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/testsuite/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/testsuite/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/tracing/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/tracing/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/subsys/usb/cmake_install.cmake")
+  include("C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink/zephyr/subsys/usb/cmake_install.cmake")
 endif()
 

@@ -563,19 +563,19 @@
 			max-frequency = < 0x7a1200 >;            /* in zephyr\dts\arm\nordic\nrf52832.dtsi:468 */
 			easydma-maxcnt-bits = < 0x8 >;           /* in zephyr\dts\arm\nordic\nrf52832.dtsi:469 */
 			cs-gpios = < &arduino_header 0x10 0x1 >; /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:223 */
-			compatible = "nordic,nrf-spi";           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:22 */
-			status = "okay";                         /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:23 */
-			pinctrl-0 = < &spi2_default >;           /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:24 */
-			pinctrl-1 = < &spi2_sleep >;             /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:25 */
+			compatible = "nordic,nrf-spi";           /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:22 */
+			status = "okay";                         /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:23 */
+			pinctrl-0 = < &spi2_default >;           /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:24 */
+			pinctrl-1 = < &spi2_sleep >;             /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:25 */
 			pinctrl-names = "default",
-			                "sleep";                 /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:26 */
+			                "sleep";                 /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:26 */
 
-			/* node '/soc/spi@40023000/gendev@0' defined in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:28 */
+			/* node '/soc/spi@40023000/gendev@0' defined in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:28 */
 			gendev: gendev@0 {
-				compatible = "vnd,spi-device";    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:29 */
-				reg = < 0x0 >;                    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:30 */
-				spi-max-frequency = < 0x1e8480 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:31 */
-				label = "GenDev";                 /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:32 */
+				compatible = "vnd,spi-device";    /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:29 */
+				reg = < 0x0 >;                    /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:30 */
+				spi-max-frequency = < 0x1e8480 >; /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:31 */
+				label = "GenDev";                 /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:32 */
 			};
 		};
 
@@ -764,24 +764,24 @@
 
 		/* node '/pin-controller/spi2_default' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:104 */
 		spi2_default: spi2_default {
-			phandle = < 0xf >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:24 */
+			phandle = < 0xf >; /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:24 */
 
 			/* node '/pin-controller/spi2_default/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:105 */
 			group1 {
 				psels = < 0x400000f >,
-				        < 0x500000d >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:9 */
+				        < 0x500000d >; /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:9 */
 			};
 		};
 
 		/* node '/pin-controller/spi2_sleep' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:112 */
 		spi2_sleep: spi2_sleep {
-			phandle = < 0x10 >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:25 */
+			phandle = < 0x10 >; /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:25 */
 
 			/* node '/pin-controller/spi2_sleep/group1' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:113 */
 			group1 {
 				low-power-enable;      /* in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832-pinctrl.dtsi:117 */
 				psels = < 0x400000f >,
-				        < 0x500000d >; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\eink\build\eink\zephyr\app.overlay:15 */
+				        < 0x500000d >; /* in ..\..\Users\jsche\Desktop\WallNet_Clean\nrf_code\eink\build\eink\zephyr\app.overlay:15 */
 			};
 		};
 	};

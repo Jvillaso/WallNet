@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include "eink.h"
 
-
 void saveRawPBM(const char* filename, uint8_t* buffer, int width, int height);
 int draw(char* string, int x, int y);
 int drawScaled(char* string, int startX, int startY);
@@ -576,7 +575,12 @@ int draw(char* string, int startX, int startY){
 }
 
 int drawScaled(char* string, int startX, int startY) {
-    int charPerRow = 16;
+    int usableWidth = WIDTH - startX;
+    int charPerRow = usableWidth / 16;
+
+    if (charPerRow <= 0) {
+        return -1;
+    }
 
     for (int i = 0; string[i] != '\0'; i++) {
         if (i >= 10 * charPerRow) {
@@ -603,6 +607,7 @@ int drawScaled(char* string, int startX, int startY) {
             for (int bit = 0; bit < 16; bit++) {
                 if (row & (1 << (15 - bit))) {
                     int x_src = startX + charX * 16 + bit;
+                    if (x_src >= WIDTH) continue;
                     setTransformedPixel(x_src, y_src);
                 }
             }

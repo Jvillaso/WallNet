@@ -1,13 +1,13 @@
 # Target labels
  eink
 # Source files and their labels
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink-complete.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-build.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-configure.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-download.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-install.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-mkdir.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-patch.rule
-C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-update.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/CMakeFiles/eink-complete.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-build.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-configure.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-download.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-install.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-mkdir.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-patch.rule
+C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/_sysbuild/sysbuild/images/eink-prefix/src/eink-stamp/eink-update.rule

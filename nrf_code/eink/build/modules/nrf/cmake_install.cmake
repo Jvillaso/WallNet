@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v3.2.2/nrf/sysbuild
+# Install script for directory: C:/ncs/v3.2.3/nrf/sysbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

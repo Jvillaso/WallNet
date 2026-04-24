@@ -18,6 +18,5 @@ target_sources(app PRIVATE
     src/wallnet_rfid.h
     src/eink.h
     src/eink.c
-    src/draw.c
     src/bq.c
 )

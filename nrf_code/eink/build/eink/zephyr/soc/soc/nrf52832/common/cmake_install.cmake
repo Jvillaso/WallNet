@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v3.2.2/zephyr/soc/nordic/common
+# Install script for directory: C:/ncs/v3.2.3/zephyr/soc/nordic/common
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,11 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/ncs/toolchains/c717907b94/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink/zephyr/soc/soc/nrf52832/common/uicr/cmake_install.cmake")
+  set(CMAKE_OBJDUMP "C:/ncs/toolchains/fd21892d0f/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
 endif()
 

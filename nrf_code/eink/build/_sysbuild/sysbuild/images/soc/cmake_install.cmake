@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v3.2.2/zephyr/share/sysbuild/images/soc
+# Install script for directory: C:/ncs/v3.2.3/zephyr/share/sysbuild/images/soc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

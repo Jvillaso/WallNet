@@ -18,7 +18,7 @@ int main(void)
 
         card_record_t austinCard;
         austinCard.valid = 1;
-        strcpy(austinCard.first_name, "joshua");
+        strcpy(austinCard.first_name, "austin");
         strcpy(austinCard.last_name, "Lugo");
         strcpy(austinCard.last_four, "1234");
         displayCard(austinCard);

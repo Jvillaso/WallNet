@@ -1,4 +1,4 @@
-menu "nrf (C:/ncs/v3.2.2/nrf)"
+menu "nrf (C:/ncs/v3.2.3/nrf)"
 osource "$(SYSBUILD_NRF_KCONFIG)"
 config ZEPHYR_NRF_MODULE
 	bool

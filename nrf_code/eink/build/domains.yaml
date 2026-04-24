@@ -1,7 +1,7 @@
 default: eink
-build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build
+build_dir: C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build
 domains:
   - name: eink
-    build_dir: C:/Users/biote/OneDrive/Documents/WallNet/nrf_code/eink/build/eink
+    build_dir: C:/Users/jsche/Desktop/WallNet_Clean/nrf_code/eink/build/eink
 flash_order:
   - eink

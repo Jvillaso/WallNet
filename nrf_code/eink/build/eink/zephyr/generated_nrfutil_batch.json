@@ -1,5 +1,5 @@
 {
-  "nrfutil_device_version": "2.15.7",
+  "nrfutil_device_version": "2.17.1",
   "family": "NRF52_FAMILY",
   "operations": [
     {
@@ -7,7 +7,7 @@
       "operation": {
         "chip_erase_mode": "ERASE_RANGES_TOUCHED_BY_FIRMWARE",
         "firmware": {
-          "file": "C:\\Users\\biote\\OneDrive\\Documents\\WallNet\\nrf_code\\eink\\build\\merged.hex"
+          "file": "C:\\Users\\jsche\\Desktop\\WallNet_Clean\\nrf_code\\eink\\build\\merged.hex"
         },
         "type": "program",
         "verify": "VERIFY_READ"

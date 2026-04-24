@@ -7,6 +7,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+
+
 #ifndef CARD_RECORD
 #define CARD_RECORD
 #define MAX_NAME_LEN 20

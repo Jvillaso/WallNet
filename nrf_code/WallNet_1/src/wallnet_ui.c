@@ -6,7 +6,7 @@
 #include <zephyr/input/input.h>
 
 #include "eink.h"
-#include "draw.h"
+#include "draw.c"
 
 #include "system_state.h"
 #include "fp_commands.h"
@@ -93,8 +93,8 @@ static void tap_eval_handler(struct k_work *work) {
             // printk("Starting enrollment process...");
                         
             sys_current_state = STATE_ENROLLING;
-            update_eink_display();
             fp_init();
+            update_eink_display();
 
             // id=1
             if(start_and_enroll(1, 3, true, true, true, true)) {
@@ -184,7 +184,7 @@ static void factory_reset_handler(struct k_work *work) {
 
 //  HARDWARE ISR way easier zephyr version does all the debounce and handling apart of work systme
 static void input_cb(struct input_event *evt, void *user_data) {
-    if (evt->code != INPUT_KEY_0) {
+    if (evt->code != INPUT_KEY_1) {
         return;
     }
 
