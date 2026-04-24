@@ -1,36 +1,8 @@
-
-
-// convert to 0–3
-
-// doing like an exponential thing is like way overkill so it should look more like
-//        \ 4.2
-//         \ 
-//          \
-//            -3.95------------------3.7----
-//                                           \
-//                                            \ 3.4
-//                                             \
-// im literally the goat at ascii art
-
-//     ⠀⠀⠀⠀⠀⠀ ⣠⠞⠉⠉⠉⠉⠉⠉⠙⠓⢦⣄
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠏⢠⣤⡶⠶⠶⠶⠶⣤⣄⠀⠹⣧⡀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⣸⠟⠀⠸⣿⣦⣄⣀⣠⣤⣤⡿⠀⠀⠘⣧
-// ⠀⠀⠀⠀⠀⠀⠀⢰⡟⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⢹⡄
-// ⠀⠀⠀⠀⠀⠀⠀⣼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
-// ⠀⠀⠀⠀⠀⠀⢀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡇
-// ⠀⠀⠀⠀⠀⠀⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇
-// ⠀⠀⠀⠀⠀⢀⡿⠀⠀⠀⢠⡶⠒⠒⠒⠒⠲⣦⡀⠀⠀⠀⠀⠀⣿
-// ⠀⣀⣠⣄⣀⣼⡇⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⡇
-// ⠸⣏⡀⠀⠀⠈⠀⠀⠀⣀⣼⡇⠀⠀⣀⣀⣠⣼⠃⠀⠀⠀⠀⠀⡏
-// ⠀⠈⠛⠛⠒⠒⠒⠛⠛⠉⠁⠀⠀⣾⠉⠀⠀⠀⠀⠀⠀⠀⢀⣰⠇
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠒⠒⠒⠚⠛⠉⠉
-
-
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/logging/log.h>
-#include "bq.h"
+#include "system_state.h"
 
 LOG_MODULE_REGISTER(wallnet_bq, LOG_LEVEL_INF);
 
@@ -41,30 +13,40 @@ static const struct device *i2c_dev;
 static struct k_work_delayable bq_read_work;
 
 /* ---------- read ---------- */
-
 static int BQ_read_reg(uint8_t reg, uint8_t *data)
 {
-    return i2c_write_read(i2c_dev, BQ_ADDR, &reg, 1, data, 1);
+	return i2c_write_read(i2c_dev, BQ_ADDR, &reg, 1, data, 1);
 }
 
 /* ---------- battery processing ---------- */
 
 static int BQ_get_batt_level(void)
 {
-    uint8_t temp;
+	uint8_t temp;
 
-    if (BQ_read_reg(0x0E, &temp)) {
-        LOG_ERR("BQ read failed you dum b chud");
-        return -1;
-    }
+	if (BQ_read_reg(0x0E, &temp)) {
+		LOG_ERR("BQ read failed you dum b chud");
+		return -1;
+	}
 
-    uint8_t val = temp & 0x7F;
-    int mv = 2304 + (val * 20);
+	uint8_t val = temp & 0x7F;
+	int mv = 2304 + (val * 20);
 
-    if (mv < 3400) return 0;
-    else if (mv < 3800) return 1;
-    else return 2;
+	if (mv < 3400) return 0;
+	else if (mv < 3800) return 1;
+	else return 2;
 }
+
+static void bq_read_worker(struct k_work *work) {
+
+	wallnet_gps_stop(); 
+
+	int batt_level = BQ_get_batt_level();
+
+	sys_batt_level = batt_level;
+}
+
+
 
 /* ---------- init ---------- */
 
@@ -79,9 +61,11 @@ int BQ_init(void)
     BQ_write(0x02, 0x3C);
     BQ_write(0x04, 0x08);
 
+    k_work_init_delayable(&bq_read_work, bq_read_worker);
+    k_work_reschedule(&bq_read_work, K_NO_WAIT);
+
     return 0;
 }
-
 
 int BQ_write(uint8_t reg, uint8_t value)
 {

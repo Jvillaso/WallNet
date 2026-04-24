@@ -1,14 +1,12 @@
-#ifndef DRAW_H
-#define DRAW_H
-
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
 #include "eink.h"
 
+
 void saveRawPBM(const char* filename, uint8_t* buffer, int width, int height);
-int draw(char* string);
+int draw(char* string, int x, int y);
 int drawScaled(char* string, int startX, int startY);
 int drawLarge(char* string);
 void reset_framebuff();
@@ -266,6 +264,120 @@ const uint16_t digits[11][24] = {
     }
 };
 
+
+const uint8_t batt[][48] = { //16 x 24
+    // =========================
+    // 0% EMPTY
+    // =========================
+    {
+        0x00,0x00, 0x00,0x03,0xFF,0xFE,
+        0x02,0x00, 0x02,0x02,0x00,0x02,
+        0x7E,0x00, 0x02,0x7E,0x00,0x02,
+        0x7E,0x00, 0x02,0x7E,0x00,0x02,
+        0x7E,0x00, 0x02,0x7E,0x00,0x02,
+        0x7E,0x00, 0x02,0x7E,0x00,0x02,
+        0x7E,0x00, 0x02,0x02,0x00,0x02,
+        0x02,0x00, 0x02,0x03,0xFF,0xFE
+    },
+
+    // =========================
+    // 25% (low fill)
+    // =========================
+    {
+        0x00,0x00, 0x00,0x03,0xFF,0xFE,
+        0x02,0x00, 0x02,0x02,0x00,0x02,
+        0x6E,0x00, 0x02,0x6E,0x00,0x02,
+        0x6E,0x00, 0x02,0x6E,0x00,0x02,
+        0x6E,0x00, 0x02,0x6E,0x00,0x02,
+        0x7E,0x00, 0x02,0x7E,0x00,0x02,
+        0x7E,0x00, 0x02,0x02,0x00,0x02,
+        0x02,0x00, 0x02,0x03,0xFF,0xFE
+    },
+
+    // =========================
+    // 50%
+    // =========================
+    {
+        0x00,0x00, 0x00,0x03,0xFF,0xFE,
+        0x02,0x00, 0x02,0x02,0x00,0x02,
+        0x4E,0x00, 0x02,0x4E,0x00,0x02,
+        0x4E,0x00, 0x02,0x4E,0x00,0x02,
+        0x4E,0x00, 0x02,0x4E,0x00,0x02,
+        0x6E,0x00, 0x02,0x6E,0x00,0x02,
+        0x7E,0x00, 0x02,0x02,0x00,0x02,
+        0x02,0x00, 0x02,0x03,0xFF,0xFE
+    },
+
+    // =========================
+    // 75%
+    // =========================
+    {
+        0x00,0x00, 0x00,0x03,0xFF,0xFE,
+        0x02,0x00, 0x02,0x02,0x00,0x02,
+        0x2E,0x00, 0x02,0x2E,0x00,0x02,
+        0x2E,0x00, 0x02,0x2E,0x00,0x02,
+        0x2E,0x00, 0x02,0x2E,0x00,0x02,
+        0x4E,0x00, 0x02,0x4E,0x00,0x02,
+        0x7E,0x00, 0x02,0x02,0x00,0x02,
+        0x02,0x00, 0x02,0x03,0xFF,0xFE
+    },
+
+    // =========================
+    // 100% FULL
+    // =========================
+    {
+        0x00,0x00, 0x00,0x03,0xFF,0xFE,
+        0x02,0x00, 0x02,0x02,0x00,0x02,
+        0xEE,0x00, 0x02,0xEE,0x00,0x02,
+        0xEE,0x00, 0x02,0xEE,0x00,0x02,
+        0xEE,0x00, 0x02,0xEE,0x00,0x02,
+        0xEE,0x00, 0x02,0xEE,0x00,0x02,
+        0xEE,0x00, 0x02,0x02,0x00,0x02,
+        0x02,0x00, 0x02,0x03,0xFF,0xFE
+    }
+};
+//     { //Empty
+//         0x00, 0x00, 0x00, 0x03, 0xFF, 
+//         0xFE, 0x02, 0x00, 0x02, 0x02, 
+//         0x00, 0x02, 0x7E, 0x00, 0x02, 
+//         0x7E, 0x00, 0x02, 0x7E, 0x00, 
+//         0x02, 0x7E, 0x00, 0x02, 0x7E, 
+//         0x00, 0x02, 0x7E, 0x00, 0x02, 
+//         0x7E, 0x00, 0x02, 0x7E, 0x00, 
+//         0x02, 0x02, 0x00, 0x02, 0x02, 
+//         0x00, 0x02, 0x03, 0xFF, 0xFE, 
+//         0x00, 0x00, 0x00
+//     },
+//     {
+
+//     },
+//     { //3/4 Battery
+//         0x00, 0x00, 0x00, 0x03, 0xFF,
+//         0xFE, 0x02, 0x00, 0x02, 0x02,
+//         0x0F, 0x7A, 0x7E, 0x0F, 0x7A,
+//         0x7E, 0x0F, 0x7A, 0x7E, 0x0F,
+//         0x7A, 0x7E, 0x0F, 0x7A, 0x7E,
+//         0x0F, 0x7A, 0x7E, 0x0F, 0x7A,
+//         0x7E, 0x0F, 0x7A, 0x7E, 0x0F,
+//         0x7A, 0x02, 0x0F, 0x7A, 0x02,
+//         0x00, 0x02, 0x03, 0xFF, 0xFE,
+//         0x00, 0x00, 0x00
+//     },
+//     {//Full Battery
+//         0x00, 0x00, 0x00, 0x03, 0xFF,
+//         0xFE, 0x02, 0x00, 0x02, 0x02,
+//         0xEF, 0x7A, 0x7E, 0xEF, 0x7A,
+//         0x7E, 0xEF, 0x7A, 0x7E, 0xEF,
+//         0x7A, 0x7E, 0xEF, 0x7A, 0x7E,
+//         0xEF, 0x7A, 0x7E, 0xEF, 0x7A,
+//         0x7E, 0xEF, 0x7A, 0x7E, 0xEF,
+//         0x7A, 0x02, 0xEF, 0x7A, 0x02,
+//         0x00, 0x02, 0x03, 0xFF, 0xFE,
+//         0x00, 0x00, 0x00
+//     }
+
+// };
+
 // int main() {
 
 
@@ -325,15 +437,54 @@ int displayCard(card_record_t cardData){
     return 0;
 }
 
-void clearPortion(int startX, int startY) {
-    // CLEAR REGION FIRST
-    for (int y_src = startY; y_src < HEIGHT; y_src++) {
+int displayErr(char* errMsg){
+    Reset();
+    if(alph_scaled_ready == 0){
+        buildAlph2x();
+    }
+    int startX = horizontal_border; 
+    int startY = (twoXHeight * 3) + vertical_border; 
+    drawScaled(errMsg, startX, startY); 
+    
+    Display(frameBuffer);
 
-        int x_begin = (y_src == startY) ? startX : 0;
+    return 0;
 
-        for (int x_src = x_begin; x_src < WIDTH; x_src++) {
+}
 
-            // same transform as draw
+void displayBattery(int level) {
+    Reset();
+
+    if (level < 0) level = 0;
+    if (level > 2) level = 2;
+
+    // ----------------------------
+    // TEXT LABELS FOR LEVELS
+    // ----------------------------
+    char* label;
+
+    switch(level) {
+        case 0: label = "EMPTY"; break;
+        case 1: label = "LOW"; break;
+        case 2: label = "FULL"; break;
+        default: label = "ERR"; break;
+    }
+
+    const int bw = 24;
+    const int bh = 16;
+
+    int startX = WIDTH - (2 * bw);
+    int startY = 0;
+
+    // ----------------------------
+    // 1. CLEAR EXACT SAME TRANSFORMED PIXELS
+    // ----------------------------
+    for (int y = 0; y < bh; y++) {
+        for (int x = 0; x < bw; x++) {
+
+            int x_src = startX + x;
+            int y_src = startY + y;
+
             int x_dst = y_src;
             int y_dst = (EPD_HEIGHT - 1) - x_src;
 
@@ -344,33 +495,18 @@ void clearPortion(int startX, int startY) {
 
             int bytesPerRow = (EPD_WIDTH + 7) / 8;
             int dstIndex = y_dst * bytesPerRow + (x_dst / 8);
-            int dstBit = 7 - (x_dst % 8);
+            int dstBit = (x_dst % 8);
 
-            //clearing bit
             frameBuffer[dstIndex] &= ~(1 << dstBit);
         }
     }
-}
-int displayErr(char* errMsg){
-    Reset();
-    if(alph_scaled_ready == 0){
-        buildAlph2x();
-    }
-    int startX = horizontal_border; 
-    int startY = (twoXHeight * 3) + vertical_border; 
 
-    clearPortion(startX, startY);
-    
-    int len = strlen(errMsg);
+    // ----------------------------
+    // 2. DRAW TEXT INSTEAD OF ICON
+    // ----------------------------
+    draw(label, startX, startY);
 
-
-    
-
-    drawScaled(errMsg, startX, startY); 
-    
     Display(frameBuffer);
-
-    return 0;
 }
 
 // int clearError(){
@@ -389,17 +525,17 @@ void reset_framebuff(){
     }
 }
 
-int draw(char* string){
+int draw(char* string, int startX, int startY){
     int charPerRow = 16;
 
     for(int i = 0; string[i] != '\0'; i++){
         if(i >= 10 * charPerRow){
-            draw("String too long");
+            draw("String too long", startX, startY);
             return -1;
         }
 
         char curChar = string[i];
-        uint8_t* drawChar;
+        const uint8_t* drawChar;
 
         if (curChar >= '0' && curChar <= '9') {
             drawChar = alph[curChar - '0'];
@@ -408,7 +544,7 @@ int draw(char* string){
             drawChar = alph[curChar - 'A' + 10];
         }
         else if (curChar >= 'a' && curChar <= 'z') {
-            drawChar = alph[curChar - 'a' + 10]; 
+            drawChar = alph[curChar - 'a' + 10];
         }
         else if (curChar == ' ') {
             drawChar = alph[36];
@@ -420,29 +556,29 @@ int draw(char* string){
         int charX = i % charPerRow;
         int charY = i / charPerRow;
 
+        int baseX = startX + charX * 8;
+        int baseY = startY + charY * 12;
+
         for(int j = 0; j < 12; j++) {
             uint8_t row = drawChar[j];
-            int y_src = charY * 12 + j;
+            int y_src = baseY + j;
+
             for (int bit = 0; bit < 8; bit++) {
                 if (row & (1 << (7 - bit))) {
-                    int x_src = charX * 8 + bit;
+                    int x_src = baseX + bit;
                     setTransformedPixel(x_src, y_src);
                 }
             }
         }
-
     }
+
     return 0;
 }
-int drawScaled(char* string, int startX, int startY) {
 
-    // 🔥 compute how many chars fit given horizontal offset
-    int usableWidth = WIDTH - startX;
-    int charPerRow = usableWidth / 16;
-    if (charPerRow <= 0) return -1;
+int drawScaled(char* string, int startX, int startY) {
+    int charPerRow = 16;
 
     for (int i = 0; string[i] != '\0'; i++) {
-
         if (i >= 10 * charPerRow) {
             return -1;
         }
@@ -460,24 +596,18 @@ int drawScaled(char* string, int startX, int startY) {
         int charY = i / charPerRow;
 
         for (int j = 0; j < 24; j++) {
+            uint16_t row = drawChar[j];
             int y_src = startY + charY * 24 + j;
             if (y_src >= HEIGHT) continue;
 
-            uint16_t row = drawChar[j];
-
             for (int bit = 0; bit < 16; bit++) {
                 if (row & (1 << (15 - bit))) {
-
-                    int x_src = startX + (charX * 16) + bit;
-
-                    if (x_src >= WIDTH) continue;
-
+                    int x_src = startX + charX * 16 + bit;
                     setTransformedPixel(x_src, y_src);
                 }
             }
         }
     }
-
     return 0;
 }
 
@@ -541,4 +671,3 @@ void saveRawPBM(const char* filename, uint8_t* buffer, int width, int height){
     fclose(f);
 }
 
-#endif

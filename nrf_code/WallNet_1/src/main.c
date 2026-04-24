@@ -39,6 +39,9 @@ struct k_work_delayable rfid_timeout_work;
 static struct k_work_delayable fp_enroll_work;
 uint16_t sys_num_fingers = 0;
 
+int sys_batt_level = 2; // start at high battery until we read from BQ
+
+
 static int build_rfid_packet(const card_record_t *card, char *packet_buf, size_t packet_buf_size)
 {
     size_t first_name_len = strnlen(card->first_name, sizeof(card->first_name));

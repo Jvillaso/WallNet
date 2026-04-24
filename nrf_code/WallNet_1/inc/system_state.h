@@ -84,6 +84,7 @@ void wallnet_auth_init(void);
 void wallnet_gps_init(void);
 void wallnet_gps_start(void);
 void wallnet_gps_stop(void);
+void wallnet_ble_notify_gps(void);
 
 void wallnet_auth_trigger(void);
 int wallnet_save_cards_to_nvm(void);
@@ -92,6 +93,13 @@ int wallnet_save_fingerprint_count_to_nvm(void);
 extern uint16_t sys_num_fingers;
 void wallnet_enroll_trigger(void);
 
-void wallnet_ble_notify_gps(void);
+
+int BQ_init(void);
+int BQ_status(void);
+int BQ_ret_batt(void);
+int BQ_write(uint8_t reg, uint8_t value);
+extern int sys_batt_level; // 0, 1, or 2 for low, medium, high
+
+
 
 #endif // SYSTEM_STATE_H

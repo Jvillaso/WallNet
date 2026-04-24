@@ -6,7 +6,7 @@
 #include <zephyr/input/input.h>
 
 #include "eink.h"
-#include "draw.c"
+#include "draw.h"
 
 #include "system_state.h"
 #include "fp_commands.h"
@@ -60,6 +60,7 @@ void update_eink_display(void) {
                         sys_card_slots[sys_active_card_idx].last_four);
 
                 displayCard(sys_card_slots[sys_active_card_idx]);
+                
             }
             break;
         case STATE_RFID_TRANSMITTING:
