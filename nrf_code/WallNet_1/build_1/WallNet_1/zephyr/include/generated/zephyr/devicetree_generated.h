@@ -1714,7 +1714,7 @@
 /* Generic property macros: */
 #define DT_N_S_buttons_S_button_0_P_gpios_IDX_0_EXISTS 1
 #define DT_N_S_buttons_S_button_0_P_gpios_IDX_0_PH DT_N_S_soc_S_gpio_50000000
-#define DT_N_S_buttons_S_button_0_P_gpios_IDX_0_VAL_pin 13
+#define DT_N_S_buttons_S_button_0_P_gpios_IDX_0_VAL_pin 14
 #define DT_N_S_buttons_S_button_0_P_gpios_IDX_0_VAL_pin_EXISTS 1
 #define DT_N_S_buttons_S_button_0_P_gpios_IDX_0_VAL_flags 17
 #define DT_N_S_buttons_S_button_0_P_gpios_IDX_0_VAL_flags_EXISTS 1

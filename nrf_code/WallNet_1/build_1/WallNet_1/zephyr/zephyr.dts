@@ -883,7 +883,7 @@
 
 		/* node '/buttons/button_0' defined in zephyr\boards\nordic\nrf52dk\nrf52dk_nrf52832.dts:64 */
 		button0: button_0 {
-			gpios = < &gpio0 0xd 0x11 >;    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:13 */
+			gpios = < &gpio0 0xe 0x11 >;    /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:13 */
 			label = "Push button switch 0"; /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:14 */
 			zephyr,code = < 0xb >;          /* in ..\..\Users\biote\OneDrive\Documents\WallNet\nrf_code\WallNet_1\build_1\WallNet_1\zephyr\app.overlay:15 */
 		};
