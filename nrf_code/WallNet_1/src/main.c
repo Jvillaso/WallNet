@@ -10,6 +10,7 @@
 #include "wallnet_rfid.h"
 
 #include "eink.h"
+#include "bq.h"
 
 
 LOG_MODULE_REGISTER(main_app, LOG_LEVEL_INF);
@@ -341,6 +342,9 @@ int main(void)
     buzzer_init();
 
     wallnet_rfid_init();
+    BQ_init();
+    BQ_start_periodic_read();
+
 
     
     // NVM storage for cards/gps
