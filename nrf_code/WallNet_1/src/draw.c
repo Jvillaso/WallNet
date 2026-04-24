@@ -443,6 +443,28 @@ int displayErr(char* errMsg){
     }
     int startX = horizontal_border; 
     int startY = (twoXHeight * 3) + vertical_border; 
+
+    // Clear from the start point to the end of the image.
+    // On the first row, clear from startX to the right edge.
+    // On following rows, clear the full width.
+    for (int y = startY; y < HEIGHT; y++) {
+        int xBegin = (y == startY) ? startX : 0;
+        for (int x = xBegin; x < WIDTH; x++) {
+            int x_dst = y;
+            int y_dst = (EPD_HEIGHT - 1) - x;
+
+            if (x_dst < 0 || x_dst >= EPD_WIDTH || y_dst < 0 || y_dst >= EPD_HEIGHT) {
+                continue;
+            }
+
+            int bytesPerRow = (EPD_WIDTH + 7) / 8;
+            int dstIndex = y_dst * bytesPerRow + (x_dst / 8);
+            int dstBit = 7 - (x_dst % 8);
+
+            frameBuffer[dstIndex] &= ~(1 << dstBit);
+        }
+    }
+
     drawScaled(errMsg, startX, startY); 
     
     Display(frameBuffer);

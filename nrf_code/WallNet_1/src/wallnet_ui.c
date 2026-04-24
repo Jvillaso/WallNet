@@ -23,7 +23,7 @@ void update_eink_display(void) {
     switch (sys_current_state) {
         case STATE_INIT_WAIT_ENROLL:
             LOG_WRN("\n[E-INK] Setup 1/2: Press button to enroll Fingerprint.");
-            displayErr("Press button to enroll Fingerprint");
+            displayErr("Press btn to enroll Finger");
             break;
         case STATE_ENROLLING:
             LOG_WRN("\n[E-INK] Enrolling Fingerprint...");
@@ -36,11 +36,11 @@ void update_eink_display(void) {
 
         case STATE_INIT_WAIT_PAIRING:
             LOG_WRN("\n[E-INK] Setup 2/2: Press button to begin Bluetooth pairing.");
-            displayErr("Press button to begin Bluetooth pairing");
+            displayErr("Press btn to begin BT pairing");
             break;
         case STATE_PAIRING_ADVERTISING:
             LOG_WRN("\n[E-INK] Pairing Mode: Open App to Connect...");
-            displayErr("pen App to Connect");
+            displayErr("Open App to Connect");
             break;
         case STATE_BLE_SYNCING:
             LOG_WRN("\n[E-INK] Syncing Cards with Phone... Please Wait.");

@@ -55,9 +55,9 @@ int eink_init(void) {
     DigitalWrite(reset_pin, HIGH);
     //DigitalWrite(debug_pin, LOW);
     //DigitalWrite(test_pin, HIGH);
-
-    
-    return Init(FULL_MODE);
+    Init(FULL_MODE);
+    //Clear();
+    return 0;
 }
 
 //Write a value to a GPIO pin

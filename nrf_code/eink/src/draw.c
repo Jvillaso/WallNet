@@ -23,8 +23,8 @@ static inline void setTransformedPixel(int x_src, int y_src) {
         return;
     }
 
-    int x_dst = y_src;
-    int y_dst = (EPD_HEIGHT - 1) - x_src;  // 🔥 Y-axis flip
+    int x_dst = (EPD_WIDTH - 1) - (HEIGHT - 1 - y_src);
+    int y_dst = (EPD_HEIGHT - 1) - x_src;  // keep the existing rotation
 
     if (x_dst < 0 || x_dst >= EPD_WIDTH || y_dst < 0 || y_dst >= EPD_HEIGHT) {
         return;
@@ -436,6 +436,30 @@ int displayCard(card_record_t cardData){
     return 0;
 }
 
+static void clearSourceRegionToEnd(int startX, int startY) {
+    if (startX < 0) startX = 0;
+    if (startY < 0) startY = 0;
+    if (startX >= WIDTH || startY >= HEIGHT) return;
+
+    for (int y = startY; y < HEIGHT; y++) {
+        int x_begin = (y == startY) ? startX : 0;
+        for (int x = x_begin; x < WIDTH; x++) {
+            int x_dst = (EPD_WIDTH - 1) - (HEIGHT - 1 - y);
+            int y_dst = (EPD_HEIGHT - 1) - x;
+
+            if (x_dst < 0 || x_dst >= EPD_WIDTH || y_dst < 0 || y_dst >= EPD_HEIGHT) {
+                continue;
+            }
+
+            int bytesPerRow = (EPD_WIDTH + 7) / 8;
+            int dstIndex = y_dst * bytesPerRow + (x_dst / 8);
+            int dstBit = 7 - (x_dst % 8);
+
+            frameBuffer[dstIndex] &= ~(1 << dstBit);
+        }
+    }
+}
+
 int displayErr(char* errMsg){
     Reset();
     if(alph_scaled_ready == 0){
@@ -443,6 +467,7 @@ int displayErr(char* errMsg){
     }
     int startX = horizontal_border; 
     int startY = (twoXHeight * 3) + vertical_border; 
+    clearSourceRegionToEnd(startX, startY);
     drawScaled(errMsg, startX, startY); 
     
     Display(frameBuffer);
@@ -669,4 +694,3 @@ void saveRawPBM(const char* filename, uint8_t* buffer, int width, int height){
 
     fclose(f);
 }
-
